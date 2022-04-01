@@ -1,0 +1,1207 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Registration</title>
+    <link rel="stylesheet" href="{% static 'bootstrap-5.1.3-dist/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'style/custom-style.css' %}">
+    <link rel="stylesheet" href="{% static 'style/style.css' %}">
+    <link rel="icon" type="" sizes="32x32" href="{% static 'images/favicon.png'%}" />
+    <link rel="icon" type="" sizes="16x16" href="{% static 'images/favicon.png'%}" />
+
+    <!-- Font Awesome icons -->
+    <script src="https://kit.fontawesome.com/f14330b5d4.js" crossorigin="anonymous"></script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <!-- Main Wrapper Start -->
+    <div class="wrapper">
+
+        <!-- Header Start -->
+        <header class="main-header">
+            <div class="top-header">
+                <div class="container-fluid">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center top-header-left">
+                            <ul class="list-inline d-flex">
+                                <li class="list-inline-item pr-2"><a href="#">(1234-567891234)</a></li>
+
+                                <li class="list-inline-item pl-1"><a href="#">(132demo@gmail.com)</a></li>
+                            </ul>
+                        </div>
+                        <div class="ml-auto d-flex align-items-center top-header-right p-2">
+                            <!-- <ul class="list-inline px-3 social-icons mt-2">
+                            <li class="list-inline-item">
+                                <a href="" class="btn btn-icon btn-sm">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="" class="btn btn-icon btn-sm"><i class="fab fa-twitter"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="" class="btn btn-icon btn-sm"><i class="fab fa-instagram"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="" class="btn btn-icon btn-sm"><i class="fab fa-linkedin-in"></i></a>
+                            </li>
+                        </ul> -->
+                        <ul class="list-inline px-3 social-icons mt-2">
+                            <li class="list-inline-item">
+                                <a href="" class="btn btn-icon btn-sm">
+                                    <img src="{% static 'images/facebook-logo.png' %}" width="30" alt="Facebook logo">
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="" class="btn btn-icon btn-sm">
+                                    <img src="{% static 'images/instagram.png' %}" width="30" alt="Instagram logo">
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="" class="btn btn-icon btn-sm">
+                                    <img src="{% static 'images/twitter.png' %}" width="30" alt="Twitter logo">
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="" class="btn btn-icon btn-sm">
+                                    <img src="{% static 'images/youtube.png' %}" width="30" alt="Youtube logo">
+                                </a>
+                            </li>
+                        </ul>
+
+                            <!-- <div class="dropdown px-3">
+                            <a href="#" class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">ENG</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item text-dark" href="#">Eng</a>
+                                <a class="dropdown-item text-dark" href="#">Urdu</a>
+                                <a class="dropdown-item text-dark" href="#">Pashto</a>
+                            </div>
+                        </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="logo-section">
+                <div class="contianer-fluid sub-header p-0">
+                    <a href="{% url 'index' %}" class="brand-logo">
+                        <img src="{%static 'images/logo.png' %}" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="fix-header w-100">
+                <div class="container-fluid">
+                    <div class="main-wrapper">
+                        <nav class="navbar display-flex justify-content-center">
+                            <div class="brand-and-icon d-md-none d-block">
+                                <a href="{% url 'index' %}" class="navbar-brand">
+                                    <!-- Tourism -->
+                                    <img src="{% static 'images/logo.png' %}" class="d-md-none d-block" alt="">
+                                </a>
+                                <button type="button" class="navbar-toggler">
+                                    <i class="fas fa-bars"></i>
+                                </button>
+                            </div>
+                            <div class="navbar-collapse p-0">
+                                <ul class="navbar-nav list-inline p-md-0 p-4">
+                                    <li class="list-inline-item">
+                                        <a href="{% url 'index' %}">Home</a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#" class="menu-link">
+                                            About Us
+                                            <span class="drop-icon">
+                                                <i class="fas fa-chevron-down"></i>
+                                            </span>
+                                        </a>
+                                        <div class="sub-menu">
+                                            <!-- items -->
+                                            <ul class="p-0 text-start">
+                                                <li><a href="about-us-overview.html">Overview of DTS</a></li>
+                                                <li><a href="about-us-features.html">Function Of DTS</a></li>
+                                            </ul>
+                                            <!-- end of items -->
+
+                                        </div>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#" class="menu-link">
+                                            Registrtaion
+                                            <span class="drop-icon">
+                                                <i class="fas fa-chevron-down"></i>
+                                            </span>
+                                        </a>
+                                        <div class="sub-menu">
+                                            <!-- items -->
+                                            <ul class="p-0 text-start">
+                                                <li><a href="#">Tourist Guide Registration</a></li>
+                                                <li><a href="{% url 'restraunt-form' %}">Restraunts Registration </a></li>
+                                                <li><a href="{% url 'travel-agency-form' %}">Travel Agencies Registration</a></li>
+                                                <li><a href="{% url 'hotel-form' %}">Hotel Registration</a></li>
+                                               
+                                            </ul>
+                                            <!-- end of items -->
+
+                                        </div>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#" class="menu-link">
+                                            Lagislation
+                                            <span class="drop-icon">
+                                                <i class="fas fa-chevron-down"></i>
+                                            </span>
+                                        </a>
+                                        <div class="sub-menu">
+                                            <!-- items -->
+                                            <ul class="p-0 text-start">
+                                                <li><a href="#">Acts</a></li>
+                                                <li><a href="#">Rules</a></li>
+                                            </ul>
+                                            <!-- end of items -->
+
+                                        </div>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#" class="menu-link">
+                                            Licensing
+                                            <span class="drop-icon">
+                                                <i class="fas fa-chevron-down"></i>
+                                            </span>
+                                        </a>
+                                        <div class="sub-menu">
+                                            <!-- items -->
+                                            <ul class="p-0 text-start">
+                                                <li><a href="#">Hotels and Restraunts</a></li>
+                                                <li><a href="#">Travel Agencies and Tour Operators</a></li>
+                                                <li><a href="#">Tourist Guides</a></li>
+                                            </ul>
+                                            <!-- end of items -->
+
+                                        </div>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#" class="menu-link">
+                                            Fees
+                                            <span class="drop-icon">
+                                                <i class="fas fa-chevron-down"></i>
+                                            </span>
+                                        </a>
+                                        <div class="sub-menu">
+                                            <!-- items -->
+                                            <ul class="p-0 text-start">
+                                                <li><a href="#">Hotels and Restraunts</a></li>
+                                                <li><a href="#">Travel Agencies and Tour Operators</a></li>
+                                                <li><a href="#">Tourist Guides</a></li>
+                                            </ul>
+                                            <!-- end of items -->
+
+                                        </div>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#" class="menu-link">
+                                            Hotel
+                                            <span class="drop-icon">
+                                                <i class="fas fa-chevron-down"></i>
+                                            </span>
+                                        </a>
+                                        <div class="sub-menu">
+                                            <!-- items -->
+                                            <ul class="p-0 text-start">
+                                                <li><a href="#">5 Star Hotels</a></li>
+                                                <li><a href="#">4 Star Hotels</a></li>
+                                                <li><a href="#">3 Star Hotels</a></li>
+                                                <li><a href="#">1 & 2 Star Hotels</a></li>
+                                            </ul>
+                                            <!-- end of items -->
+
+                                        </div>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#" class="menu-link">
+                                            Service Provider
+                                            <span class="drop-icon">
+                                                <i class="fas fa-chevron-down"></i>
+                                            </span>
+                                        </a>
+
+                                        <div class="sub-menu">
+                                            <!-- items -->
+                                            <ul class="p-0 text-start">
+                                                <li><a href="#">Restraunts</a></li>
+                                                <li><a href="#">Travel Agencies & Tour Operators</a></li>
+                                                <li><a href="#">Tourist Guides</a></li>
+                                            </ul>
+                                            <!-- end of items -->
+
+                                        </div>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#" class="menu-link">
+                                            Downloads
+                                            <span class="drop-icon">
+                                                <i class="fas fa-chevron-down"></i>
+                                            </span>
+                                        </a>
+                                        <div class="sub-menu">
+                                            <!-- items -->
+                                            <ul class="p-0 text-start">
+                                                <li><a href="#">Tenders</a></li>
+                                                <li><a href="#">Applicatons</a></li>
+                                                <li><a href="#">Jobs</a></li>
+                                            </ul>
+                                            <!-- end of items -->
+
+                                        </div>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#" class="menu-link">
+                                            Featured Destination
+                                            <span class="drop-icon">
+                                                <i class="fas fa-chevron-down"></i>
+                                            </span>
+                                        </a>
+                                        <div class="sub-menu">
+                                            <!-- items -->
+                                            <ul class="p-0 text-start">
+                                                <li><a href="#">Hunza Valley</a></li>
+                                                <li><a href="#">The Beautiful Valley of Sawat</a></li>
+                                                <li><a href="#">Chitral Valley</a></li>
+                                                <li><a href="#">Deosai Plains</a></li>
+                                                <li><a href="#">Gilgit Valley</a></li>
+                                                <li><a href="#">Skadu Valley</a></li>
+                                            </ul>
+                                            <!-- end of items -->
+
+                                        </div>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#">Contact Us</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Header end -->
+
+
+        <!-- Main Content Start -->
+        <section class="main-content gallery-section">
+            <!-- Start Hero Section -->
+            <div class="other-hero hero z-index-2">
+                <div class="container">
+                    <div class="row justify-content-center main-heading  space-top-xl-4">
+                        <div class=" text-center">
+                            <h1 class="sub-head">Restaurant Registrtaion</h1>
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb justify-content-center">
+                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page"> Restaurant Registration
+                                    </li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- End Hero Section -->
+            <div class="container space-y">
+                <!-- <div class="row row-cols-1 g-4"> -->
+                <div class="row touristGuide-content">
+                    <form action="">
+                        <fieldset>
+                            <legend>Restaurant Registration</legend>
+                            <div class="row">
+                                <div class="col-12 my-2">
+                                    <label for="" class="form-label">Name Of The Restaurant</label>
+                                    <input type="text" class="form-control" name="restaurent-name" />
+                                </div>
+                                <div class="col-lg-3 col-md-6 my-2">
+                                    <label for="" class="form-label">Year of Establisment:</label>
+
+                                    <input type="date" class="form-control" name="establish-year" />
+                                </div>
+                                <div class="col-lg-3 col-md-6 my-2">
+                                    <label for="" class="form-label">Date of Commission:</label>
+
+                                    <input type="date" class="form-control" name="commission-date" />
+                                </div>
+                                <div class="col-lg-3 col-md-6 my-2">
+                                    <label for="" class="form-label">Telex Number:</label>
+
+                                    <input type="text" class="form-control" name="telex-no" />
+                                </div>
+                                <div class="col-lg-3 col-md-6 my-2">
+                                    <label for="" class="form-label">Telephone Number:</label>
+
+                                    <input type="text" class="form-control" name="telephone-no" />
+                                </div>
+                                <div class="col-lg-6 col-md-12 my-2">
+                                    <label for="" class="form-label">Address:</label>
+
+                                    <input type="text" class="form-control" name="hotel-address" />
+                                </div>
+                                <div class="col-lg-6 col-md-12 my-2">
+                                    <label for="" class="form-label">Telegraphic Address:</label>
+
+                                    <input type="text" class="form-control" name="telegraphic address" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h5 class="mt-4 mb-2">
+                                    <u>
+                                        Location
+                                    </u>
+                                </h5>
+                                <div class="col-md-4 my-2">
+                                    <label for="" class="form-label">Province:</label>
+                                    <select class="form-select" aria-label="Default select example" name="province" id="province">
+                                        <option selected>PLease Select</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4 my-2">
+                                    <label for="" class="form-label">Town:</label>
+
+                                    <input type="text" class="form-control" name="town" />
+                                </div>
+                                <div class="col-md-4 my-2">
+                                    <label for="" class="form-label">Street:</label>
+
+                                    <input type="text" class="form-control" name="streeet" />
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-md-12 my-2">
+                                    <label for="" class="form-label">Nature of Ownership:</label>
+
+                                    <!-- <input type="text" class="form-control" />
+                                <small>(Please State Whether Sole Proprietorship, firms cooperative, Limited company, etc) <b class="text-danger">*</b></small> -->
+                                    <select class="form-select" aria-label="Default select example" name="ownership-nature" id="ownership-nature">
+                                    <option selected>PLease Select</option>
+                                    <option value="Proprietorship">Proprietorship</option>
+                                    <option value="Cooperative">Cooperative</option>
+                                    <option value="Company">Company</option>
+                                    <option value="Firms">Firms</option>
+                                    <option value="Limited Company">Limited Company</option>
+                                </select>
+                                </div>
+                            </div>
+                            <div class="row ">
+                                <div class="col-7">
+                                    <h5 class="mt-4 mb-2 form-Subhead">
+                                        <u>
+                                            Number Of Owners
+                                        </u>
+                                    </h5>
+                                </div>
+                                <div class="col-5 text-end">
+                                    <button class="add-owner-field btn btn-sm text-nowrap btn-success mt-4">Add Owners</button>
+                                </div>
+                                <div class="col-md-12 my-2">
+                                    <div class="owner-input-field">
+                                        <label for="" class="form-label">Fill the Information of Number of Owners you have</label>
+                                        <div class="row">
+                                            <div class="col-lg-4 col-md-6 my-2">
+                                                <label for="" class="form-label">Name of Owner:</label>
+
+                                                <input type="text" class="form-control" name="owner-name" />
+                                            </div>
+
+                                            <div class="col-lg-2 col-md-6 my-2">
+                                                <label for="" class="form-label">Owner % :</label>
+
+                                                <input type="text" class="form-control" name="owner" />
+                                            </div>
+
+                                            <div class="col-lg-6 col-md-12 my-2">
+                                                <label for="" class="form-label">Full Address of Owner:</label>
+
+                                                <input type="text" class="form-control" name="owner-address" />
+                                            </div>
+
+                                            <div class="col-lg-6 col-md-12 my-2">
+                                                <label for="" class="form-label">Telegraphic Address of Owner:</label>
+
+                                                <input type="text" class="form-control" name="owner-telegraph-address" />
+                                            </div>
+
+                                            <div class="col-lg-3 col-md-6 my-2">
+                                                <label for="" class="form-label">Owner Telephone Number:</label>
+
+                                                <input type="text" class="form-control" name="owner-telephone-no" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-7">
+                                    <h5 class="mt-4 mb-2 form-Subhead">
+                                        <u>
+                                            Manager
+                                        </u>
+                                    </h5>
+                                </div>
+                                <div class="col-5 text-end">
+                                    <button class="add-hotelManager-field btn btn-sm text-nowrap btn-success mt-4">Add Manager</button>
+                                </div>
+                                <div class="col-md-12 my-2">
+                                    <div class="hotelManager-input-field">
+                                        <label for="" class="form-label">Fill the Information of Number of Owners you have</label>
+                                        <div class="row">
+                                            <div class="col-lg-4 col-md-6 my-2">
+                                                <label for="" class="form-label">Name of Manager:</label>
+
+                                                <input type="text" class="form-control" name="manager-name" />
+                                            </div>
+
+                                            <div class="col-lg-2 col-md-6 my-2 text-nowrap">
+                                                <label for="" class="form-label">Manager % :</label>
+
+                                                <input type="text" class="form-control" name="manager-ratio" />
+                                            </div>
+
+                                            <div class="col-lg-6 col-md-12 my-2">
+                                                <label for="" class="form-label">Manager Adress:</label>
+
+                                                <input type="text" class="form-control" name="manager-address" />
+                                            </div>
+
+                                            <div class="col-lg-3 col-md-12 my-2">
+                                                <label for="" class="form-label">Manager Telephone Number:</label>
+
+                                                <input type="text" class="form-control" name="manager-telephone-no" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h5 class="mt-4 mb-2">
+                                    <u>
+                                        Area
+                                    </u>
+                                </h5>
+                                <div class="col-4 my-2">
+                                    <label for="" class="form-label">Total Area:</label>
+
+                                    <input type="text" class="form-control" name="total-area" />
+                                </div>
+
+                                <div class="col-4 my-2">
+                                    <label for="" class="form-label">Area of Kitchen:</label>
+
+                                    <input type="text" class="form-control" name="kitchen-area" />
+                                </div>
+
+                                <div class="col-4 my-2">
+                                    <label for="" class="form-label">Area of Pantry:</label>
+
+                                    <input type="text" class="form-control" name="pantry-area" />
+                                </div>
+
+                                <div class="col-4 my-2">
+                                    <label for="" class="form-label">Area of Dining Hall:</label>
+
+                                    <input type="text" class="form-control" name="dinning-hall-area" />
+                                </div>
+
+                                <div class="col-4 my-2">
+                                    <label for="" class="form-label">Seating Capacity of Dining Hall:</label>
+
+                                    <input type="text" class="form-control" name="dinning-hall-capacity" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h5 class="mt-4 mb-2">
+                                    <u>
+                            Costs
+                        </u>
+                                </h5>
+                                <div class="col-3 my-2">
+                                    <label for="" class="form-label">Cost of Furniture & Fixtures:</label>
+
+                                    <input type="text" class="form-control" />
+                                </div>
+
+                                <div class="col-3 my-2">
+                                    <label for="" class="form-label">Cost of Equipment:</label>
+
+                                    <input type="text" class="form-control" name="equipment-cost" />
+                                </div>
+                                <div class="col-3 my-2">
+                                    <label for="" class="form-label">Annual Rent:</label>
+
+                                    <input type="text" class="form-control" name="annual-rent" />
+                                </div>
+
+                                <div class="col-3 my-2">
+                                    <label for="" class="form-label">Working Capital:</label>
+
+                                    <input type="text" class="form-control" name="working-capital" />
+                                </div>
+
+                                <div class="col-3 my-2">
+                                    <label for="" class="form-label">Total Investment:</label>
+
+                                    <input type="text" class="form-control" name="total-investment" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h5 class="mt-4 mb-2">
+                                    <u>
+                            Furniture & Fixtures
+                        </u>
+                                </h5>
+                                <div class="col-md-12 mb-2">
+                                    <span>(Please give details separately for the Dining hall and the Kitchen)</span>
+                                </div>
+                                <div class="col-4 my-2">
+                                    <label for="" class="form-label">Number Of Floors:</label>
+
+                                    <input type="text" class="form-control" name="floor-numbers" />
+                                </div>
+
+                                <div class="col-4 my-2">
+                                    <label for="" class="form-label">Number Of Rooms on Each Floor:</label>
+
+                                    <input type="text" class="form-control" name="rooms-number" />
+                                </div>
+
+                                <div class="col-4 my-2">
+                                    <label for="" class="form-label">Nature Of Room:</label>
+                                    <select class="form-select" aria-label="Default select example" name="room-nature" id="room-nature">
+                            <option selected>PLease Select</option>
+                            <option value="Single-bed-room">Single Bed Room</option>
+                            <option value="Double-bed-room">Double Bed Room</option>
+                            <option value="Suite-room">Suite Room</option>
+                        </select>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <h5 class="mt-4 mb-2">
+                                    <u>
+                            Facilities Available on the Premises
+                        </u>
+                            {% for item in restaurentData %}
+                                </h5>
+                                <div class="col-12 my-2">
+                                    <div class="form-group">
+                                        <input class="form-check-input" type="checkbox" value="" id="reception">
+                                        <label class="form-check-label" for="reception"> Reception </label>
+                                    </div>
+                                </div>
+                                <div class="col-12 my-2">
+                                    <div class="form-group">
+                                        <input class="form-check-input" type="checkbox" value="" id="billCounter">
+                                        <label class="form-check-label" for="billCounter"> Bill Counter </label>
+                                    </div>
+                                </div>
+                                <div class="col-12 my-2">
+                                    <div class="form-group">
+                                        <input class="form-check-input" type="checkbox" value="" id="telephone">
+                                        <label class="form-check-label" for="telephone"> Telephone </label>
+                                    </div>
+                                </div>
+                                <div class="col-12 my-2">
+                                    <div class="form-group">
+                                        <input class="form-check-input" type="checkbox" value="" id="air-conditionging-cooling">
+                                        <label class="form-check-label" for="air-conditionging-cooling"> Air-Conditionging cooling
+                                according to local condtions and weather </label>
+                                    </div>
+                                </div>
+                                <div class="col-12 my-2">
+                                    <div class="form-group">
+                                        <input class="form-check-input" type="checkbox" value="" id="air-conditionging-heat">
+                                        <label class="form-check-label" for="air-conditionging-heat"> Heating according to local
+                                condtions and weather </label>
+                                    </div>
+                                </div>
+                                <div class="col-12 my-2">
+                                    <div class="form-group">
+                                        <input class="form-check-input" type="checkbox" value="" id="cloakRoom">
+                                        <label class="form-check-label" for="cloakRoom"> Cloak Room </label>
+                                    </div>
+                                </div>
+                                <div class="col-12 my-2">
+                                    <div class="form-group">
+                                        <input class="form-check-input" type="checkbox" value="" id="toilet">
+                                        <label class="form-check-label" for="toilet"> Toilet </label>
+                                    </div>
+                                </div>
+                                <div class="col-12 my-2">
+                                    <div class="form-group">
+                                        <div class="carParking">
+                                            <input class="form-check-input" type="checkbox" value="" id="isChecked">
+                                            <label class="form-check-label" for="isChecked"> Car Park </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="row" id="other-divChk" style="display: none">
+                                        <div class="col-md-6 col-12">
+                                            <div class="form-group">
+                                                <label for="" class="form-label">Car Parking Capacity</label>
+                                                <input type="text" class="form-control required">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 my-2">
+                                    <div class="form-group">
+                                        <input class="form-check-input" type="checkbox" value="" id="entertainment">
+                                        <label class="form-check-label" for="entertainment"> Entertaiment </label>
+                                    </div>
+                            {% endfor %}
+
+                                </div>
+                                <div class="col-4 my-2">
+                                    <label for="" class="form-label">Type of Cuisine offered:</label>
+                                    <input type="text" class="form-control" name="cuisine-type" />
+                                </div>
+                                <div class="col-4 my-2">
+                                    <label for="" class="form-label">Total Investment:</label>
+                                    <input type="text" class="form-control" name="total-investment" />
+                                </div>
+                                <div class="col-4 my-2">
+                                    <label for="" class="form-label">:</label>
+                                    <input type="text" class="form-control" name="ratio" />
+                                </div>
+
+                            </div>
+                            <div class=" row ">
+                                <div class="col-7">
+                                    <h5 class="mt-4 mb-2 form-Subhead">
+                                        <u>
+                                Furniture and Fixtures For Daining Hall
+                            </u>
+                                    </h5>
+                                </div>
+                                <div class="col-5 text-end">
+                                    <button class="add-diningHall-field btn btn-success btn-sm mt-4 text-nowrap">Add</button>
+                                </div>
+                                <div class="col-md-12 diningHall-input-field">
+                                    <div class="input-field">
+                                        <label for="" class="form-label">Fill the Information of Furniture and Fixtures For Daining
+                                Hall</label>
+                                        <div class="row">
+                                            <div class="col-12 my-2">
+                                                <label class="form-label">Furniture Type</label>
+                                                <input type="text" class="form-control" name="dinning-furniture-type" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class=" row ">
+                                <div class="col-7">
+                                    <h5 class="mt-4 mb-2 form-Subhead">
+                                        <u>
+                                Furniture and Fixtures for Kitchen
+                            </u>
+                                    </h5>
+                                </div>
+                                <div class="col-5 text-end">
+                                    <button class="add-kitchen-field btn btn-success btn-sm mt-4 text-nowrap">Add</button>
+                                </div>
+                                <div class="col-md-12 ">
+                                    <div class="kitchen-input-field">
+                                        <label for="" class="form-label">Fill the Information of Furniture and Fixtures for
+                                Kitchen</label>
+                                        <div class="row">
+                                            <div class="col-12 my-2">
+                                                <label class="form-label">Furniture Type</label>
+                                                <input type="text" class="form-control" name="kitchen-furniture type" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class=" row">
+                                <h5 class="mt-4 mb-2">
+                                    <u>
+                            Manager Information
+                        </u>
+                                </h5>
+                                <div class="col-md-12 ">
+                                    <div class="input-field">
+                                        <label for="" class="form-label">Fill the information of Managers</label>
+                                        <div class="row">
+                                            <div class="col-4 my-2">
+                                                <label class="form-label">Total Number</label>
+                                                <input type="text" class="form-control" name="total-managers-no" />
+                                            </div>
+                                            <div class="col-4 my-2">
+                                                <label class="form-label">Professionally Trained</label>
+                                                <input type="text" class="form-control" name="professional-managers-no" />
+                                            </div>
+                                            <div class="col-4 my-2">
+                                                <label class="form-label">Not Professionally Trained but Experianced</label>
+                                                <input type="text" class="form-control" name="unprofessional-managers-no" />
+                                            </div>
+                                            <div class="col-4 my-2">
+                                                <label class="form-label">Apprentices</label>
+                                                <input type="text" class="form-control" name="managers-apprentices" />
+                                            </div>
+                                            <div class="col-4 my-2">
+                                                <label class="form-label">English Knowing</label>
+                                                <input type="text" class="form-control" name="managers-language" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class=" row">
+                                <h5 class="mt-4 mb-2">
+                                    <u>
+                            Receptioln Information
+                        </u>
+                                </h5>
+                                <div class="col-md-12 ">
+                                    <div class="input-field">
+                                        <label for="" class="form-label">Fill the information of Managers</label>
+                                        <div class="row">
+                                            <div class="col-4 my-2">
+                                                <label class="form-label">Total Number</label>
+                                                <input type="text" class="form-control" name="total-recepent-no" />
+                                            </div>
+                                            <div class="col-4 my-2">
+                                                <label class="form-label">Professionally Trained</label>
+                                                <input type="text" class="form-control" name="professional-recepent" />
+                                            </div>
+                                            <div class="col-4 my-2">
+                                                <label class="form-label">Not Professionally Trained but Experianced</label>
+                                                <input type="text" class="form-control" name="unprofessional-recepent" />
+                                            </div>
+                                            <div class="col-4 my-2">
+                                                <label class="form-label">Apprentices</label>
+                                                <input type="text" class="form-control" name="recepent-apprentices" />
+                                            </div>
+                                            <div class="col-4 my-2">
+                                                <label class="form-label">English Knowing</label>
+                                                <input type="text" class="form-control" name="recepent-language" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class=" row">
+                                <h5 class="mt-4 mb-2">
+                                    <u>
+                            Billing Information
+                        </u>
+                                </h5>
+                                <div class="col-md-12 ">
+                                    <div class="input-field">
+                                        <label for="" class="form-label">Fill the information of Managers</label>
+                                        <div class="row">
+                                            <div class="col-4 my-2">
+                                                <label class="form-label">Total Number</label>
+                                                <input type="text" class="form-control" name="total-billing" />
+                                            </div>
+                                            <div class="col-4 my-2">
+                                                <label class="form-label">Professionally Trained</label>
+                                                <input type="text" class="form-control" name="trained-billing" />
+                                            </div>
+                                            <div class="col-4 my-2">
+                                                <label class="form-label">Not Professionally Trained but Experianced</label>
+                                                <input type="text" class="form-control" name="untrained-billing" />
+                                            </div>
+                                            <div class="col-4 my-2">
+                                                <label class="form-label">Apprentices</label>
+                                                <input type="text" class="form-control" name="billing-apprentices" />
+                                            </div>
+                                            <div class="col-4 my-2">
+                                                <label class="form-label">English Knowing</label>
+                                                <input type="text" class="form-control" name="billing-english" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class=" row">
+                                <h5 class="mt-4 mb-2">
+                                    <u>
+                            Cooks Information
+                        </u>
+                                </h5>
+                                <div class="col-md-12 ">
+                                    <div class="input-field">
+                                        <label for="" class="form-label">Fill the information of Managers</label>
+                                        <div class="row">
+                                            <div class="col-4 my-2">
+                                                <label class="form-label">Total Number</label>
+                                                <input type="text" class="form-control" name="total-cooks" />
+                                            </div>
+                                            <div class="col-4 my-2">
+                                                <label class="form-label">Professionally Trained</label>
+                                                <input type="text" class="form-control" name="trained-cooks" />
+                                            </div>
+                                            <div class="col-4 my-2">
+                                                <label class="form-label">Not Professionally Trained but Experianced</label>
+                                                <input type="text" class="form-control" name="untrained-cooks" />
+                                            </div>
+                                            <div class="col-4 my-2">
+                                                <label class="form-label">Apprentices</label>
+                                                <input type="text" class="form-control" name="cooks-apprentices" />
+                                            </div>
+                                            <div class="col-4 my-2">
+                                                <label class="form-label">English Knowing</label>
+                                                <input type="text" class="form-control" name="cooks-language" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class=" row">
+                                <h5 class="mt-4 mb-2">
+                                    <u>
+                            Bearers Information
+                        </u>
+                                </h5>
+                                <div class="col-md-12 ">
+                                    <div class="input-field">
+                                        <label for="" class="form-label">Fill the information of Managers</label>
+                                        <div class="row">
+                                            <div class="col-4 my-2">
+                                                <label class="form-label">Total Number</label>
+                                                <input type="text" class="form-control" name="total-bearers" />
+                                            </div>
+                                            <div class="col-4 my-2">
+                                                <label class="form-label">Professionally Trained</label>
+                                                <input type="text" class="form-control" name="trained-bearers" />
+                                            </div>
+                                            <div class="col-4 my-2">
+                                                <label class="form-label">Not Professionally Trained but Experianced</label>
+                                                <input type="text" class="form-control" name="untrained-bearers" />
+                                            </div>
+                                            <div class="col-4 my-2">
+                                                <label class="form-label">Apprentices</label>
+                                                <input type="text" class="form-control" name="bearers-apprentices" />
+                                            </div>
+                                            <div class="col-4 my-2">
+                                                <label class="form-label">English Knowing</label>
+                                                <input type="text" class="form-control" name="bearers-langugae" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class=" row">
+                                <h5 class="mt-4 mb-2">
+                                    <u>
+                            Other Information
+                        </u>
+                                </h5>
+                                <div class="col-md-12 ">
+                                    <div class="input-field">
+                                        <label for="" class="form-label">Fill the information of Managers</label>
+                                        <div class="row">
+                                            <div class="col-4 my-2">
+                                                <label class="form-label">Total Number</label>
+                                                <input type="text" class="form-control" name="total-others" />
+                                            </div>
+                                            <div class="col-4 my-2">
+                                                <label class="form-label">Professionally Trained</label>
+                                                <input type="text" class="form-control" name="trained-others" />
+                                            </div>
+                                            <div class="col-4 my-2">
+                                                <label class="form-label">Not Professionally Trained but Experianced</label>
+                                                <input type="text" class="form-control" name="untrained-others" />
+                                            </div>
+                                            <div class="col-4 my-2">
+                                                <label class="form-label">Apprentices</label>
+                                                <input type="text" class="form-control" name="others-apprentices" />
+                                            </div>
+                                            <div class="col-4 my-2">
+                                                <label class="form-label">English Knowing</label>
+                                                <input type="text" class="form-control" name="other-language" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="row">
+                                <h5 class="mt-4 mb-2">
+                                    <u>
+                            Employees
+                        </u>
+                                </h5>
+                                <div class="col-12">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered employees">
+                                            <thead class="bg-info text-white">
+                                                <tr>
+                                                    <th>Category</th>
+                                                    <th>Total Number</th>
+                                                    <th>Professionally Trained</th>
+                                                    <th>Not Professionally Trained but Experianced</th>
+                                                    <th>Apprentices</th>
+                                                    <th>English Knowing</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th>Manager</th>
+                                                    <td contenteditable="true"></td>
+                                                    <td contenteditable="true"></td>
+                                                    <td contenteditable="true"></td>
+                                                    <td contenteditable="true"></td>
+                                                    <td contenteditable="true"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Reception</th>
+                                                    <td contenteditable="true"></td>
+                                                    <td contenteditable="true"></td>
+                                                    <td contenteditable="true"></td>
+                                                    <td contenteditable="true"></td>
+                                                    <td contenteditable="true"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Billing</th>
+                                                    <td contenteditable="true"></td>
+                                                    <td contenteditable="true"></td>
+                                                    <td contenteditable="true"></td>
+                                                    <td contenteditable="true"></td>
+                                                    <td contenteditable="true"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Cooks</th>
+                                                    <td contenteditable="true"></td>
+                                                    <td contenteditable="true"></td>
+                                                    <td contenteditable="true"></td>
+                                                    <td contenteditable="true"></td>
+                                                    <td contenteditable="true"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Bearers</th>
+                                                    <td contenteditable="true"></td>
+                                                    <td contenteditable="true"></td>
+                                                    <td contenteditable="true"></td>
+                                                    <td contenteditable="true"></td>
+                                                    <td contenteditable="true"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Other</th>
+                                                    <td contenteditable="true"></td>
+                                                    <td contenteditable="true"></td>
+                                                    <td contenteditable="true"></td>
+                                                    <td contenteditable="true"></td>
+                                                    <td contenteditable="true"></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div> -->
+
+                            <div class=" row">
+                                <h5 class="mt-4 mb-2">
+                                    <u>
+                            Rates Charged
+                        </u>
+                                </h5>
+                                <div class="col-md-12 ">
+                                    <div class="input-field">
+                                        <div class="row">
+                                            <div class="col-12 my-2">
+                                                <label for="" class="form-label">Rates Charged :</label>
+                                                <select class="form-select" aria-label="Default select example" name="charged-rate">
+                                        <option selected>PLease Select Rates Charged</option>
+                                        <option value="Immediately">Immediately before the 1st January, 2011 </option>
+                                        <option value="Present">Present(With date from which prescribed)</option>
+                                    </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-12 my-2 pt-4 text-end">
+                                    <button class="btn btn-success btn-lg" name="submit-button" value="submit-button" id="submit-button">Submit</button>
+                                    <button class="btn btn-danger btn-lg" id="reset-button" >Reset</button>
+                                </div>
+                            </div>
+
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <!-- Main Content End -->
+
+        <!-- Footer  Start -->
+        <footrer class="main-footer d-block footer-bg">
+            <div class="footer-space">
+                <div class="container">
+                    <div class="row text-left">
+                        <div class="col-12 col-md-6 col-lg-4 my-md-0 my-5">
+                            <h4 class="h6 font-weight-bold mb-4">Find Us</h4>
+                            <div id="map-container-google" class="z-depth-1-half map-container">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2770.209674141393!2d66.99299731440739!3d30.20368861798864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb25e51ec26c2d399!2zMzDCsDEyJzEzLjMiTiA2NsKwNTknNDIuNyJF!5e1!3m2!1sen!2s!4v1647866926168!5m2!1sen!2s"
+                                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                            <div class="d-md-flex d-lg-block">
+                                <div class="ml-md-6 text-center">
+                                    <div class="mb-4">
+                                        <address class="adress">
+                                        <span class="text-gray">
+                                            Directorate of Tourism, Noori Naseer Khan Cultural Complex, Spiny Road
+                                            Quetta.
+                                        </span>
+                                    </address>
+                                    </div>
+                                    <ul class="inline-list footer-social-icons p-0">
+                                        <li class="list-inline-item mx-1">
+                                            <a href="" class="btn btn-social">
+                                                <i class="btn-inner-icon fab fa-facebook-f"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item mx-1">
+                                            <a href="" class=" btn btn-social">
+                                                <i class="btn-inner-icon fab fa-twitter"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item mx-1">
+                                            <a href="" class="btn btn-social">
+                                                <i class=" btn-inner-icon fab fa-instagram"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item mx-1">
+                                            <a href="" class="btn btn-social text-center">
+                                                <i class="btn-inner-icon fab fa-linkedin-in"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-2 my-md-0 my-5">
+                            <h4 class="h6 font-weight-bold mb-4">Quick Links</h4>
+                            <ul class="inline-list list-group list-group-flush list-group-borderless mb-0 p-0">
+                                <li class=" list-group-item footer-bg">
+                                    <a href="">Investor Relation</a>
+                                </li>
+                                <li class="list-group-item footer-bg">
+                                    <a href="">Rewards Program</a>
+                                </li>
+                                <li class=" list-group-item footer-bg">
+                                    <a href="">Point Plus</a>
+                                </li>
+                                <li class=" list-group-item footer-bg">
+                                    <a href="">Partners</a>
+                                </li>
+                                <li class=" list-group-item footer-bg">
+                                    <a href="">List My Hotels</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-2 my-md-0 my-5">
+                            <h4 class="h6 font-weight-bold mb-4 ">Departments</h4>
+                            <ul class="ilist-group list-group-flush list-group-borderless mb-0 p-0">
+                                <li class=" list-group-item footer-bg">
+                                    <a href="">Account</a>
+                                </li>
+                                <li class="list-group-item footer-bg">
+                                    <a href="">Legeal</a>
+                                </li>
+                                <li class=" list-group-item footer-bg">
+                                    <a href="">Contact</a>
+                                </li>
+                                <li class=" list-group-item footer-bg">
+                                    <a href="">Affiliate Program</a>
+                                </li>
+                                <li class=" list-group-item footer-bg">
+                                    <a href="">Privacy Policy</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4 my-md-0 my-5">
+                            <div class="d-md-flex d-lg-block">
+                                <div class="mb-5 mr-md-7 mr-lg-0">
+                                    <h4 class="mb-4 h6 font-weight-bold">
+                                        Get In Touch
+                                    </h4>
+                                </div>
+                                <div class="ml-md-6">
+                                    <ul class="inline-list footer-social-icons p-0">
+                                        <li class="list-inline-item w-100 my-2">
+                                            <label for="" class="form-label">Name</label>
+                                            <input type="text" class="form-control" />
+                                        </li>
+                                        <li class="list-inline-item w-100 my-2">
+                                            <label for="" class="form-label">Email Adress</label>
+                                            <input type="email" class="form-control" />
+                                        </li>
+                                        <li class="list-inline-item w-100 my-2">
+                                            <label for="" class="form-label">Message</label>
+                                            <textarea class="form-control" id="" cols="30" rows="5"></textarea>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-nav">
+                <div class="container d-lg-flex d-md-block justify-content-between align-items-center">
+                    <p>
+                        © 2022 Balochistan Tourism. All rights reserved
+                    </p>
+
+                    <ul class="list-inline text-md-right text-center bottom-navigation">
+                        <li class="list-inline-item  pb-3 pb-md-0">
+                            <a class="list-group-item-action" href="">Home</a>
+                        </li>
+                        <li class="list-inline-item  pb-3 pb-md-0">
+                            <a class="list-group-item-action" href="">About Us</a>
+                        </li>
+                        <li class="list-inline-item  pb-3 pb-md-0">
+                            <a class="list-group-item-action" href="">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footrer>
+        <!-- Footer End -->
+
+        <!-- Main Wrapper End -->
+    </div>
+    <script src="{% static 'script/script.js' %}"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script> -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js'></script>
+    <script src="{% static 'script/addFile.js' %}"></script>
+   
+
+    <script>
+        $('#isChecked').click(function() {
+            $("#other-divChk").toggle(this.checked);
+        });
+    </script>
+
+</body>
+
+</html>

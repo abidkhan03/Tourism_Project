@@ -1,0 +1,7 @@
+asgiref==3.5.0
+Django==4.0.3
+django-bootstrap-static==4.2.1
+sqlparse==0.4.2
+tzdata==2022.1
+psycopg2==2.9.3
+backports.zoneinfo==0.2.1

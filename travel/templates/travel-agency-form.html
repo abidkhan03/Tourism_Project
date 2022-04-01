@@ -1,0 +1,1062 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Agency Registration</title>
+
+    <!-- Font Awesome icons -->
+    <script src="https://kit.fontawesome.com/f14330b5d4.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'bootstrap-5.1.3-dist/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'style/custom-style.css' %}">
+
+    <!-- <script src="https://kit.fontawesome.com/f14330b5d4.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script> -->
+  
+    <!-- Font Awesome icons -->
+   
+    <style>
+        .employees thead tr th,
+        .employees tbody tr td {
+            padding: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Main Wrapper Start -->
+    <div class="wrapper">
+
+        <!-- Header Start -->
+        <header class="main-header">
+            <div class="top-header">
+                <div class="container-fluid">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center top-header-left">
+                            <ul class="list-inline d-flex">
+                                <li class="list-inline-item pr-2"><a href="#">(1234-567891234)</a></li>
+
+                                <li class="list-inline-item pl-1"><a href="#">(132demo@gmail.com)</a></li>
+                            </ul>
+                        </div>
+                        <div class="ml-auto d-flex align-items-center top-header-right p-2">
+                            <!-- <ul class="list-inline px-3 social-icons mt-2">
+                            <li class="list-inline-item">
+                                <a href="" class="btn btn-icon btn-sm">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="" class="btn btn-icon btn-sm"><i class="fab fa-twitter"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="" class="btn btn-icon btn-sm"><i class="fab fa-instagram"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="" class="btn btn-icon btn-sm"><i class="fab fa-linkedin-in"></i></a>
+                            </li>
+                        </ul> -->
+                        <ul class="list-inline px-3 social-icons mt-2">
+                            <li class="list-inline-item">
+                                <a href="" class="btn btn-icon btn-sm">
+                                    <img src="{% static 'images/facebook-logo.png' %}" width="30" alt="Facebook logo">
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="" class="btn btn-icon btn-sm">
+                                    <img src="{% static 'images/instagram.png' %}" width="30" alt="Instagram logo">
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="" class="btn btn-icon btn-sm">
+                                    <img src="{% static 'images/twitter.png' %}" width="30" alt="Twitter logo">
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="" class="btn btn-icon btn-sm">
+                                    <img src="{% static 'images/youtube.png' %}" width="30" alt="Youtube logo">
+                                </a>
+                            </li>
+                        </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="logo-section">
+                <div class="contianer-fluid sub-header p-0">
+                    <a href="{% url 'index' %}" class="brand-logo">
+                        <img src="{% static 'images/logo.png' %}" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="fix-header w-100">
+                <div class="container-fluid">
+                    <div class="main-wrapper">
+                        <nav class="navbar display-flex justify-content-center">
+                            <div class="brand-and-icon d-md-none d-block">
+                                <a href="index.html" class="navbar-brand">
+                                    <!-- Tourism -->
+                                    <img src="assets/images/logo.png" class="d-md-none d-block" alt="">
+                                </a>
+                                <button type="button" class="navbar-toggler">
+                                    <i class="fas fa-bars"></i>
+                                </button>
+                            </div>
+                            <div class="navbar-collapse p-0">
+                                <ul class="navbar-nav list-inline p-md-0 p-4">
+                                    <li class="list-inline-item">
+                                        <a href="{% url 'index' %}">Home</a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#" class="menu-link">
+                                            About Us
+                                            <span class="drop-icon">
+                                                <i class="fas fa-chevron-down"></i>
+                                            </span>
+                                        </a>
+                                        <div class="sub-menu">
+                                            <!-- items -->
+                                            <ul class="p-0 text-start">
+                                                <li><a href="about-us-overview.html">Overview of DTS</a></li>
+                                                <li><a href="about-us-features.html">Function Of DTS</a></li>
+                                            </ul>
+                                            <!-- end of items -->
+
+                                        </div>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#" class="menu-link">
+                                            Registration
+                                            <span class="drop-icon">
+                                                <i class="fas fa-chevron-down"></i>
+                                            </span>
+                                        </a>
+                                        <div class="sub-menu">
+                                            <!-- items -->
+                                            <ul class="p-0 text-start">
+                                                <li><a href="#">Tourist Guide Registration</a></li>
+                                                <li><a href="{% url 'restraunt-form' %}">Restraunts Registration </a></li>
+                                                <li><a href="{% url 'travel-agency-form' %}">Travel Agencies Registration</a></li>
+                                                <li><a href="{% url 'hotel-form' %}">Hotel Registration</a></li>
+                                               
+                                            </ul>
+                                            <!-- end of items -->
+
+                                        </div>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#" class="menu-link">
+                                            Lagislation
+                                            <span class="drop-icon">
+                                                <i class="fas fa-chevron-down"></i>
+                                            </span>
+                                        </a>
+                                        <div class="sub-menu">
+                                            <!-- items -->
+                                            <ul class="p-0 text-start">
+                                                <li><a href="#">Acts</a></li>
+                                                <li><a href="#">Rules</a></li>
+                                            </ul>
+                                            <!-- end of items -->
+
+                                        </div>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#" class="menu-link">
+                                            Licensing
+                                            <span class="drop-icon">
+                                                <i class="fas fa-chevron-down"></i>
+                                            </span>
+                                        </a>
+                                        <div class="sub-menu">
+                                            <!-- items -->
+                                            <ul class="p-0 text-start">
+                                                <li><a href="#">Hotels and Restraunts</a></li>
+                                                <li><a href="#">Travel Agencies and Tour Operators</a></li>
+                                                <li><a href="#">Tourist Guides</a></li>
+                                            </ul>
+                                            <!-- end of items -->
+
+                                        </div>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#" class="menu-link">
+                                            Fees
+                                            <span class="drop-icon">
+                                                <i class="fas fa-chevron-down"></i>
+                                            </span>
+                                        </a>
+                                        <div class="sub-menu">
+                                            <!-- items -->
+                                            <ul class="p-0 text-start">
+                                                <li><a href="#">Hotels and Restraunts</a></li>
+                                                <li><a href="#">Travel Agencies and Tour Operators</a></li>
+                                                <li><a href="#">Tourist Guides</a></li>
+                                            </ul>
+                                            <!-- end of items -->
+
+                                        </div>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#" class="menu-link">
+                                            Hotel
+                                            <span class="drop-icon">
+                                                <i class="fas fa-chevron-down"></i>
+                                            </span>
+                                        </a>
+                                        <div class="sub-menu">
+                                            <!-- items -->
+                                            <ul class="p-0 text-start">
+                                                <li><a href="#">5 Star Hotels</a></li>
+                                                <li><a href="#">4 Star Hotels</a></li>
+                                                <li><a href="#">3 Star Hotels</a></li>
+                                                <li><a href="#">1 & 2 Star Hotels</a></li>
+                                            </ul>
+                                            <!-- end of items -->
+
+                                        </div>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#" class="menu-link">
+                                            Service Provider
+                                            <span class="drop-icon">
+                                                <i class="fas fa-chevron-down"></i>
+                                            </span>
+                                        </a>
+
+                                        <div class="sub-menu">
+                                            <!-- items -->
+                                            <ul class="p-0 text-start">
+                                                <li><a href="#">Restraunts</a></li>
+                                                <li><a href="#">Travel Agencies & Tour Operators</a></li>
+                                                <li><a href="#">Tourist Guides</a></li>
+                                            </ul>
+                                            <!-- end of items -->
+
+                                        </div>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#" class="menu-link">
+                                            Downloads
+                                            <span class="drop-icon">
+                                                <i class="fas fa-chevron-down"></i>
+                                            </span>
+                                        </a>
+                                        <div class="sub-menu">
+                                            <!-- items -->
+                                            <ul class="p-0 text-start">
+                                                <li><a href="#">Tenders</a></li>
+                                                <li><a href="#">Applicatons</a></li>
+                                                <li><a href="#">Jobs</a></li>
+                                            </ul>
+                                            <!-- end of items -->
+
+                                        </div>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#" class="menu-link">
+                                            Featured Destination
+                                            <span class="drop-icon">
+                                                <i class="fas fa-chevron-down"></i>
+                                            </span>
+                                        </a>
+                                        <div class="sub-menu">
+                                            <!-- items -->
+                                            <ul class="p-0 text-start">
+                                                <li><a href="#">Hunza Valley</a></li>
+                                                <li><a href="#">The Beautiful Valley of Sawat</a></li>
+                                                <li><a href="#">Chitral Valley</a></li>
+                                                <li><a href="#">Deosai Plains</a></li>
+                                                <li><a href="#">Gilgit Valley</a></li>
+                                                <li><a href="#">Skadu Valley</a></li>
+                                            </ul>
+                                            <!-- end of items -->
+
+                                        </div>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#">Contact Us</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Header end -->
+
+        <!-- Main Content Start -->
+        <section class="main-content gallery-section">
+            <!-- Start Hero Section -->
+            <div class="other-hero hero z-index-2">
+                <div class="container">
+                    <div class="row justify-content-center main-heading  space-top-xl-4">
+                        <div class=" text-center">
+                            <h1 class="sub-head">Travel Agency Registration</h1>
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb justify-content-center">
+                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Travel Agency Registration</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- End Hero Section -->
+            <div class="container space-y">
+                <!-- <div class="row row-cols-1 g-4"> -->
+                <div class="row touristGuide-content">
+                    <form action="">
+                        <fieldset>
+                            <legend>Travel Agency Registration</legend>
+                            <div class="col-12 my-4">
+                                <label for="" class="form-label" class="form-label">Name Of The Registered Firm</label>
+                                <input type="text" class="form-control" />
+                            </div>
+                            <div class="form-row row">
+                                <div class="col-12">
+                                    <h5 class="mt-4 mb-2 form-Subhead">
+                                        <u>
+                                            Business Details
+                                        </u>
+                                    </h5>
+                                </div>
+                                <div class="col-md-4 my-2">
+                                    <label for="" class="form-label">Name of Business</label>
+                                    <input type="text" class="form-control " id="" value="">
+                                </div>
+                                <div class="col-md-8  my-2">
+                                    <label for="" class="form-label">Business Address</label>
+                                    <input type="text" class="form-control " id="" value="">
+                                </div>
+                                <div class="col-md-12 my-2">
+                                    <label for="" class="form-label">Does your Business reside in pakistan or outside of pakistan</label>
+                                    <br>
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModalLong">
+                                        Yes
+                                    </button>
+                                    <button type="button" class="btn btn-danger" data-bs-target="#exampleModalLong">
+                                        No
+                                    </button>
+                                </div>
+                                <div class="col-md-6 my-2">
+                                    <label for="" class="form-label">What is the nature of your business</label>
+                                    <select name="" id="" class="form-select">
+                                        <option value="">Choose Buisness Nature</option>
+                                        <option value="">Hotel</option>
+                                        <option value="">Plane</option>
+                                        <option value="">Bus</option>
+                                        <option value="">Car</option>
+                                        <option value="">Bike</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-row row">
+                                <h5 class="mt-4 mb-2 form-Subhead">
+                                    <u>
+                                        History of Business Details
+                                    </u>
+                                </h5>
+                                <div class=" col-md-4   my-2">
+                                    <label for="" class="form-label">Year of establisment</label>
+                                    <input type="date" class="form-control" id="" placeholder="">
+                                </div>
+                                <div class="col-md-8  my-2">
+                                    <label for="formFileMultiple" class="form-label">Attached the Atested copy of registration</label>
+                                    <input class="form-control" type="file" id="formFileMultiple" multiple />
+                                </div>
+                                <div class="col-md-4  my-2">
+                                    <label for="" class="form-label">Contact Number</label>
+                                    <input type="text" class="form-control" id="" placeholder="Number">
+
+                                </div>
+                                <div class="col-md-8 my-2">
+                                    <label for="" class="form-label">Telegraphic Cable Address</label>
+                                    <input type="text" class="form-control" id="" placeholder="">
+                                </div>
+
+                                <div class="col-md-12  my-2">
+                                    <label for="" class="form-label">Does Your Business Have Any Other Branch</label>
+                                    <br>
+
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#model2">
+                                        Yes
+                                    </button>
+                                    <button type="button" class="btn btn-danger" data-bs-target="#model2">
+                                        No
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="form-row row">
+                                <h5 class="mt-4 mb-2 form-Subhead">
+                                    <u>
+                                       Business Capital Details
+                                    </u>
+                                </h5>
+                                <div class="col-lg-4 col-md-5 my-2">
+                                    <label for="" class="form-label">How Much Capital invested</label>
+                                    <input type="text" class="form-control" id="" placeholder="">
+                                </div>
+                                <div class="col-lg-8 col-md-7 my-2">
+                                    <label for="formFileMultiple" class="form-label">Attached the copy of Capital Investment</label>
+                                    <input class="form-control" type="file" id="formFileMultiple" multiple />
+                                </div>
+                            </div>
+
+                            <div class="form-row row">
+                                <div class="col-7">
+                                    <h5 class="mt-4 mb-2 form-Subhead">
+                                        <u>
+                                            Number Of Directors
+                                        </u>
+                                    </h5>
+                                </div>
+                                <div class="col-5 text-end">
+                                    <button class="add-director-field btn btn-sm text-nowrap btn-success mt-4">Add Directors</button>
+                                </div>
+                                <div class="col-md-12 my-2">
+                                    <div class=" director-input-field">
+                                        <label for="" class="form-label">Fill the Information of Number of Directors you have</label>
+                                        <div class="row">
+                                            <div class="col-lg-3 col-md-6 my-2">
+                                                <label class="form-label">Name</label>
+                                                <input type="text" class="form-control" name="" />
+                                            </div>
+                                            <div class="col-lg-3 col-md-6 my-2">
+                                                <label class="form-label">Address</label>
+                                                <input type="text" class="form-control" name="" />
+                                            </div>
+                                            <div class="col-lg-3 col-md-6 my-2">
+                                                <label class="form-label">Year Of Experiance</label>
+                                                <input type="text" class="form-control" name="" />
+                                            </div>
+                                            <div class="col-lg-3 col-md-6 my-2">
+                                                <label class="form-label">Qualification</label>
+                                                <input type="text" class="form-control" name="" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-row row ">
+                                <div class="col-7">
+                                    <h5 class="mt-4 mb-2 form-Subhead">
+                                        <u>
+                                            Number Of Managers
+                                        </u>
+                                    </h5>
+                                </div>
+                                <div class="col-5 text-end">
+                                    <button class="add-manager-field btn btn-success text-nowrap btn-sm mt-4">Add Managers</button>
+                                </div>
+                                <div class="col-md-12 ">
+                                    <div class="manager-input-field">
+                                        <label for="" class="form-label">Fill the information of Number of Managers you have</label>
+                                        <div class="row">
+                                            <div class="col-lg-3 col-md-6 my-2">
+                                                <label class="form-label">Name</label>
+                                                <input type="text" class="form-control" name="" />
+                                            </div>
+                                            <div class="col-lg-3 col-md-6 my-2">
+                                                <label class="form-label">Address</label>
+                                                <input type="text" class="form-control" name="" />
+                                            </div>
+                                            <div class="col-lg-3 col-md-6 my-2">
+                                                <label class="form-label">Year Of Experiance</label>
+                                                <input type="text" class="form-control" name="" />
+                                            </div>
+                                            <div class="col-lg-3 col-md-6 my-2">
+                                                <label class="form-label">Qualification</label>
+                                                <input type="text" class="form-control" name="" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-row row ">
+                                <div class="col-7">
+                                    <h5 class="mt-4 mb-2 form-Subhead">
+                                        <u>
+                                            Number Of Partners
+                                        </u>
+                                    </h5>
+                                </div>
+                                <div class="col-5 text-end">
+                                    <button class="add-partner-field btn btn-success btn-sm mt-4 text-nowrap">Add Partners</button>
+                                </div>
+                                <div class="col-md-12 ">
+                                    <div class="partner-input-field">
+                                        <label for="" class="form-label">Fill the information of Number of Partners you have</label>
+                                        <div class="row">
+                                            <div class="col-lg-3 col-md-6 my-2">
+                                                <label class="form-label">Name</label>
+                                                <input type="text" class="form-control" name="" />
+                                            </div>
+                                            <div class="col-lg-3 col-md-6 my-2">
+                                                <label class="form-label">Address</label>
+                                                <input type="text" class="form-control" name="" />
+                                            </div>
+                                            <div class="col-lg-3 col-md-6 my-2">
+                                                <label class="form-label">Year Of Experiance</label>
+                                                <input type="text" class="form-control" name="" />
+                                            </div>
+                                            <div class="col-lg-3 col-md-6 my-2">
+                                                <label class="form-label">Qualification</label>
+                                                <input type="text" class="form-control" name="" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-row row">
+                                <h5 class="mt-4 mb-2 form-Subhead">
+                                    <u>
+                                      Banker Details
+                                    </u>
+                                </h5>
+                                <div class="col-md-6 my-2">
+                                    <label for="formFileMultiple" class="form-label">Name of The Banker</label>
+                                    <input type="text" class="form-control" id="" value="">
+                                </div>
+                                <div class="col-md-6 my-2">
+                                    <label for="formFileMultiple" class="form-label">Attach reference letter from the bank</label>
+                                    <input class="form-control" type="file" id="formFileMultiple" multiple />
+                                </div>
+
+                            </div>
+
+                            <div class="form-row row">
+                                <h5 class="mt-4 mb-2 form-Subhead">
+                                    <u>
+                                        Auditors
+                                    </u>
+                                </h5>
+                                <div class="col-md-4  my-2">
+                                    <label for="" class="form-label">Number of Auditors</label>
+                                    <input type="text" class="form-control " id="" value="">
+                                </div>
+                                <div class="col-md-4  my-2">
+                                    <label for="" class="form-label">Name of Auditors</label>
+                                    <input type="text" class="form-control " id="" value="">
+                                </div>
+                                <div class="col-md-4  my-2">
+                                    <label for="" class="form-label">Address of Auditors</label>
+                                    <input type="text" class="form-control " id="" value="">
+                                </div>
+                            </div>
+
+                            <div class="form-row row">
+                                <h5 class="mt-4 mb-2 form-Subhead">
+                                    <u>
+                                        Staff
+                                    </u>
+                                </h5>
+                                <div class="col-md-12 mb-2">
+                                    <span>List The Number of Staff</span>
+                                </div>
+                                <div class="col-lg-3 col-md-6 my-2">
+                                    <label for="" class="form-label">Directors</label>
+                                    <input type="text" class="form-control " id="" value="">
+                                </div>
+                                <div class="col-lg-3 col-md-6 my-2">
+                                    <label for="" class="form-label">Managers</label>
+                                    <input type="text" class="form-control " id="" value="">
+                                </div>
+                                <div class="col-lg-3 col-md-6 my-2">
+                                    <label for="" class="form-label">Operators</label>
+                                    <input type="text" class="form-control " id="" value="">
+                                </div>
+                                <div class="col-lg-3 col-md-6 my-2">
+                                    <label for="" class="form-label">Genral Staff</label>
+                                    <input type="text" class="form-control " id="" value="">
+                                </div>
+                            </div>
+
+                            <div class="form-row row">
+                                <h5 class="mt-4 mb-2 form-Subhead">
+                                    <u>
+                                       Supported Business
+                                    </u>
+                                </h5>
+                                <div class="col-md-12 mb-2">
+                                    <span>Supported Business to Run your own Business List 5</span>
+                                </div>
+                                <div class="col-lg-3 col-md-6 my-2">
+                                    <label for="" class="form-label">Business 1</label>
+                                    <input type="text" class="form-control " id="" value="">
+                                </div>
+                                <div class="col-lg-3 col-md-6 my-2">
+                                    <label for="" class="form-label">Business 2</label>
+                                    <input type="text" class="form-control " id="" value="">
+                                </div>
+                                <div class="col-lg-3 col-md-6 my-2">
+                                    <label for="" class="form-label">Business 3</label>
+                                    <input type="text" class="form-control " id="" value="">
+                                </div>
+                                <div class="col-lg-3 col-md-6 my-2">
+                                    <label for="" class="form-label">Business 4</label>
+                                    <input type="text" class="form-control " id="" value="">
+                                </div>
+                                <div class="col-lg-3 col-md-6 my-2">
+                                    <label for="" class="form-label">Business 5</label>
+                                    <input type="text" class="form-control " id="" value="">
+                                </div>
+                            </div>
+
+                            <div class="form-row row">
+                                <h5 class="mt-4 mb-2 form-Subhead">
+                                    <u>
+                                        Assest
+                                    </u>
+                                </h5>
+                                <div class="col-md-12 mb-2">
+                                    <span>List 8 Assests of Your Business</span>
+                                </div>
+                                <div class="col-lg-3 col-md-6 my-2">
+                                    <label for="" class="form-label">Assest 1</label>
+                                    <input type="text" class="form-control " id="" value="">
+                                </div>
+                                <div class="col-lg-3 col-md-6 my-2">
+                                    <label for="" class="form-label">Assest 2</label>
+                                    <input type="text" class="form-control " id="" value="">
+                                </div>
+                                <div class="col-lg-3 col-md-6 my-2">
+                                    <label for="" class="form-label">Assest 3</label>
+                                    <input type="text" class="form-control " id="" value="">
+                                </div>
+                                <div class="col-lg-3 col-md-6 my-2">
+                                    <label for="" class="form-label">Assest 4</label>
+                                    <input type="text" class="form-control " id="" value="">
+                                </div>
+                                <div class="col-lg-3 col-md-6 my-2">
+                                    <label for="" class="form-label">Assest 5</label>
+                                    <input type="text" class="form-control " id="" value="">
+                                </div>
+                                <div class="col-lg-3 col-md-6 my-2">
+                                    <label for="" class="form-label">Assest 6</label>
+                                    <input type="text" class="form-control " id="" value="">
+                                </div>
+                                <div class="col-lg-3 col-md-6 my-2">
+                                    <label for="" class="form-label">Assest 7</label>
+                                    <input type="text" class="form-control " id="" value="">
+                                </div>
+                                <div class="col-lg-3 col-md-6 my-2">
+                                    <label for="" class="form-label">Assest 8</label>
+                                    <input type="text" class="form-control " id="" value="">
+                                </div>
+
+
+                            </div>
+
+                            <div class="form-row row">
+                                <h5 class="mt-4 mb-2 form-Subhead">
+                                    <u>
+                                        Foreign Travellers
+                                    </u>
+                                </h5>
+                                <div class="col-md-6 my-2">
+                                    <label for="validationServer03" class="form-label">Number of  Partnership with Foreign Travellers </label>
+                                    <input type="text" class="form-control " id="validationServer03" placeholder="Capital">
+
+                                </div>
+                                <div class="col-md-6 my-2">
+                                    <label for="formFileMultiple" class="form-label">Attached The Copy Agreement with Them</label>
+                                    <input class="form-control" type="file" id="formFileMultiple" multiple />
+                                </div>
+                                <div class="col-md-12 my-2">
+                                    <label for="" class="form-label">Any Dealing in Foreign Exchange</label>
+                                    <br>
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#model3">
+                                        Yes
+                                    </button>
+                                    <button type="button" class="btn btn-danger" data-bs-target="#model3">
+                                        No
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="form-row row">
+                                <h5 class="mt-4 mb-2 form-Subhead">
+                                    <u>
+                                        Conviction Offence Details
+                                    </u>
+                                </h5>
+                                <div class="col-md-12 my-2">
+                                    <label for="" class="form-label">Does Any of Your Partners in your Business Ever Convicted Give Details </label>
+                                    <input type="text" class="form-control " id="validationServer04" placeholder="Conviction">
+                                </div>
+                            </div>
+
+
+                            <div class="form-row row">
+                                <h5 class="mt-4 mb-2 form-Subhead">
+                                    <u>
+                                        Business Plan Details
+                                    </u>
+                                </h5>
+                                <div class="col-md-6 my-2">
+                                    <label for="formFileMultiple" class="form-label">Attached The Copy Detail Plan of Your Office</label>
+                                    <input class="form-control" type="file" id="formFileMultiple" multiple />
+                                </div>
+                            </div>
+
+                            <div class="row my-3">
+                                <div class="form-group">
+                                    <div class="form-check">
+                                        <input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3">
+                                        <h6 class="form-check-label " for="invalidCheck3">
+                                            Agree to terms and conditions
+                                        </h6>
+                                        <small class="invalid-feedback">
+                                            You must agree before submitting.
+                                        </small>
+                                        <div class="invalid-feedback mt-2">
+                                            <a href="down.jpeg" download rel="noopener noreferrer" target="_blank">
+                                                Download File
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 my-4 pt-4 text-end">
+                                <button class="btn btn-success btn-lg">Submit</button>
+                                <button class="btn btn-danger btn-lg">Reset</button>
+                            </div>
+
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <!-- Main Content End -->
+
+        <!-- Footer  Start -->
+        <footrer class="main-footer d-block footer-bg">
+            <div class="footer-space">
+                <div class="container">
+                    <div class="row text-left">
+                        <div class="col-12 col-md-6 col-lg-4 my-md-0 my-5">
+                            <h4 class="h6 font-weight-bold mb-4">Find Us</h4>
+                            <div id="map-container-google" class="z-depth-1-half map-container">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2770.209674141393!2d66.99299731440739!3d30.20368861798864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb25e51ec26c2d399!2zMzDCsDEyJzEzLjMiTiA2NsKwNTknNDIuNyJF!5e1!3m2!1sen!2s!4v1647866926168!5m2!1sen!2s"
+                                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                            <div class="d-md-flex d-lg-block">
+                                <div class="ml-md-6 text-center">
+                                    <div class="mb-4">
+                                        <address class="adress">
+                                            <span class="text-gray">
+                                                Directorate of Tourism, Noori Naseer Khan Cultural Complex, Spiny Road Quetta.
+                                            </span>
+                                        </address>
+                                    </div>
+                                    <ul class="inline-list footer-social-icons p-0">
+                                        <li class="list-inline-item mx-1">
+                                            <a href="" class="btn btn-social">
+                                                <i class="btn-inner-icon fab fa-facebook-f"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item mx-1">
+                                            <a href="" class=" btn btn-social">
+                                                <i class="btn-inner-icon fab fa-twitter"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item mx-1">
+                                            <a href="" class="btn btn-social">
+                                                <i class=" btn-inner-icon fab fa-instagram"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item mx-1">
+                                            <a href="" class="btn btn-social text-center">
+                                                <i class="btn-inner-icon fab fa-linkedin-in"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-2 my-md-0 my-5">
+                            <h4 class="h6 font-weight-bold mb-4">Quick Links</h4>
+                            <ul class="inline-list list-group list-group-flush list-group-borderless mb-0 p-0">
+                                <li class=" list-group-item footer-bg">
+                                    <a href="">Investor Relation</a>
+                                </li>
+                                <li class="list-group-item footer-bg">
+                                    <a href="">Rewards Program</a>
+                                </li>
+                                <li class=" list-group-item footer-bg">
+                                    <a href="">Point Plus</a>
+                                </li>
+                                <li class=" list-group-item footer-bg">
+                                    <a href="">Partners</a>
+                                </li>
+                                <li class=" list-group-item footer-bg">
+                                    <a href="">List My Hotels</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-2 my-md-0 my-5">
+                            <h4 class="h6 font-weight-bold mb-4 ">Departments</h4>
+                            <ul class="ilist-group list-group-flush list-group-borderless mb-0 p-0">
+                                <li class=" list-group-item footer-bg">
+                                    <a href="">Account</a>
+                                </li>
+                                <li class="list-group-item footer-bg">
+                                    <a href="">Legeal</a>
+                                </li>
+                                <li class=" list-group-item footer-bg">
+                                    <a href="">Contact</a>
+                                </li>
+                                <li class=" list-group-item footer-bg">
+                                    <a href="">Affiliate Program</a>
+                                </li>
+                                <li class=" list-group-item footer-bg">
+                                    <a href="">Privacy Policy</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4 my-md-0 my-5">
+                            <div class="d-md-flex d-lg-block">
+                                <div class="mb-5 mr-md-7 mr-lg-0">
+                                    <h4 class="mb-4 h6 font-weight-bold">
+                                        Get In Touch
+                                    </h4>
+                                </div>
+                                <div class="ml-md-6">
+                                    <ul class="inline-list footer-social-icons p-0">
+                                        <li class="list-inline-item w-100 my-4">
+                                            <label for="" class="form-label" class="form-label">Name</label>
+                                            <input type="text" class="form-control" />
+                                        </li>
+                                        <li class="list-inline-item w-100 my-4">
+                                            <label for="" class="form-label" class="form-label">Email Adress</label>
+                                            <input type="email" class="form-control" />
+                                        </li>
+                                        <li class="list-inline-item w-100 my-4">
+                                            <label for="" class="form-label" class="form-label">Message</label>
+                                            <textarea class="form-control" id="" cols="30" rows="5"></textarea>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-nav">
+                <div class="container d-lg-flex d-md-block justify-content-between align-items-center">
+                    <p>
+                        © 2022 Balochistan Tourism. All rights reserved
+                    </p>
+
+                    <ul class="list-inline text-md-right text-center bottom-navigation">
+                        <li class="list-inline-item  pb-3 pb-md-0">
+                            <a class="list-group-item-action" href="">Home</a>
+                        </li>
+                        <li class="list-inline-item  pb-3 pb-md-0">
+                            <a class="list-group-item-action" href="">About Us</a>
+                        </li>
+                        <li class="list-inline-item  pb-3 pb-md-0">
+                            <a class="list-group-item-action" href="">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footrer>
+        <!-- Footer End -->
+
+        <!-- Main Wrapper End -->
+    </div>
+
+
+    <!-- Modal -->
+    <div class="modal" id="model3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Foreign Exchange Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"></span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="col-md-12 ">
+                        <label for="" class="form-label">Licence Number</label>
+                        <input type="text" class="form-control " id="" value="Code">
+                    </div>
+                    <div class="col-md-12 ">
+                        <label for="" class="form-label">Issue Date</label>
+                        <input type="text" class="form-control " id="" value="Address">
+                    </div>
+                    <div class="col-md-12 ">
+                        <label for="formFileMultiple" class="form-label">Attached The Copy Of Licence</label>
+                        <input class="form-control" type="file" id="formFileMultiple" multiple />
+                    </div>
+                    <div class="col-md-12 ">
+                        <label for="formFileMultiple" class="form-label">Attached The Copy Foreign Exchange Statement</label>
+                        <input class="form-control" type="file" id="formFileMultiple" multiple />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Foreign Business Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"></span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="col-md-12 ">
+                        <label for="" class="form-label">Name of Foreign Business</label>
+                        <input type="text" class="form-control " id="" value="Name">
+                    </div>
+                    <div class="col-md-12 ">
+                        <label for="" class="form-label">Foreign Business Address</label>
+                        <input type="text" class="form-control " id="" value="Address">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal -->
+    <div class="modal" id="model2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Branch Details</h5>
+
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"></span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="col-md-12 ">
+                        <label for="" class="form-label">Branch Code</label>
+                        <input type="text" class="form-control " id="" value="Code">
+                    </div>
+                    <div class="col-md-12 ">
+                        <label for="" class="form-label">Branch Address</label>
+                        <input type="text" class="form-control " id="" value="Address">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'script/jquery.js' %}"></script>
+    <script src="{% static 'bootstrap-5.1.3-dist/js/bootstrap.bundle.min.js'%}"></script>
+    <script src="{% static 'script/script.js' %}"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script> -->
+    <script src="{% static 'script/addFile.js' %}"></script>
+    
+    <script>
+        document.querySelectorAll(".drop-zone__input").forEach((inputElement) => {
+            const dropZoneElement = inputElement.closest(".drop-zone");
+
+            dropZoneElement.addEventListener("click", (e) => {
+                inputElement.click();
+            });
+
+            inputElement.addEventListener("change", (e) => {
+                if (inputElement.files.length) {
+                    updateThumbnail(dropZoneElement, inputElement.files[0]);
+                }
+            });
+
+            dropZoneElement.addEventListener("dragover", (e) => {
+                e.preventDefault();
+                dropZoneElement.classList.add("drop-zone--over");
+            });
+
+            ["dragleave", "dragend"].forEach((type) => {
+                dropZoneElement.addEventListener(type, (e) => {
+                    dropZoneElement.classList.remove("drop-zone--over");
+                });
+            });
+
+            dropZoneElement.addEventListener("drop", (e) => {
+                e.preventDefault();
+
+                if (e.dataTransfer.files.length) {
+                    inputElement.files = e.dataTransfer.files;
+                    updateThumbnail(dropZoneElement, e.dataTransfer.files[0]);
+                }
+
+                dropZoneElement.classList.remove("drop-zone--over");
+            });
+        });
+
+        /**
+         * Attachment file
+         *
+         * @param {HTMLElement} dropZoneElement
+         * @param {File} file
+         */
+        function updateThumbnail(dropZoneElement, file) {
+            let thumbnailElement = dropZoneElement.querySelector(".drop-zone__thumb");
+
+            // First time - remove the prompt
+            if (dropZoneElement.querySelector(".drop-zone__prompt")) {
+                dropZoneElement.querySelector(".drop-zone__prompt").remove();
+            }
+
+            // First time - there is no thumbnail element, so lets create it
+            if (!thumbnailElement) {
+                thumbnailElement = document.createElement("div");
+                thumbnailElement.classList.add("drop-zone__thumb");
+                dropZoneElement.appendChild(thumbnailElement);
+            }
+
+            thumbnailElement.dataset.label = file.name;
+
+            // Show thumbnail for image files
+            if (file.type.startsWith("image/")) {
+                const reader = new FileReader();
+
+                reader.readAsDataURL(file);
+                reader.onload = () => {
+                    thumbnailElement.style.backgroundImage = `url('${reader.result}')`;
+                };
+            } else {
+                thumbnailElement.style.backgroundImage = null;
+            }
+        }
+    </script>
+</body>
+
+</html>

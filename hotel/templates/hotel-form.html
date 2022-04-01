@@ -1,0 +1,1490 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Registration</title>
+    <link rel="stylesheet" href="{% static 'bootstrap-5.1.3-dist/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'style/custom-style.css' %}">
+    <link rel="stylesheet" href="{% static 'style/style.css' %}">
+    <link rel="icon" type="" sizes="32x32" href="{% static 'images/favicon.png'%}" />
+    <link rel="icon" type="" sizes="16x16" href="{% static 'images/favicon.png'%}" />
+
+    <link rel="stylesheet" href="{% static 'select2-4.1.0-rc.0/dist/css/select2.min.css'%}">
+    <!-- Font Awesome icons -->
+    <script src="https://kit.fontawesome.com/f14330b5d4.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+</head>
+
+<body>
+    <!-- Main Wrapper Start -->
+    <div class="wrapper">
+
+        <!-- Header Start -->
+        <header class="main-header">
+            <div class="top-header">
+                <div class="container-fluid">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center top-header-left">
+                            <ul class="list-inline d-flex">
+                                <li class="list-inline-item pe-2"><a href="#">(1234-567891234)</a></li>
+
+                                <li class="list-inline-item ps-1"><a href="#">(132demo@gmail.com)</a></li>
+                            </ul>
+                        </div>
+                        <div class="ml-auto d-flex align-items-center top-header-right p-2">
+                            <!-- <ul class="list-inline px-3 social-icons mt-2">
+                            <li class="list-inline-item">
+                                <a href="" class="btn btn-icon btn-sm">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="" class="btn btn-icon btn-sm"><i class="fab fa-twitter"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="" class="btn btn-icon btn-sm"><i class="fab fa-instagram"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="" class="btn btn-icon btn-sm"><i class="fab fa-linkedin-in"></i></a>
+                            </li>
+                        </ul> -->
+                        <ul class="list-inline px-3 social-icons mt-2">
+                            <li class="list-inline-item">
+                                <a href="" class="btn btn-icon btn-sm">
+                                    <img src="{% static 'images/facebook-logo.png' %}" width="30" alt="Facebook logo">
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="" class="btn btn-icon btn-sm">
+                                    <img src="{% static 'images/instagram.png' %}" width="30" alt="Instagram logo">
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="" class="btn btn-icon btn-sm">
+                                    <img src="{% static 'images/twitter.png' %}" width="30" alt="Twitter logo">
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="" class="btn btn-icon btn-sm">
+                                    <img src="{% static 'images/youtube.png' %}" width="30" alt="Youtube logo">
+                                </a>
+                            </li>
+                        </ul>
+
+                            <!-- <div class="dropdown px-3">
+                            <a href="#" class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">ENG</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item text-dark" href="#">Eng</a>
+                                <a class="dropdown-item text-dark" href="#">Urdu</a>
+                                <a class="dropdown-item text-dark" href="#">Pashto</a>
+                            </div>
+                        </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="logo-section">
+                <div class="contianer-fluid sub-header p-0">
+                    <a href="{% url 'index'%}" class="brand-logo">
+                        <img src="{% static 'images/logo.png' %}" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="fix-header w-100">
+                <div class="container-fluid">
+                    <div class="main-wrapper">
+                        <nav class="navbar display-flex justify-content-center">
+                            <div class="brand-and-icon d-md-none d-block">
+                                <a href="{% url 'index'%}" class="navbar-brand">
+                                    <!-- Tourism -->
+                                    <img src="{% static 'images/logo.png' %}" class="d-md-none d-block" alt="">
+                                </a>
+                                <button type="button" class="navbar-toggler">
+                                    <i class="fas fa-bars"></i>
+                                </button>
+                            </div>
+                            <div class="navbar-collapse p-0">
+                                <ul class="navbar-nav list-inline p-md-0 p-4">
+                                    <li class="list-inline-item">
+                                        <a href="{% url 'index' %}">Home</a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#" class="menu-link">
+                                            About Us
+                                            <span class="drop-icon">
+                                                <i class="fas fa-chevron-down"></i>
+                                            </span>
+                                        </a>
+                                        <div class="sub-menu">
+                                            <!-- items -->
+                                            <ul class="p-0 text-start">
+                                                <li><a href="about-us-overview.html">Overview of DTS</a></li>
+                                                <li><a href="about-us-features.html">Function Of DTS</a></li>
+                                            </ul>
+                                            <!-- end of items -->
+
+                                        </div>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#" class="menu-link">
+                                            Registration
+                                            <span class="drop-icon">
+                                                <i class="fas fa-chevron-down"></i>
+                                            </span>
+                                        </a>
+                                        <div class="sub-menu">
+                                            <!-- items -->
+                                            <ul class="p-0 text-start">
+                                                <li><a href="#">Tourist Guide Registration</a></li>
+                                                <li><a href="{% url 'restraunt-form' %}">Restraunts Registration </a></li>
+                                                <li><a href="{% url 'travel-agency-form' %}">Travel Agencies Registration</a></li>
+                                                <li><a href="{% url 'hotel-form' %}">Hotel Registration</a></li>
+                                               
+                                            </ul>
+                                            <!-- end of items -->
+
+                                        </div>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#" class="menu-link">
+                                            Lagislation
+                                            <span class="drop-icon">
+                                                <i class="fas fa-chevron-down"></i>
+                                            </span>
+                                        </a>
+                                        <div class="sub-menu">
+                                            <!-- items -->
+                                            <ul class="p-0 text-start">
+                                                <li><a href="#">Acts</a></li>
+                                                <li><a href="#">Rules</a></li>
+                                            </ul>
+                                            <!-- end of items -->
+
+                                        </div>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#" class="menu-link">
+                                            Licensing
+                                            <span class="drop-icon">
+                                                <i class="fas fa-chevron-down"></i>
+                                            </span>
+                                        </a>
+                                        <div class="sub-menu">
+                                            <!-- items -->
+                                            <ul class="p-0 text-start">
+                                                <li><a href="#">Hotels and Restraunts</a></li>
+                                                <li><a href="#">Travel Agencies and Tour Operators</a></li>
+                                                <li><a href="#">Tourist Guides</a></li>
+                                            </ul>
+                                            <!-- end of items -->
+
+                                        </div>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#" class="menu-link">
+                                            Fees
+                                            <span class="drop-icon">
+                                                <i class="fas fa-chevron-down"></i>
+                                            </span>
+                                        </a>
+                                        <div class="sub-menu">
+                                            <!-- items -->
+                                            <ul class="p-0 text-start">
+                                                <li><a href="#">Hotels and Restraunts</a></li>
+                                                <li><a href="#">Travel Agencies and Tour Operators</a></li>
+                                                <li><a href="#">Tourist Guides</a></li>
+                                            </ul>
+                                            <!-- end of items -->
+
+                                        </div>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#" class="menu-link">
+                                            Hotel
+                                            <span class="drop-icon">
+                                                <i class="fas fa-chevron-down"></i>
+                                            </span>
+                                        </a>
+                                        <div class="sub-menu">
+                                            <!-- items -->
+                                            <ul class="p-0 text-start">
+                                                <li><a href="#">5 Star Hotels</a></li>
+                                                <li><a href="#">4 Star Hotels</a></li>
+                                                <li><a href="#">3 Star Hotels</a></li>
+                                                <li><a href="#">1 & 2 Star Hotels</a></li>
+                                            </ul>
+                                            <!-- end of items -->
+
+                                        </div>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#" class="menu-link">
+                                            Service Provider
+                                            <span class="drop-icon">
+                                                <i class="fas fa-chevron-down"></i>
+                                            </span>
+                                        </a>
+
+                                        <div class="sub-menu">
+                                            <!-- items -->
+                                            <ul class="p-0 text-start">
+                                                <li><a href="#">Restraunts</a></li>
+                                                <li><a href="#">Travel Agencies & Tour Operators</a></li>
+                                                <li><a href="#">Tourist Guides</a></li>
+                                            </ul>
+                                            <!-- end of items -->
+
+                                        </div>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#" class="menu-link">
+                                            Downloads
+                                            <span class="drop-icon">
+                                                <i class="fas fa-chevron-down"></i>
+                                            </span>
+                                        </a>
+                                        <div class="sub-menu">
+                                            <!-- items -->
+                                            <ul class="p-0 text-start">
+                                                <li><a href="#">Tenders</a></li>
+                                                <li><a href="#">Applicatons</a></li>
+                                                <li><a href="#">Jobs</a></li>
+                                            </ul>
+                                            <!-- end of items -->
+
+                                        </div>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#" class="menu-link">
+                                            Featured Destination
+                                            <span class="drop-icon">
+                                                <i class="fas fa-chevron-down"></i>
+                                            </span>
+                                        </a>
+                                        <div class="sub-menu">
+                                            <!-- items -->
+                                            <ul class="p-0 text-start">
+                                                <li><a href="#">Hunza Valley</a></li>
+                                                <li><a href="#">The Beautiful Valley of Sawat</a></li>
+                                                <li><a href="#">Chitral Valley</a></li>
+                                                <li><a href="#">Deosai Plains</a></li>
+                                                <li><a href="#">Gilgit Valley</a></li>
+                                                <li><a href="#">Skadu Valley</a></li>
+                                            </ul>
+                                            <!-- end of items -->
+
+                                        </div>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#">Contact Us</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Header end -->
+
+
+        <!-- Main Content Start -->
+        <section class="main-content gallery-section">
+            <!-- Start Hero Section -->
+            <div class="other-hero hero z-index-2">
+                <div class="container">
+                    <div class="row justify-content-center main-heading  space-top-xl-4">
+                        <div class=" text-center">
+                            <h1 class="sub-head">Hotel Registration</h1>
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb justify-content-center">
+                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page"> Hotel Registration</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- End Hero Section -->
+            <div class="container space-y">
+                <!-- <div class="row row-cols-1 g-4"> -->
+                <div class="row touristGuide-content">
+                    <form action="">
+                        <fieldset>
+                            <legend>Hotel Registration</legend>
+                            <div class="row">
+                                <div class="col-md--12 my-2">
+                                    <label for="" class="form-label">Name Of The Hotel</label>
+                                    <input type="text" class="form-control" name="hotel-name" />
+                                </div>
+                                <div class="col-lg-3 col-md-6 my-2">
+                                    <label for="" class="form-label">Year of Establisment:</label>
+
+                                    <input type="date" class="form-control" name="establishment-year" />
+                                </div>
+                                <div class="col-lg-3 col-md-6 my-2">
+                                    <label for="" class="form-label">Date of Commission:</label>
+
+                                    <input type="date" class="form-control" name="commission-date" />
+                                </div>
+                                <div class="col-lg-3 col-md-6 my-2">
+                                    <label for="" class="form-label">Telex Number:</label>
+
+                                    <input type="text" class="form-control" name="telex-number" />
+                                </div>
+                                <div class="col-lg-3 col-md-6 my-2">
+                                    <label for="" class="form-label">Telephone Number:</label>
+
+                                    <input type="text" class="form-control" name="telephone-no" />
+                                </div>
+                                <div class="col-lg-6 col-md-12 my-2">
+                                    <label for="" class="form-label">Address:</label>
+
+                                    <input type="text" class="form-control" name="hotel-address" />
+                                </div>
+                                <div class="col-lg-6 col-md-12 my-2">
+                                    <label for="" class="form-label">Telegraphic Address:</label>
+
+                                    <input type="text" class="form-control" name="telegraph-address" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h5 class="mt-4 mb-2">
+                                    <u>
+                                        Location
+                                    </u>
+                                </h5>
+                                <div class="col-md-4 my-2">
+                                    <label for="" class="form-label">Province:</label>
+                                    <select class="form-select" aria-label="Default select example" name="province">
+                                        <option selected>PLease Select</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                      </select>
+                                </div>
+                                <div class="col-md-4 my-2">
+                                    <label for="" class="form-label">Town:</label>
+
+                                    <input type="text" class="form-control" name="town" />
+                                </div>
+                                <div class="col-md-4 my-2">
+                                    <label for="" class="form-label">Street:</label>
+
+                                    <input type="text" class="form-control" name="street-no" />
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <h5 class="mt-4 mb-2">
+                                    <u>
+                                        Ownership
+                                    </u>
+                                </h5>
+                                <div class="col-md-12 my-2">
+                                    <label for="" class="form-label">Nature of Ownership:</label>
+
+                                    <!-- <input type="text" class="form-control" />
+                                    <small>(Please State Whether Sole Proprietorship, firms cooperative, Limited company, etc) <b class="text-danger">*</b></small> -->
+                                    <select class="form-select" aria-label="Default select example" name="ownership-nature">
+                                        <option selected>PLease Select</option>
+                                        <option value="Proprietorship">Proprietorship</option>
+                                        <option value="Cooperative">Cooperative</option>
+                                        <option value="Company">Company</option>
+                                        <option value="Firms">Firms</option>
+                                        <option value="Limited-Company">Limited Company</option>
+                                      </select>
+                                </div>
+                            </div>
+                            <div class="row ">
+                                <div class="col-7">
+                                    <h5 class="mt-4 mb-2 form-Subhead">
+                                        <u>
+                                            Number Of Owners
+                                        </u>
+                                    </h5>
+                                </div>
+                                <div class="col-5 text-end">
+                                    <button class="add-owner-field btn btn-sm text-nowrap btn-success mt-4">Add Owners</button>
+                                </div>
+                                <div class="col-md-12 my-2">
+                                    <div class="owner-input-field">
+                                        <label for="" class="form-label">Fill the Information of Number of Owners you have</label>
+                                        <div class="row">
+                                            <div class="col-lg-4 col-md-6 my-2">
+                                                <label for="" class="form-label">Name of Owner:</label>
+
+                                                <input type="text" class="form-control" name="owner-name" />
+                                            </div>
+
+                                            <div class="col-lg-2 col-md-6 my-2">
+                                                <label for="" class="form-label">Owner % :</label>
+
+                                                <input type="text" class="form-control" name="owner-percentage" />
+                                            </div>
+
+                                            <div class="col-lg-6 col-md-12 my-2">
+                                                <label for="" class="form-label">Full Address of Owner:</label>
+
+                                                <input type="text" class="form-control" name="owner-address" />
+                                            </div>
+
+                                            <div class="col-lg-6 col-md-12 my-2">
+                                                <label for="" class="form-label">Telegraphic Address of Owner:</label>
+
+                                                <input type="text" class="form-control" name="owner-telegraph-address" />
+                                            </div>
+
+                                            <div class="col-lg-3 col-md-6 my-2">
+                                                <label for="" class="form-label">Owner Telephone Number:</label>
+
+                                                <input type="text" class="form-control" name="owner-telephone-no" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-7">
+                                    <h5 class="mt-4 mb-2 form-Subhead">
+                                        <u>
+                                            Manager
+                                        </u>
+                                    </h5>
+                                </div>
+                                <div class="col-5 text-end">
+                                    <button class="add-hotelManager-field btn btn-sm text-nowrap btn-success mt-4">Add Manager</button>
+                                </div>
+                                <div class="col-md-12 my-2">
+                                    <div class="hotelManager-input-field">
+                                        <label for="" class="form-label">Fill the Information of Number of Owners you have</label>
+                                        <div class="row">
+                                            <div class="col-lg-4 col-md-6 my-2">
+                                                <label for="" class="form-label">Name of Manager:</label>
+
+                                                <input type="text" class="form-control" name="manager-name" />
+                                            </div>
+
+                                            <div class="col-lg-2 col-md-6 my-2 text-nowrap">
+                                                <label for="" class="form-label">Manager % :</label>
+
+                                                <input type="text" class="form-control" name="manager-percentage" />
+                                            </div>
+
+                                            <div class="col-lg-6 col-md-12 my-2">
+                                                <label for="" class="form-label">Manager Adress:</label>
+
+                                                <input type="text" class="form-control" name="manager-address" />
+                                            </div>
+
+                                            <div class="col-lg-3 col-md-12 my-2">
+                                                <label for="" class="form-label">Manager Telephone Number:</label>
+
+                                                <input type="text" class="form-control" name="manager-telephone-no" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h5 class="mt-4 mb-2">
+                                    <u>
+                                        Land
+                                    </u>
+                                </h5>
+                                <div class="col-lg-4 col-md-6 my-2">
+                                    <label for="" class="form-label">Area of Hotel:</label>
+
+                                    <input type="text" class="form-control" name="hotel-area" />
+                                </div>
+
+                                <div class="col-lg-4 col-md-6 my-2">
+                                    <label for="" class="form-label">Covered Area:</label>
+
+                                    <input type="text" class="form-control" name="hotel-covered-area" />
+                                </div>
+
+                                <div class="col-lg-4 col-md-6 my-2">
+                                    <label for="" class="form-label">Area Type:</label>
+                                    <select class="form-select" aria-label="Default select example" name="hotel-area-type">
+                                        <option selected>PLease Select Area Type</option>
+                                        <option value="Proprietorship">Proprietorship</option>
+                                        <option value="On-lease">On Lease</option>
+                                        <option value="Mortage">Mortage</option>
+                                      </select>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <h5 class="mt-4 mb-2">
+                                    <u>
+                                        Costs
+                                    </u>
+                                </h5>
+                                <div class="col-lg-3 col-md-6 my-2">
+                                    <label for="" class="form-label">Cost of Land:</label>
+
+                                    <input type="text" class="form-control" name="land-cost" />
+                                </div>
+
+                                <div class="col-lg-3 col-md-6 my-2">
+                                    <label for="" class="form-label">Cost of Building:</label>
+
+                                    <input type="text" class="form-control" name="building-cost" />
+                                </div>
+
+                                <div class="col-lg-3 col-md-6 my-2">
+                                    <label for="" class="form-label">Cost of Furniture & Fixtures:</label>
+
+                                    <input type="text" class="form-control" name="furniture-cost" />
+                                </div>
+
+                                <div class="col-lg-3 col-md-6 my-2">
+                                    <label for="" class="form-label">Cost of Equipment:</label>
+
+                                    <input type="text" class="form-control" name="equipment-cost" />
+                                </div>
+
+                                <div class="col-lg-3 col-md-6 my-2">
+                                    <label for="" class="form-label">Working Capital:</label>
+
+                                    <input type="text" class="form-control" name="working-capital" />
+                                </div>
+
+                                <div class="col-lg-3 col-md-6 my-2">
+                                    <label for="" class="form-label">Total Investment:</label>
+
+                                    <input type="text" class="form-control" name="total-investment" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h5 class="mt-4 mb-2">
+                                    <u>
+                                        Building
+                                    </u>
+                                </h5>
+
+                                <div class="col-lg-4 col-md-6 my-2">
+                                    <label for="" class="form-label">Number Of Floors:</label>
+
+                                    <input type="text" class="form-control" />
+                                </div>
+
+                                <div class="col-lg-4 col-md-6 my-2">
+                                    <label for="" class="form-label">Number Of Rooms on Each Floor:</label>
+
+                                    <input type="text" class="form-control" name="floor-rooms-no" />
+                                </div>
+
+                                <div class="col-lg-4 col-md-6 my-2">
+                                    <label for="" class="form-label">Nature Of Room:</label>
+                                    <select class="form-select" aria-label="Default select example" name="room-nature">
+                                        <option selected>PLease Select</option>
+                                        <option value="Single-bed-room">Single Bed Room</option>
+                                        <option value="Double-bed-room">Double Bed  Room</option>
+                                        <option value="Suite-room">Suite Room</option>
+                                      </select>
+                                </div>
+
+                                <div class="col-md-12 my-2">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th>Nature Of Room</th>
+                                                    <th>With Attached Bath</th>
+                                                    <th>With Attached Bath</th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                <tr>
+                                                    <th>
+                                                        <h6>Single Bad Room</h6>
+                                                    </th>
+                                                    <td>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" value="" id="check">
+                                                            <!-- <label class="form-check-label" for="check">
+                                                          Attach Bathroom
+                                                        </label> -->
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" value="" id="check">
+                                                            <!-- <label class="form-check-label" for="check">
+                                                          Attach Bathroom
+                                                        </label> -->
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>
+                                                        <h6>Double Bad Room</h6>
+                                                    </th>
+                                                    <td>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" value="" id="check">
+                                                            <!-- <label class="form-check-label" for="check">
+                                                          Attach Bathroom
+                                                        </label> -->
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" value="" id="check">
+                                                            <!-- <label class="form-check-label" for="check">
+                                                          Attach Bathroom
+                                                        </label> -->
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>
+                                                        <h6>Suite Room</h6>
+                                                    </th>
+                                                    <td>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" value="" id="check">
+                                                            <!-- <label class="form-check-label" for="check">
+                                                          Attach Bathroom
+                                                        </label> -->
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox" value="" id="check">
+                                                            <!-- <label class="form-check-label" for="check">
+                                                          Attach Bathroom
+                                                        </label> -->
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>
+                                                        <h6>Total</h6>
+                                                    </th>
+                                                    <td contenteditable="true">
+
+                                                    </td>
+                                                    <td contenteditable="true">
+
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <h5 class="mt-4 mb-2">
+                                        <u>
+                                           Public Rooms
+                                        </u>
+                                    </h5>
+                                </div>
+                                <div class="col-12">
+                                    <div class="row">
+                                        <div class="col-12 my-2">
+                                            <div class="form-group">
+                                                <div class="roomCheckbox">
+                                                    <input class="form-check-input" type="checkbox" value="" id="roomCheckbox" name="visitors-room">
+                                                    <label class="form-check-label" for="roomCheckbox">Visitors Room</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="row" id="rooms-detail" style="display: none">
+                                                <div class="col-md-6 col-12">
+                                                    <div class="form-group">
+                                                        <label for="" class="form-label">Give Visitors Room Detail</label>
+                                                        <input type="text" class="form-control required" name="visitors-room-detail">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 col-12">
+                                                    <div class="form-group">
+                                                        <label for="" class="form-label">Area of Visitors Room</label>
+                                                        <input type="text" class="form-control required" name="visitors-room-area">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="row">
+                                        <div class="col-12 my-2">
+                                            <div class="form-group">
+                                                <div class="receptionHallCheckbox">
+                                                    <input class="form-check-input" type="checkbox" value="" id="receptionHallCheckbox" name="reception-hall">
+                                                    <label class="form-check-label" for="receptionHallCheckbox"> Reception Hall</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="row" id="receptionHall-detail" style="display: none">
+                                                <div class="col-md-6 col-12">
+                                                    <div class="form-group">
+                                                        <label for="" class="form-label">Give Reception Hall  Detail</label>
+                                                        <input type="text" class="form-control required" name="reception-hall-details">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 col-12">
+                                                    <div class="form-group">
+                                                        <label for="" class="form-label">Area of Reception Hall</label>
+                                                        <input type="text" class="form-control required" name="reception-hall-area">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="row">
+                                        <div class="col-12 my-2">
+                                            <div class="form-group">
+                                                <div class="cloakRoomCheckbox">
+                                                    <input class="form-check-input" type="checkbox" value="" id="cloakRoomCheckbox" name="cloak-room">
+                                                    <label class="form-check-label" for="cloakRoomCheckbox">Cloak Room</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="row" id="cloakRoom-detail" style="display: none">
+                                                <div class="col-md-6 col-12">
+                                                    <div class="form-group">
+                                                        <label for="" class="form-label">Give Cloak Room Detail</label>
+                                                        <input type="text" class="form-control required" name="cloak-room-detail">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 col-12">
+                                                    <div class="form-group">
+                                                        <label for="" class="form-label">Area of Cloak Room</label>
+                                                        <input type="text" class="form-control required" name="cloak-room-area">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="row">
+                                        <div class="col-12 my-2">
+                                            <div class="form-group">
+                                                <div class="readingRoomCheckbox">
+                                                    <input class="form-check-input" type="checkbox" value="" id="readingRoomCheckbox" name="readin-room">
+                                                    <label class="form-check-label" for="readingRoomCheckbox">Reading Room</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="row" id="readingRoom-detail" style="display: none">
+                                                <div class="col-md-6 col-12">
+                                                    <div class="form-group">
+                                                        <label for="" class="form-label">Give Reading Room Detail</label>
+                                                        <input type="text" class="form-control required" name="reading-room-detail">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 col-12">
+                                                    <div class="form-group">
+                                                        <label for="" class="form-label">Area of Reading Room</label>
+                                                        <input type="text" class="form-control required" name="reading-room-area">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="row">
+                                        <div class="col-12 my-2">
+                                            <div class="form-group">
+                                                <div class="restaurantCheckbox">
+                                                    <input class="form-check-input" type="checkbox" value="" id="restaurantCheckbox" name="restaurant">
+                                                    <label class="form-check-label" for="restaurantCheckbox">Restaurant</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="row" id="restaurant-detail" style="display: none">
+                                                <div class="col-md-6 col-12">
+                                                    <div class="form-group">
+                                                        <label for="" class="form-label">Give Restaurant Detail</label>
+                                                        <input type="text" class="form-control required" name="restaurant-detail">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 col-12">
+                                                    <div class="form-group">
+                                                        <label for="" class="form-label">Area of Restaurant</label>
+                                                        <input type="text" class="form-control required" name="restaurant-area">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-6 my-2">
+                                    <div class="row ">
+                                        <div class="col-7">
+                                            <h5 class="mt-4 mb-2 form-Subhead">
+                                                <u>
+                                                     Common Bathroom No.
+                                                </u>
+                                            </h5>
+                                        </div>
+                                        <div class="col-5 text-end">
+                                            <button class="add-bathroomNo-field btn btn-sm text-nowrap btn-success mt-4">Add </button>
+                                        </div>
+                                        <div class="col-md-12 my-2">
+                                            <div class="bathroomNo-input-field">
+                                                <label for="" class="form-label">Give the Number of Common Bathroom with Floor Numbers</label>
+                                                <div class="row">
+                                                    <div class="col-md-6 my-2">
+                                                        <label for="" class="form-label">Common Bathroom No.:</label>
+                                                        <input type="text" class="form-control" name="common-bathroom-no" />
+                                                    </div>
+                                                    <div class="col-md-6 my-2">
+                                                        <label for="" class="form-label">Floor No.:</label>
+                                                        <input type="text" class="form-control" name="bathroom-floor-no" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-6 my-2">
+                                    <div class="row ">
+                                        <div class="col-7">
+                                            <h5 class="mt-4 mb-2 form-Subhead">
+                                                <u>
+                                                     Common Toilet No.
+                                                </u>
+                                            </h5>
+                                        </div>
+                                        <div class="col-5 text-end">
+                                            <button class="add-toiletNo-field btn btn-sm text-nowrap btn-success mt-4">Add </button>
+                                        </div>
+                                        <div class="col-md-12 my-2">
+                                            <div class="toiletNo-input-field">
+                                                <label for="" class="form-label">Give the Number of Common Toilets with Floor Numbers</label>
+                                                <div class="row">
+                                                    <div class="col-md-6 my-2">
+                                                        <label for="" class="form-label">Common Toilet No.:</label>
+                                                        <input type="text" class="form-control" name="common-toilet-no" />
+                                                    </div>
+                                                    <div class="col-md-6 my-2">
+                                                        <label for="" class="form-label">Floor No.:</label>
+                                                        <input type="text" class="form-control" name="toilet-floor-no" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 my-2">
+                                    <label for="" class="form-label">No. Of Staircase:</label>
+
+                                    <input type="text" class="form-control" name="staircase-no" />
+                                </div>
+                                <div class="col-lg-4 col-md-6 my-2">
+                                    <label for="" class="form-label">No. Of Lifts:</label>
+
+                                    <input type="text" class="form-control" name="lifts-no" />
+                                </div>
+
+                                <div class="col-lg-4 col-md-6 my-2">
+                                    <label for="" class="form-label">Car Park (Lease Indicate Capacity):</label>
+
+                                    <input type="text" class="form-control" name="car-park" />
+                                </div>
+                                <div class="col-lg-4 col-md-6 my-2">
+                                    <label for="" class="form-label">Area of Compund:</label>
+
+                                    <input type="text" class="form-control" name="compound-area" />
+                                </div>
+                                <div class="col-lg-4 col-md-6 my-2">
+                                    <label for="" class="form-label">Area Of Garden (If any):</label>
+
+                                    <input type="text" class="form-control" name="garden-area" />
+                                </div>
+                                <div class="col-lg-4 col-md-6 my-2">
+                                    <label for="" class="form-label">Date of Completion of Construction :</label>
+
+                                    <input type="date" class="form-control" name="completion-date" />
+                                </div>
+                                <div class="col-lg-4 col-md-6 my-2">
+                                    <label for="" class="form-label"> Last Date of Renovation (If Any):</label>
+
+                                    <input type="date" class="form-control" name="renovation-date" />
+                                </div>
+
+                                <div class="col-lg-4 col-md-6 my-2">
+                                    <label for="formFileMultiple" class="form-label">Please Attach a Plan of The Buildingx</label>
+                                    <input class="form-control" type="file" id="formFileMultiple" name="attach-file" multiple />
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <h5 class="mt-4 mb-2">
+                                    <u>
+                                       Furniture and Fixtures
+                                    </u>
+                                </h5>
+                                <div class="col-lg-12 col-md-6 my-2">
+                                    <div class="row ">
+                                        <div class="col-7">
+                                            <h5 class="mt-4 mb-2 form-Subhead">
+                                                <u>
+                                                     Bedrooms
+                                                </u>
+                                            </h5>
+                                        </div>
+                                        <div class="col-5 text-end">
+                                            <button class="add-bedRoom-field btn btn-sm text-nowrap btn-success mt-4">Add Furniture</button>
+                                        </div>
+                                        <div class="col-md-12 my-2">
+                                            <div class="bedRoom-input-field">
+                                                <label for="" class="form-label">Give the Information of Furniture in Bedrooms</label>
+                                                <div class="row">
+                                                    <div class="col-lg-12 my-2">
+                                                        <label for="" class="form-label">Furniture Type:</label>
+                                                        <input type="text" class="form-control" name="bedroom-type" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-6 my-2">
+                                    <div class="row ">
+                                        <div class="col-7">
+                                            <h5 class="mt-4 mb-2 form-Subhead">
+                                                <u>
+                                                     Common Rooms
+                                                </u>
+                                            </h5>
+                                        </div>
+                                        <div class="col-5 text-end">
+                                            <button class="add-commonRoom-field btn btn-sm text-nowrap btn-success mt-4">Add Furniture</button>
+                                        </div>
+                                        <div class="col-md-12 my-2">
+                                            <div class="commonRoom-input-field">
+                                                <label for="" class="form-label">Give the Information of Furniture in Common Rooms</label>
+                                                <div class="row">
+                                                    <div class="col-lg-12 my-2">
+                                                        <label for="" class="form-label">Furniture Type:</label>
+                                                        <input type="text" class="form-control" name="room-type" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-12 col-md-6 my-2">
+                                    <div class="row ">
+                                        <div class="col-7">
+                                            <h5 class="mt-4 mb-2 form-Subhead">
+                                                <u>
+                                                     Corridors & Galleries
+                                                </u>
+                                            </h5>
+                                        </div>
+                                        <div class="col-5 text-end">
+                                            <button class="add-corridorsGallery-field btn btn-sm text-nowrap btn-success mt-4">Add Furniture</button>
+                                        </div>
+                                        <div class="col-md-12 my-2">
+                                            <div class="corridorsGallery-input-field">
+                                                <label for="" class="form-label">Give the Information of Furniture in  Corridors and Galleries</label>
+                                                <div class="row">
+                                                    <div class="col-lg-12 my-2">
+                                                        <label for="" class="form-label">Furniture Type:</label>
+                                                        <input type="text" class="form-control" name="corridors-type" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-12 col-md-6 my-2">
+                                    <div class="row ">
+                                        <div class="col-7">
+                                            <h5 class="mt-4 mb-2 form-Subhead">
+                                                <u>
+                                                     Bathrooms Attached With Bedrooms
+                                                </u>
+                                            </h5>
+                                        </div>
+                                        <div class="col-5 text-end">
+                                            <button class="add-bathrooms-field btn btn-sm text-nowrap btn-success mt-4">Add Furniture</button>
+                                        </div>
+                                        <div class="col-md-12 my-2">
+                                            <div class="bathrooms-input-field">
+                                                <label for="" class="form-label">Give the Information of Furniture in Bathrooms Attached With Bedroom</label>
+                                                <div class="row">
+                                                    <div class="col-lg-12 my-2">
+                                                        <label for="" class="form-label">Furniture Type:</label>
+                                                        <input type="text" class="form-control" name="bathroom-type" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-12 col-md-6 my-2">
+                                    <div class="row ">
+                                        <div class="col-7">
+                                            <h5 class="mt-4 mb-2 form-Subhead">
+                                                <u>
+                                                    Common Bathrooms
+                                                </u>
+                                            </h5>
+                                        </div>
+                                        <div class="col-5 text-end">
+                                            <button class="add-commonbathrooms-field btn btn-sm text-nowrap btn-success mt-4">Add Furniture</button>
+                                        </div>
+                                        <div class="col-md-12 my-2">
+                                            <div class="commonbathrooms-input-field">
+                                                <label for="" class="form-label">Give the Information of Furniture in Common Bathrooms</label>
+                                                <div class="row">
+                                                    <div class="col-lg-12 my-2">
+                                                        <label for="" class="form-label">Furniture Type:</label>
+                                                        <input type="text" class="form-control" name="common-bathroom-type" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-12 col-md-6 my-2">
+                                    <div class="row ">
+                                        <div class="col-7">
+                                            <h5 class="mt-4 mb-2 form-Subhead">
+                                                <u>
+                                                    Common Toiltes
+                                                </u>
+                                            </h5>
+                                        </div>
+                                        <div class="col-5 text-end">
+                                            <button class="add-commontoilets-field btn btn-sm text-nowrap btn-success mt-4">Add Furniture</button>
+                                        </div>
+                                        <div class="col-md-12 my-2">
+                                            <div class="commontoilets-input-field">
+                                                <label for="" class="form-label">Give the Information of Furniture in Common Toiles</label>
+                                                <div class="row">
+                                                    <div class="col-lg-12 my-2">
+                                                        <label for="" class="form-label">Furniture Type:</label>
+                                                        <input type="text" class="form-control" name="toilet-type" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row ">
+                                <div class="col-12">
+                                    <h5 class="mt-4 mb-2 form-Subhead">
+                                        <u>
+                                           Facilities Available On The Hotel Premises
+                                        </u>
+                                    </h5>
+                                </div>
+                                <div class="col-md-12 my-2">
+                                    <div class="row">
+                                        <div class="col-md-6 col-12 my-2">
+                                            <label for="">Telephones Provided: </label>
+                                            <select class="form-select select" multiple="multiple" aria-label="Default select example" >
+                                                <option value="1">In Rooms</option>
+                                                <option value="2">On Each Floor</option>
+                                                <option value="3"> In Lobby </option>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-md-6 col-12 my-2">
+                                            <label for="">Facilities Available On The Hotel Premises: </label>
+                                            <select class="form-select select" multiple="multiple" aria-label="Default select example">
+                                                <option value="1">Banking Counter</option>
+                                                <option value="2">Receptioln</option>
+                                                <option value="3"> Postal Counter </option>
+                                                <option value="4">Running Hot & Cold Water</option>
+                                                <option value="5">Heating or Air-Conditioning</option>
+                                                <option value="6">Restaurant</option>
+                                                <option value="7">Coffee Shop</option>
+                                                <option value="8">Bar</option>
+                                                <option value="9">Cold Storage </option>
+                                                <option value="10">Locks</option>
+                                                <option value="11"> Entertaiment</option>
+                                                <option value="12">Others</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row ">
+                                <div class="col-lg-12 col-md-6 my-2">
+                                    <div class="row ">
+                                        <div class="col-7">
+                                            <h5 class="mt-4 mb-2 form-Subhead">
+                                                <u>
+                                                    Cuisine Served
+                                                </u>
+                                            </h5>
+                                        </div>
+                                        <div class="col-5 text-end">
+                                            <button class="add-cuisineServed-field btn btn-sm text-nowrap btn-success mt-4">Add Cuisine</button>
+                                        </div>
+                                        <div class="col-md-12 my-2">
+                                            <div class="">
+                                                <label for="" class="form-label">Add Information About The Types of Cuisine Served</label>
+                                                <div class="row cuisineServed-input-field">
+                                                    <div class="col-lg-4 col-md-6 my-2">
+                                                        <label for="" class="form-label">Cuisine Name:</label>
+                                                        <input type="text" class="form-control" name="cuisine-name" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 my-2">
+                                            <div class="form-group">
+                                                <div class="resturantForm">
+                                                    <input class="form-check-input" type="checkbox" value="" id="restaurant">
+                                                    <label class="form-check-label" for="restaurant"> Is A Restaurant Attached With Hotel </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="row" id="other-divChk" style="display: none">
+                                                <div class="col-md-6 col-12">
+                                                    <div class="form-group">
+                                                        <label for="" class="form-label">Restaurant Name</label>
+                                                        <input type="text" class="form-control required" name="restaurant-name">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 col-12">
+                                                    <div class="form-group">
+                                                        <label for="" class="form-label">Please Attach Restaurant Details</label>
+                                                        <input type="file" class="form-control required" name="attach-restaurant-detail">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row ">
+                                <div class="col-12">
+                                    <h5 class="mt-4 mb-2 form-Subhead">
+                                        <u>
+                                           Majority of Guests
+                                        </u>
+                                    </h5>
+                                </div>
+                                <div class="col-md-12 my-2">
+                                    <div class="row">
+                                        <div class="col-md-6 col-12 my-2">
+                                            <label for="">Monthly Guests: </label>
+                                            <select class="form-select select" multiple="multiple" aria-label="Default select example">
+                                                <option value="1">Foreigners</option>
+                                                <option value="2">Pakistanis</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-md-6 col-12 my-2">
+                                            <label for="">Peak Season of Business: </label>
+                                            <select class="form-select select" multiple="multiple" aria-label="Default select example">
+                                                <option value="1">Winter</option>
+                                                <option value="2">Summer</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- <div class="row">
+                                <h5 class="mt-4 mb-2">
+                                    <u>
+                                       Employees
+                                    </u>
+                                </h5>
+                                <div class="col-md-12">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered employees">
+                                            <thead class="bg-info text-white">
+                                                <tr>
+                                                    <th>Category</th>
+                                                    <th>Total Number</th>
+                                                    <th>Professionally Trained</th>
+                                                    <th>Not Professionally Trained but Experianced</th>
+                                                    <th>Apprentices</th>
+                                                    <th>English Knowing</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th>Manager</th>
+                                                    <td contenteditable="true"></td>
+                                                    <td contenteditable="true"></td>
+                                                    <td contenteditable="true"></td>
+                                                    <td contenteditable="true"></td>
+                                                    <td contenteditable="true"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Reception</th>
+                                                    <td contenteditable="true"></td>
+                                                    <td contenteditable="true"></td>
+                                                    <td contenteditable="true"></td>
+                                                    <td contenteditable="true"></td>
+                                                    <td contenteditable="true"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Billing</th>
+                                                    <td contenteditable="true"></td>
+                                                    <td contenteditable="true"></td>
+                                                    <td contenteditable="true"></td>
+                                                    <td contenteditable="true"></td>
+                                                    <td contenteditable="true"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Cooks</th>
+                                                    <td contenteditable="true"></td>
+                                                    <td contenteditable="true"></td>
+                                                    <td contenteditable="true"></td>
+                                                    <td contenteditable="true"></td>
+                                                    <td contenteditable="true"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Bearers</th>
+                                                    <td contenteditable="true"></td>
+                                                    <td contenteditable="true"></td>
+                                                    <td contenteditable="true"></td>
+                                                    <td contenteditable="true"></td>
+                                                    <td contenteditable="true"></td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Other</th>
+                                                    <td contenteditable="true"></td>
+                                                    <td contenteditable="true"></td>
+                                                    <td contenteditable="true"></td>
+                                                    <td contenteditable="true"></td>
+                                                    <td contenteditable="true"></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div> -->
+                            <div class="row">
+                                <div class="col-md-12 my-2 pt-4 text-end">
+                                    <button class="btn btn-success btn-lg">Submit</button>
+                                    <button class="btn btn-danger btn-lg">Reset</button>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <!-- Main Content End -->
+
+        <!-- Footer  Start -->
+        <footrer class="main-footer d-block footer-bg">
+            <div class="footer-space">
+                <div class="container">
+                    <div class="row text-left">
+                        <div class="col-12 col-md-6 col-lg-4 my-md-0 my-5">
+                            <h4 class="h6 font-weight-bold mb-4">Find Us</h4>
+                            <div id="map-container-google" class="z-depth-1-half map-container">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2770.209674141393!2d66.99299731440739!3d30.20368861798864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb25e51ec26c2d399!2zMzDCsDEyJzEzLjMiTiA2NsKwNTknNDIuNyJF!5e1!3m2!1sen!2s!4v1647866926168!5m2!1sen!2s"
+                                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                            <div class="d-md-flex d-lg-block">
+                                <div class="ml-md-6 text-center">
+                                    <div class="mb-4">
+                                        <address class="adress">
+                                            <span class="text-gray">
+                                                Directorate of Tourism, Noori Naseer Khan Cultural Complex, Spiny Road Quetta.
+                                            </span>
+                                        </address>
+                                    </div>
+                                    <ul class="inline-list footer-social-icons p-0">
+                                        <li class="list-inline-item mx-1">
+                                            <a href="" class="btn btn-social">
+                                                <i class="btn-inner-icon fab fa-facebook-f"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item mx-1">
+                                            <a href="" class=" btn btn-social">
+                                                <i class="btn-inner-icon fab fa-twitter"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item mx-1">
+                                            <a href="" class="btn btn-social">
+                                                <i class=" btn-inner-icon fab fa-instagram"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item mx-1">
+                                            <a href="" class="btn btn-social text-center">
+                                                <i class="btn-inner-icon fab fa-linkedin-in"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-2 my-md-0 my-5">
+                            <h4 class="h6 font-weight-bold mb-4">Quick Links</h4>
+                            <ul class="inline-list list-group list-group-flush list-group-borderless mb-0 p-0">
+                                <li class=" list-group-item footer-bg">
+                                    <a href="">Investor Relation</a>
+                                </li>
+                                <li class="list-group-item footer-bg">
+                                    <a href="">Rewards Program</a>
+                                </li>
+                                <li class=" list-group-item footer-bg">
+                                    <a href="">Point Plus</a>
+                                </li>
+                                <li class=" list-group-item footer-bg">
+                                    <a href="">Partners</a>
+                                </li>
+                                <li class=" list-group-item footer-bg">
+                                    <a href="">List My Hotels</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-2 my-md-0 my-5">
+                            <h4 class="h6 font-weight-bold mb-4 ">Departments</h4>
+                            <ul class="ilist-group list-group-flush list-group-borderless mb-0 p-0">
+                                <li class=" list-group-item footer-bg">
+                                    <a href="">Account</a>
+                                </li>
+                                <li class="list-group-item footer-bg">
+                                    <a href="">Legeal</a>
+                                </li>
+                                <li class=" list-group-item footer-bg">
+                                    <a href="">Contact</a>
+                                </li>
+                                <li class=" list-group-item footer-bg">
+                                    <a href="">Affiliate Program</a>
+                                </li>
+                                <li class=" list-group-item footer-bg">
+                                    <a href="">Privacy Policy</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4 my-md-0 my-5">
+                            <div class="d-md-flex d-lg-block">
+                                <div class="mb-5 mr-md-7 mr-lg-0">
+                                    <h4 class="mb-4 h6 font-weight-bold">
+                                        Get In Touch
+                                    </h4>
+                                </div>
+                                <div class="ml-md-6">
+                                    <ul class="inline-list footer-social-icons p-0">
+                                        <li class="list-inline-item w-100 my-2">
+                                            <label for="" class="form-label">Name</label>
+                                            <input type="text" class="form-control" />
+                                        </li>
+                                        <li class="list-inline-item w-100 my-2">
+                                            <label for="" class="form-label">Email Adress</label>
+                                            <input type="email" class="form-control" />
+                                        </li>
+                                        <li class="list-inline-item w-100 my-2">
+                                            <label for="" class="form-label">Message</label>
+                                            <textarea class="form-control" id="" cols="30" rows="5"></textarea>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-nav">
+                <div class="container d-lg-flex d-md-block justify-content-between align-items-center">
+                    <p>
+                        © 2022 Balochistan Tourism. All rights reserved
+                    </p>
+
+                    <ul class="list-inline text-md-right text-center bottom-navigation">
+                        <li class="list-inline-item  pb-3 pb-md-0">
+                            <a class="list-group-item-action" href="">Home</a>
+                        </li>
+                        <li class="list-inline-item  pb-3 pb-md-0">
+                            <a class="list-group-item-action" href="">About Us</a>
+                        </li>
+                        <li class="list-inline-item  pb-3 pb-md-0">
+                            <a class="list-group-item-action" href="">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footrer>
+        <!-- Footer End -->
+    </div>
+        <!-- Main Wrapper
+
+    <!-- <script src="assets/bootstrap-5.1.3-dist/js/bootstrap.bundle.min.js"></script> -->
+    <script src="{% static 'script/script.js' %}"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script> -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js'></script>
+    <script src="{% static 'script/addFile.js' %}"></script>
+    <script src="{% static 'select2-4.1.0-rc.0/dist/js/select2.full.min.js' %}"></script>
+    <script>
+        $(document).ready(function() {
+            $('.select').select2();
+        });
+
+        $(document).ready(function() {
+            // restaurant detail for hotel cuisine
+            $('#restaurant').click(function() {
+                $("#other-divChk").toggle(this.checked);
+            });
+
+
+            // Visitor Room Details Fields Show/Hide
+            $('#roomCheckbox').click(function() {
+                $("#rooms-detail").toggle(this.checked);
+            });
+
+            // reception hall Details Fields Show/Hide
+            $('#receptionHallCheckbox').click(function() {
+                $("#receptionHall-detail").toggle(this.checked);
+            });
+            // cloak room Details Fields Show/Hide
+            $('#cloakRoomCheckbox').click(function() {
+                $("#cloakRoom-detail").toggle(this.checked);
+            });
+            // reading room Details Fields Show/Hide
+            $('#readingRoomCheckbox').click(function() {
+                $("#readingRoom-detail").toggle(this.checked);
+            });
+            // restaurant Details Fields Show/Hide
+            $('#restaurantCheckbox').click(function() {
+                $("#restaurant-detail").toggle(this.checked);
+            });
+        });
+    </script>
+
+</body>
+
+</html>

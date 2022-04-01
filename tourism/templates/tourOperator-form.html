@@ -1,0 +1,715 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourism</title>
+    <<link rel="stylesheet" href="{% static 'bootstrap-5.1.3-dist/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'style/custom-style.css' %}">
+    <link rel="stylesheet" href="{% static 'style/style.css' %}">
+    <link rel="icon" type="" sizes="32x32" href="{% static 'images/favicon.png'%}" />
+    <link rel="icon" type="" sizes="16x16" href="{% static 'images/favicon.png'%}" />
+    <!-- Font Awesome icons -->
+    <script src="https://kit.fontawesome.com/f14330b5d4.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- Main Wrapper Start -->
+    <div class="wrapper">
+
+        <!-- Header Start -->
+        <header class="main-header">
+            <div class="top-header">
+                <div class="container-fluid">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center top-header-left">
+                            <ul class="list-inline d-flex">
+                                <li class="list-inline-item pr-2"><a href="#">(1234-567891234)</a></li>
+
+                                <li class="list-inline-item pl-1"><a href="#">(132demo@gmail.com)</a></li>
+                            </ul>
+                        </div>
+                        <div class="ml-auto d-flex align-items-center top-header-right p-2">
+                            <!-- <ul class="list-inline px-3 social-icons mt-2">
+                            <li class="list-inline-item">
+                                <a href="" class="btn btn-icon btn-sm">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="" class="btn btn-icon btn-sm"><i class="fab fa-twitter"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="" class="btn btn-icon btn-sm"><i class="fab fa-instagram"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="" class="btn btn-icon btn-sm"><i class="fab fa-linkedin-in"></i></a>
+                            </li>
+                        </ul> -->
+                            <ul class="list-inline px-3 social-icons mt-2">
+                                <li class="list-inline-item">
+                                    <a href="" class="btn btn-icon btn-sm">
+                                        <img src="{% static 'images/facebook-logo.png' %" width="30" alt="Facebook logo">
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="" class="btn btn-icon btn-sm">
+                                        <img src="{% static 'images/instagram.png' %}" width="30" alt="Instagram logo">
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="" class="btn btn-icon btn-sm">
+                                        <img src="{% static 'images/twitter.png' %}" width="30" alt="Twitter logo">
+                                    </a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="" class="btn btn-icon btn-sm">
+                                        <img src="{% static 'images/youtube.png' %}" width="30" alt="Youtube logo">
+                                    </a>
+                                </li>
+                            </ul>
+
+                            <!-- <div class="dropdown px-3">
+                            <a href="#" class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">ENG</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item text-dark" href="#">Eng</a>
+                                <a class="dropdown-item text-dark" href="#">Urdu</a>
+                                <a class="dropdown-item text-dark" href="#">Pashto</a>
+                            </div>
+                        </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="logo-section">
+                <div class="contianer-fluid sub-header p-0">
+                    <a href="/index/" class="brand-logo">
+                        <img src="{% static 'images/logo.png' %}" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="fix-header">
+                <div class="container-fluid">
+                    <div class="main-wrapper">
+                        <nav class="navbar display-flex justify-content-center">
+                            <div class="brand-and-icon d-md-none d-block">
+                                <a href="/index/" class="navbar-brand">
+                                    <!-- Tourism -->
+                                    <img src="{% static 'images/logo.png' %}" class="d-md-none d-block" alt="">
+                                </a>
+                                <button type="button" class="navbar-toggler">
+                                <i class="fas fa-bars"></i>
+                            </button>
+                            </div>
+                            <div class="navbar-collapse p-0">
+                                <ul class="navbar-nav list-inline p-md-0 p-4">
+                                    <li class="list-inline-item">
+                                        <a href="/index/">Home</a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#" class="menu-link">
+                                        About Us
+                                        <span class="drop-icon">
+                                            <i class="fas fa-chevron-down"></i>
+                                        </span>
+                                    </a>
+                                        <div class="sub-menu">
+                                            <!-- items -->
+                                            <ul class="p-0 text-start">
+                                                <li><a href="/about-us-overview/">Overview of DTS</a></li>
+                                                <li><a href="/about-us-features/">Function Of DTS</a></li>
+                                            </ul>
+                                            <!-- end of items -->
+
+                                        </div>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#" class="menu-link">
+                                        Registertaion
+                                        <span class="drop-icon">
+                                            <i class="fas fa-chevron-down"></i>
+                                        </span>
+                                    </a>
+                                        <div class="sub-menu">
+                                            <!-- items -->
+                                            <ul class="p-0 text-start">
+                                                <li><a href="/touristGuide-form/">Tourist Guide</a></li>
+                                                <li><a href="/tourOperator-form/">Tour Operator</a></li>
+                                                <li><a href="#">Travel Agencies</a></li>
+                                                <li><a href="/hotel-form/">Hotel</a></li>
+                                                <li><a href="#">Restraunts</a></li>
+                                            </ul>
+                                            <!-- end of items -->
+
+                                        </div>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#" class="menu-link">
+                                        Lagislation
+                                        <span class="drop-icon">
+                                            <i class="fas fa-chevron-down"></i>
+                                        </span>
+                                    </a>
+                                        <div class="sub-menu">
+                                            <!-- items -->
+                                            <ul class="p-0 text-start">
+                                                <li><a href="#">Acts</a></li>
+                                                <li><a href="#">Rules</a></li>
+                                            </ul>
+                                            <!-- end of items -->
+
+                                        </div>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#" class="menu-link">
+                                        Licensing
+                                        <span class="drop-icon">
+                                            <i class="fas fa-chevron-down"></i>
+                                        </span>
+                                    </a>
+                                        <div class="sub-menu">
+                                            <!-- items -->
+                                            <ul class="p-0 text-start">
+                                                <li><a href="#">Hotels and Restraunts</a></li>
+                                                <li><a href="#">Travel Agencies and Tour Operators</a></li>
+                                                <li><a href="#">Tourist Guides</a></li>
+                                            </ul>
+                                            <!-- end of items -->
+
+                                        </div>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#" class="menu-link">
+                                        Fees
+                                        <span class="drop-icon">
+                                            <i class="fas fa-chevron-down"></i>
+                                        </span>
+                                    </a>
+                                        <div class="sub-menu">
+                                            <!-- items -->
+                                            <ul class="p-0 text-start">
+                                                <li><a href="#">Hotels and Restraunts</a></li>
+                                                <li><a href="#">Travel Agencies and Tour Operators</a></li>
+                                                <li><a href="#">Tourist Guides</a></li>
+                                            </ul>
+                                            <!-- end of items -->
+
+                                        </div>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#" class="menu-link">
+                                        Hotel
+                                        <span class="drop-icon">
+                                            <i class="fas fa-chevron-down"></i>
+                                        </span>
+                                    </a>
+                                        <div class="sub-menu">
+                                            <!-- items -->
+                                            <ul class="p-0 text-start">
+                                                <li><a href="#">5 Star Hotels</a></li>
+                                                <li><a href="#">4 Star Hotels</a></li>
+                                                <li><a href="#">3 Star Hotels</a></li>
+                                                <li><a href="#">1 & 2 Star Hotels</a></li>
+                                            </ul>
+                                            <!-- end of items -->
+
+                                        </div>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#" class="menu-link">
+                                        Service Provider
+                                        <span class="drop-icon">
+                                            <i class="fas fa-chevron-down"></i>
+                                        </span>
+                                    </a>
+
+                                        <div class="sub-menu">
+                                            <!-- items -->
+                                            <ul class="p-0 text-start">
+                                                <li><a href="#">Restraunts</a></li>
+                                                <li><a href="#">Travel Agencies & Tour Operators</a></li>
+                                                <li><a href="#">Tourist Guides</a></li>
+                                            </ul>
+                                            <!-- end of items -->
+
+                                        </div>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#" class="menu-link">
+                                        Downloads
+                                        <span class="drop-icon">
+                                            <i class="fas fa-chevron-down"></i>
+                                        </span>
+                                    </a>
+                                        <div class="sub-menu">
+                                            <!-- items -->
+                                            <ul class="p-0 text-start">
+                                                <li><a href="#">Tenders</a></li>
+                                                <li><a href="#">Applicatons</a></li>
+                                                <li><a href="#">Jobs</a></li>
+                                            </ul>
+                                            <!-- end of items -->
+
+                                        </div>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#" class="menu-link">
+                                        Featured Destination
+                                        <span class="drop-icon">
+                                            <i class="fas fa-chevron-down"></i>
+                                        </span>
+                                    </a>
+                                        <div class="sub-menu">
+                                            <!-- items -->
+                                            <ul class="p-0 text-start">
+                                                <li><a href="#">Hunza Valley</a></li>
+                                                <li><a href="#">The Beautiful Valley of Sawat</a></li>
+                                                <li><a href="#">Chitral Valley</a></li>
+                                                <li><a href="#">Deosai Plains</a></li>
+                                                <li><a href="#">Gilgit Valley</a></li>
+                                                <li><a href="#">Skadu Valley</a></li>
+                                            </ul>
+                                            <!-- end of items -->
+
+                                        </div>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#">Contact Us</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Header end -->
+
+        <!-- Main Content Start -->
+        <section class="main-content gallery-section">
+            <!-- Start Hero Section -->
+            <div class="other-hero hero z-index-2">
+                <div class="container">
+                    <div class="row justify-content-center main-heading  space-top-xl-4">
+                        <div class=" text-center">
+                            <h1 class="sub-head">Tourist Guide Registertaion</h1>
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb justify-content-center">
+                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Tourist Guide Registertaion</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- End Hero Section -->
+            <div class="container space-y">
+                <!-- <div class="row row-cols-1 g-4"> -->
+                <div class="row touristGuide-content">
+                    <form action="{% url 'tourOperator-form'%}" method="post">
+                        {% csrf_token %}
+                        <fieldset>
+                            <legend>Tourist Guide Registertaion</legend>
+                            <div class="col-12 my-4">
+                                <label for="" class="form-label">Name Of The Registered Firm</label>
+                                <input type="text" class="form-control" />
+                            </div>
+                            <div class="col-12 my-4">
+                                <label for="" class="form-label">Registered Business Address:</label>
+
+                                <input type="text" class="form-control" />
+
+                                <small>(If the principal place of business is out-side Pakistan or the company incorporated outside Pakistan give name and address of the duly authorized agent, in Pakistan) <b class="text-danger">*</b></small>
+                            </div>
+                            <div class="col-12 my-4">
+                                <label for="" class="form-label">Nature of the Firm:</label>
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>PLease Select</option>
+                                    <option value="1">Proprietary</option>
+                                    <option value="2">Partnership</option>
+                                    <option value="3">Private Company</option>
+                                    <option value="1">Public Company Limited</option>
+                                    <option value="2">Unlimited</option>
+                                  </select>
+                            </div>
+                            <div class="col-12 my-4">
+                                <label for="" class="form-label">Year of Establishment:</label>
+                                <input type="date" class="form-control" />
+                                <small>(Year of registration in case
+                                    of Partnership/company.
+                                    Please attach copy of
+                                    Registration certificate) <b class="text-danger">*</b></small>
+                            </div>
+                            <div class="col-12 my-4">
+                                <label for="" class="form-label"> Contact Number:</label>
+                                <input type="number" class="form-control" />
+                            </div>
+                            <div class="col-12 my-4">
+                                <label for="" class="form-label"> Details of Branch Office:</label>
+                                <input type="text" class="form-control" />
+                                <small>(if any established) <b class="text-danger">*</b></small>
+                            </div>
+                            <div class="col-12 my-4">
+                                <label for="" class="form-label">Capital invested:</label>
+                                <input type="text" class="form-control" />
+
+                                <small>(please indicate
+                                    clearly the paid Up capital and
+                                    enclose certificate of appropriate
+                                    Authority in support of your statement) <b class="text-danger">*</b></small>
+                            </div>
+                            <div class="col-12 my-4">
+                                <label for="" class="form-label">Name and address of the Board of Directors/partners/manager indicating qualifications and experience of each in Travel business:</label>
+                                <input type="text" class="form-control" />
+                                <small>(separately , for those heading each Branch office) <b class="text-danger">*</b></small>
+
+                            </div>
+
+                            <div class="col-12 my-4">
+                                <label for="" class="form-label">Bank account details</label>
+                                <input type="text" class="form-control" />
+
+                                <small>(please attached reference from Bank)<b class="text-danger">*</b></small>
+                            </div>
+
+                            <div class="col-12 my-4">
+                                <label for="" class="form-label">Name and address of the Auditors, if any.</label>
+                                <input type="text" class="form-control" />
+                            </div>
+
+                            <div class="col-12 my-4">
+                                <label for="" class="form-label">No. of Staff Category-Wise
+                                        With Professional Qualifications
+                                        Employed or Proposed to
+                                        be Employed :</label>
+                                <input type="text" class="form-control" />
+                                <small>(separately for each branch office)<b class="text-danger">*</b></small>
+                            </div>
+
+                            <div class="col-12 my-4">
+                                <label for="" class="form-label">Nature of business  </label>
+                                <input type="text" class="form-control" />
+                                <small>  (Please give details indicating clearly the field of operation, proposed to be undertaken)<b class="text-danger">*</b></small>
+                            </div>
+
+                            <div class="col-12 my-4">
+                                <label for="" class="form-label">Bank account details</label>
+                                <input type="text" class="form-control" />
+                                <small> (please attached reference from Bank)<b class="text-danger">*</b></small>
+                            </div>
+
+                            <div class="col-12 my-4">
+                                <label for="" class="form-label">Name and address of the
+                                        Auditors, if any.</label>
+                                <input type="text" class="form-control" />
+                            </div>
+
+                            <div class="col-12 my-4">
+                                <label for="" class="form-label">No. of staff category-wise
+                                        with professional qualifications
+                                        employed or proposed to
+                                        be employed</label>
+                                <input type="text" class="form-control" />
+
+                                <small> (separately for each branch office)<b class="text-danger">*</b></small>
+                            </div>
+                            <div class="col-12 my-4">
+                                <label for="" class="form-label">Nature of business.</label>
+                                <input type="text" class="form-control" />
+                                <small>(Please give details indicating clearly the field of operation, proposed to be undertaken)<b class="text-danger">*</b></small>
+                            </div>
+                            <div class="col-12 my-4">
+                                <label for="" class="form-label">Whether any other activities are
+                                        proposed be undertaken, if so in
+                                        what fields?.</label>
+                                <input type="text" class="form-control" />
+                            </div>
+
+                            <div class="col-12 my-4">
+                                <label for="" class="form-label">Please indicate road transport,
+                                        airline/rail/shipping agencies
+                                        including foreign agencies
+                                        negotiated or proposed
+                                        to be acquired.</label>
+                                <input type="text" class="form-control" />
+                            </div>
+                            <div class="col-12 my-4">
+                                <h6>Please give the following details:</h6>
+                                <label for="" class="form-label">¡) Assets:</label>
+                                <input type="text" class="form-control" />
+
+                                <label for="" class="form-label">¡¡) Liabilities, clearly showing
+                                        investment, Tangible,
+                                        & intangible assets loans and
+                                        other liabilities reserve
+                                        funds, case & bank balance.</label>
+                                <input type="text" class="form-control" />
+                            </div>
+                            <div class="col-12 my-4">
+                                <label for="" class="form-label">Do you hold a license to deal in foreign exchange?</label>
+                                <input type="text" class="form-control" />
+                                <small>( If so. Please give your license number and date (enclose statement of foreign exchange Bank Account))<b class="text-danger">*</b></small>
+                            </div>
+                            <div class="col-12 my-4">
+                                <label for="" class="form-label">Please give details of your connection with foreign travel agents and tour operators </label>
+                                <input type="text" class="form-control" />
+
+                                <small>(enclose copies of agreement, if any, entered into with them)<b class="text-danger">*</b></small>
+                            </div>
+                            <div class="col-12 my-4">
+                                <label for="" class="form-label">Please state if your Manager or a partner or any of the directors of your company have ever been convicted of an offence. If so, please give details.</label>
+                                <input type="text" class="form-control" />
+                            </div>
+                            <div class="col-12 my-4">
+                                <label for="" class="form-label">Please give a detailed plan
+                                        of your office
+                                        </label>
+                                <input type="text" class="form-control" />
+
+                                <small>(including each branch office
+                                    if any, indicating the space, various
+                                    counters, show, windows, etc)<b class="text-danger">*</b></small>
+                            </div>
+
+                            <div class="col-12 my-4">
+                                <label for="" class="form-label">Please make all in one Pdf and Attach: </label>
+                                <div class="drop-zone">
+                                    <span class="drop-zone__prompt">Drop file here or click to upload</span>
+                                    <input type="file" name="myFile" class="drop-zone__input" >
+                                </div>
+                            </div>
+
+                            <div class="col-12 my-4 pt-4 text-end">
+                                <button class="btn btn-success btn-lg" name="submit-button" value="submit-button" id="submit-button">Submit</button>
+                                <button class="btn btn-danger btn-lg" id="reset-form">Reset</button>
+                            </div>
+
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <!-- Main Content End -->
+
+        <!-- Footer  Start -->
+        <footrer class="main-footer d-block footer-bg">
+            <div class="footer-space">
+                <div class="container">
+                    <div class="row text-left">
+                        <div class="col-12 col-md-6 col-lg-4 my-md-0 my-5">
+                            <h4 class="h6 font-weight-bold mb-4">Find Us</h4>
+                            <div id="map-container-google" class="z-depth-1-half map-container">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2770.209674141393!2d66.99299731440739!3d30.20368861798864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb25e51ec26c2d399!2zMzDCsDEyJzEzLjMiTiA2NsKwNTknNDIuNyJF!5e1!3m2!1sen!2s!4v1647866926168!5m2!1sen!2s"
+                                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                            <div class="d-md-flex d-lg-block">
+                                <div class="ml-md-6 text-center">
+                                    <div class="mb-4">
+                                        <address class="adress">
+                                            <span class="text-gray">
+                                                Directorate of Tourism, Noori Naseer Khan Cultural Complex, Spiny Road Quetta.
+                                            </span>
+                                        </address>
+                                    </div>
+                                    <ul class="inline-list footer-social-icons p-0">
+                                        <li class="list-inline-item mx-1">
+                                            <a href="" class="btn btn-social">
+                                                <i class="btn-inner-icon fab fa-facebook-f"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item mx-1">
+                                            <a href="" class=" btn btn-social">
+                                                <i class="btn-inner-icon fab fa-twitter"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item mx-1">
+                                            <a href="" class="btn btn-social">
+                                                <i class=" btn-inner-icon fab fa-instagram"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item mx-1">
+                                            <a href="" class="btn btn-social text-center">
+                                                <i class="btn-inner-icon fab fa-linkedin-in"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-2 my-md-0 my-5">
+                            <h4 class="h6 font-weight-bold mb-4">Quick Links</h4>
+                            <ul class="inline-list list-group list-group-flush list-group-borderless mb-0 p-0">
+                                <li class=" list-group-item footer-bg">
+                                    <a href="">Investor Relation</a>
+                                </li>
+                                <li class="list-group-item footer-bg">
+                                    <a href="">Rewards Program</a>
+                                </li>
+                                <li class=" list-group-item footer-bg">
+                                    <a href="">Point Plus</a>
+                                </li>
+                                <li class=" list-group-item footer-bg">
+                                    <a href="">Partners</a>
+                                </li>
+                                <li class=" list-group-item footer-bg">
+                                    <a href="">List My Hotels</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-2 my-md-0 my-5">
+                            <h4 class="h6 font-weight-bold mb-4 ">Departments</h4>
+                            <ul class="ilist-group list-group-flush list-group-borderless mb-0 p-0">
+                                <li class=" list-group-item footer-bg">
+                                    <a href="">Account</a>
+                                </li>
+                                <li class="list-group-item footer-bg">
+                                    <a href="">Legeal</a>
+                                </li>
+                                <li class=" list-group-item footer-bg">
+                                    <a href="">Contact</a>
+                                </li>
+                                <li class=" list-group-item footer-bg">
+                                    <a href="">Affiliate Program</a>
+                                </li>
+                                <li class=" list-group-item footer-bg">
+                                    <a href="">Privacy Policy</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4 my-md-0 my-5">
+                            <div class="d-md-flex d-lg-block">
+                                <div class="mb-5 mr-md-7 mr-lg-0">
+                                    <h4 class="mb-4 h6 font-weight-bold">
+                                        Get In Touch
+                                    </h4>
+                                </div>
+                                <div class="ml-md-6">
+                                    <ul class="inline-list footer-social-icons p-0">
+                                        <li class="list-inline-item w-100 my-4">
+                                            <label for="" class="form-label">Name</label>
+                                            <input type="text" class="form-control" />
+                                        </li>
+                                        <li class="list-inline-item w-100 my-4">
+                                            <label for="" class="form-label">Email Adress</label>
+                                            <input type="email" class="form-control" />
+                                        </li>
+                                        <li class="list-inline-item w-100 my-4">
+                                            <label for="" class="form-label">Message</label>
+                                            <textarea class="form-control" id="" cols="30" rows="5"></textarea>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-nav">
+                <div class="container d-lg-flex d-md-block justify-content-between align-items-center">
+                    <p>
+                        © 2022 Balochistan Tourism. All rights reserved
+                    </p>
+
+                    <ul class="list-inline text-md-right text-center bottom-navigation">
+                        <li class="list-inline-item  pb-3 pb-md-0">
+                            <a class="list-group-item-action" href="">Home</a>
+                        </li>
+                        <li class="list-inline-item  pb-3 pb-md-0">
+                            <a class="list-group-item-action" href="">About Us</a>
+                        </li>
+                        <li class="list-inline-item  pb-3 pb-md-0">
+                            <a class="list-group-item-action" href="">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footrer>
+        <!-- Footer End -->
+
+        <!-- Main Wrapper End -->
+    </div>
+
+
+    <script src="{% static 'bootstrap-5.1.3-dist/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'script/script.js' %}"></script>
+    <script>
+        document.querySelectorAll(".drop-zone__input").forEach((inputElement) => {
+            const dropZoneElement = inputElement.closest(".drop-zone");
+
+            dropZoneElement.addEventListener("click", (e) => {
+                inputElement.click();
+            });
+
+            inputElement.addEventListener("change", (e) => {
+                if (inputElement.files.length) {
+                    updateThumbnail(dropZoneElement, inputElement.files[0]);
+                }
+            });
+
+            dropZoneElement.addEventListener("dragover", (e) => {
+                e.preventDefault();
+                dropZoneElement.classList.add("drop-zone--over");
+            });
+
+            ["dragleave", "dragend"].forEach((type) => {
+                dropZoneElement.addEventListener(type, (e) => {
+                    dropZoneElement.classList.remove("drop-zone--over");
+                });
+            });
+
+            dropZoneElement.addEventListener("drop", (e) => {
+                e.preventDefault();
+
+                if (e.dataTransfer.files.length) {
+                    inputElement.files = e.dataTransfer.files;
+                    updateThumbnail(dropZoneElement, e.dataTransfer.files[0]);
+                }
+
+                dropZoneElement.classList.remove("drop-zone--over");
+            });
+        });
+
+        /**
+         * Attachment file
+         *
+         * @param {HTMLElement} dropZoneElement
+         * @param {File} file
+         */
+        function updateThumbnail(dropZoneElement, file) {
+            let thumbnailElement = dropZoneElement.querySelector(".drop-zone__thumb");
+
+            // First time - remove the prompt
+            if (dropZoneElement.querySelector(".drop-zone__prompt")) {
+                dropZoneElement.querySelector(".drop-zone__prompt").remove();
+            }
+
+            // First time - there is no thumbnail element, so lets create it
+            if (!thumbnailElement) {
+                thumbnailElement = document.createElement("div");
+                thumbnailElement.classList.add("drop-zone__thumb");
+                dropZoneElement.appendChild(thumbnailElement);
+            }
+
+            thumbnailElement.dataset.label = file.name;
+
+            // Show thumbnail for image files
+            if (file.type.startsWith("image/")) {
+                const reader = new FileReader();
+
+                reader.readAsDataURL(file);
+                reader.onload = () => {
+                    thumbnailElement.style.backgroundImage = `url('${reader.result}')`;
+                };
+            } else {
+                thumbnailElement.style.backgroundImage = null;
+            }
+        }
+    </script>
+</body>
+
+</html>

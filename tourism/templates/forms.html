@@ -1,0 +1,761 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'style/style.css' %}">
+    <link rel="icon" type="" sizes="32x32" href="{% static 'images/favicon.png'%}" />
+    <link rel="icon" type="" sizes="16x16" href="{% static 'images/favicon.png'%}" />
+
+    <title>Hello, world!</title>
+</head>
+
+<body>
+    <h1>Travel Agency </h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        <h4>Business Details</h4>
+        <div class="form-row">
+
+            <div class="col-md-4 mb-3">
+                <label for="validationServer01">Name of Business</label>
+                <input type="text" class="form-control is-valid" id="validationServer01" value="" name="business-name" placeholder="Name"required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="col-md-8 mb-3">
+                <label for="validationServer01">Business Address</label>
+                <input type="text" class="form-control is-valid" id="validationServer01" value="" name="business-address" placeholder="address" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <br>
+
+
+            <div class="col-md-6 mb-3">
+                <label for="validationServer01">Does your Business reside in pakistan or outside of pakistan</label>
+
+                <!-- Button trigger modal -->
+                <button type="button" class="btn " data-toggle="modal" data-target="#exampleModalLong">
+                    Yes
+                </button>
+                <button type="button" class="btn " data-target="#exampleModalLong">
+                    No
+                </button>
+
+                <!-- Modal -->
+                <div class="modal" id="exampleModalLong" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Foreign Business Details</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="col-md-12 mb-3">
+                                    <label for="validationServer01">Name of Foreign Business</label>
+                                    <input type="text" class="form-control is-valid" id="validationServer01"
+                                        value="" name="foreign-bussiness-name" placeholder="Name" required>
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                </div>
+                                <div class="col-md-12 mb-3">
+                                    <label for="validationServer01">Foreign Business Address</label>
+                                    <input type="text" class="form-control is-valid" id="validationServer01"
+                                        value="" name="foreign-business-address" placeholder="Address" required>
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+
+                <label for="validationServer01">What is the nature of your business</label>
+                <div class="dropdown">
+                    <button class="btn  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Nature of Business
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Hotel</a>
+                        <a class="dropdown-item" href="#">plane</a>
+                        <a class="dropdown-item" href="#">bus</a>
+                        <a class="dropdown-item" href="#">car</a>
+                        <a class="dropdown-item" href="#">bike</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <h4>History of Business Details</h4>
+
+        <div class="form-row">
+            <div class="col-md-3 mb-3">
+                <label for="validationServer03">Year of establisment</label>
+                <input type="text" class="form-control is-valid" id="validationServer03" name="establish-year" placeholder="Year" required>
+                <div class="invalid-feedback">
+                    Year
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="formFileMultiple" class="form-label">Attached the Atested copy of registeration</label>
+                <input class="form-control" type="file" id="formFileMultiple" name="attested-files" multiple />
+            </div>
+            <br>
+            <br>
+            <br>
+            <div class="col-md-4 mb-3">
+                <label for="validationServer04">Contact Number</label>
+                <input type="text" class="form-control is-valid" id="validationServer04" name="contact-no" placeholder="Number" required>
+                <div class="invalid-feedback">
+                    Number
+                </div>
+            </div>
+            <div class="col-md-8 mb-3">
+                <label for="validationServer04">Telegraphic Cable Address</label>
+                <input type="text" class="form-control is-valid" id="validationServer04" name="telegraphic-address" placeholder="Address" required>
+                <div class="invalid-feedback">
+                    Number
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label for="validationServer01">Does Your Business Any Other Branch</label>
+
+                <!-- Button trigger modal -->
+                <button type="button" class="btn " data-toggle="modal" data-target="#model2">
+                    Yes
+                </button>
+                <button type="button" class="btn " data-target="#model2">
+                    No
+                </button>
+
+                <!-- Modal -->
+                <div class="modal" id="model2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+                    aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Branch Details</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="col-md-12 mb-3">
+                                    <label for="validationServer01">Branch Code</label>
+                                    <input type="text" class="form-control is-valid" id="validationServer01" name="branch-code" placeholder="Code"
+                                        value="" required>
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                </div>
+                                <div class="col-md-12 mb-3">
+                                    <label for="validationServer01">Branch Address</label>
+                                    <input type="text" class="form-control is-valid" id="validationServer01" name="branch-address" placeholder="Address"
+                                        value="" required>
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <h4>Business Capital Details</h4>
+
+        <div class="form-row">
+            <div class="col-md-3 mb-3">
+                <label for="validationServer03">How Much Capital invested</label>
+                <input type="text" class="form-control is-valid" id="validationServer03" name="capital-invest" placeholder="Capital" required>
+                <div class="invalid-feedback">
+                    Capital
+                </div>
+            </div>
+            <div class="col-md-9 mb-3">
+                <label for="formFileMultiple" class="form-label">Attached the copy of Capital Investment</label>
+                <input class="form-control" type="file" id="formFileMultiple" name="capital-attach-file" multiple />
+            </div>
+        </div>
+
+
+        <h4>Number Of Directors</h4>
+
+        <div class="form-row">
+            <div class="col-md-12 mb-3">
+                    <label for="validationServer01">Fill the information of Number of Directors you have</label>
+        
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn " data-toggle="modal" data-target="#model4">
+                       1
+                    </button>
+                    <button type="button" class="btn " data-toggle="modal" data-target="#model4">
+                       2
+                    </button>
+                    <button type="button" class="btn " data-toggle="modal" data-target="#model4">
+                        3
+                     </button>
+                     <button type="button" class="btn " data-toggle="modal" data-target="#model4">
+                        4
+                     </button>
+                     <button type="button" class="btn " data-toggle="modal" data-target="#model4">
+                        5
+                     </button>
+        
+                    <!-- Modal -->
+                    <div class="modal" id="model4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+                        aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLongTitle">Number of Directors</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="col-md-12 mb-3">
+                                        <label for="validationServer01">Name of Directors</label>
+                                        <input type="text" class="form-control is-valid" id="validationServer01"
+                                            value="" name="directors-name" placeholder="Code" required>
+                                    </div>
+                                    <div class="col-md-12 mb-3">
+                                        <label for="validationServer01">Address</label>
+                                        <input type="text" class="form-control is-valid" id="validationServer01"
+                                            value="" name="director-address" required>
+                                    </div>
+                                    <div class="col-md-12 mb-3">
+                                        <label for="validationServer01">Years of Experiance</label>
+                                        <input type="text" class="form-control is-valid" id="validationServer01"
+                                            value="" name="experience-year" required>
+                                    </div>
+                                    <div class="col-md-12 mb-3">
+                                        <label for="validationServer01">Qualification</label>
+                                        <input type="text" class="form-control is-valid" id="validationServer01"
+                                            value="Address" required>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                        </div>
+                    </div>
+             </div>
+        </div>
+</div>
+
+          
+<h4>Number Of Managers</h4>
+
+<div class="form-row">
+    <div class="col-md-12 mb-3">
+            <label for="validationServer01">Fill the information of Number of Managers you have</label>
+
+            <!-- Button trigger modal -->
+            <button type="button" class="btn " data-toggle="modal" data-target="#model4">
+               1
+            </button>
+            <button type="button" class="btn " data-toggle="modal" data-target="#model4">
+               2
+            </button>
+            <button type="button" class="btn " data-toggle="modal" data-target="#model4">
+                3
+             </button>
+             <button type="button" class="btn " data-toggle="modal" data-target="#model4">
+                4
+             </button>
+             <button type="button" class="btn " data-toggle="modal" data-target="#model4">
+                5
+             </button>
+
+            <!-- Modal -->
+            <div class="modal" id="model4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Number of Manager</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="col-md-12 mb-3">
+                                <label for="validationServer01">Name of Manager</label>
+                                <input type="text" class="form-control is-valid" id="validationServer01"
+                                    value="Code" required>
+                            </div>
+                            <div class="col-md-12 mb-3">
+                                <label for="validationServer01">Address</label>
+                                <input type="text" class="form-control is-valid" id="validationServer01"
+                                    value="Address" required>
+                            </div>
+                            <div class="col-md-12 mb-3">
+                                <label for="validationServer01">Years of Experiance</label>
+                                <input type="text" class="form-control is-valid" id="validationServer01"
+                                    value="Address" required>
+                            </div>
+                            <div class="col-md-12 mb-3">
+                                <label for="validationServer01">Qualification</label>
+                                <input type="text" class="form-control is-valid" id="validationServer01"
+                                    value="Address" required>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                </div>
+            </div>
+     </div>
+</div>
+</div>
+
+
+      
+   
+<h4>Number Of Partners</h4>
+
+<div class="form-row">
+    <div class="col-md-12 mb-3">
+            <label for="validationServer01">Fill the information of Number of Partners you have</label>
+
+            <!-- Button trigger modal -->
+            <button type="button" class="btn " data-toggle="modal" data-target="#model4">
+               1
+            </button>
+            <button type="button" class="btn " data-toggle="modal" data-target="#model4">
+               2
+            </button>
+            <button type="button" class="btn " data-toggle="modal" data-target="#model4">
+                3
+             </button>
+             <button type="button" class="btn " data-toggle="modal" data-target="#model4">
+                4
+             </button>
+             <button type="button" class="btn " data-toggle="modal" data-target="#model4">
+                5
+             </button>
+
+            <!-- Modal -->
+            <div class="modal" id="model4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Number of Partner</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="col-md-12 mb-3">
+                                <label for="validationServer01">Name of Partner</label>
+                                <input type="text" class="form-control is-valid" id="validationServer01"
+                                    value="Code" required>
+                            </div>
+                            <div class="col-md-12 mb-3">
+                                <label for="validationServer01">Address</label>
+                                <input type="text" class="form-control is-valid" id="validationServer01"
+                                    value="Address" required>
+                            </div>
+                            <div class="col-md-12 mb-3">
+                                <label for="validationServer01">Years of Experiance</label>
+                                <input type="text" class="form-control is-valid" id="validationServer01"
+                                    value="Address" required>
+                            </div>
+                            <div class="col-md-12 mb-3">
+                                <label for="validationServer01">Qualification</label>
+                                <input type="text" class="form-control is-valid" id="validationServer01"
+                                    value="Address" required>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                </div>
+            </div>
+     </div>
+</div>
+</div>
+
+
+  
+
+
+
+
+
+        <h4>Banker Details</h4>
+        
+        <div class="form-row">
+            <div class="col-md-6 mb-3">
+                <label for="formFileMultiple" class="form-label">Name of The Banker</label>
+                <input type="text" class="form-control is-valid" id="validationServer01"
+                    value="" required>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="formFileMultiple" class="form-label">Attach reference letter from the bank</label>
+                <input class="form-control" type="file" id="formFileMultiple" multiple />
+            </div>
+
+        </div>    
+
+
+
+
+
+        <h4>Auditors</h4>
+        
+        <div class="form-row">
+            <div class="col-md-4 mb-3">
+                <label for="validationServer01">Number of Auditors</label>
+                <input type="text" class="form-control is-valid" id="validationServer01"
+                    value="" required>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="validationServer01">Name of Auditors</label>
+                <input type="text" class="form-control is-valid" id="validationServer01"
+                    value="" required>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="validationServer01">Address of Auditors</label>
+                <input type="text" class="form-control is-valid" id="validationServer01"
+                    value="" required>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="validationServer01">Number of Auditors</label>
+                <input type="text" class="form-control is-valid" id="validationServer01"
+                    value="" required>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="validationServer01">Name of Auditors</label>
+                <input type="text" class="form-control is-valid" id="validationServer01"
+                    value="" required>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="validationServer01">Address of Auditors</label>
+                <input type="text" class="form-control is-valid" id="validationServer01"
+                    value="" required>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="validationServer01">Number of Auditors</label>
+                <input type="text" class="form-control is-valid" id="validationServer01"
+                    value="" required>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="validationServer01">Name of Auditors</label>
+                <input type="text" class="form-control is-valid" id="validationServer01"
+                    value="" required>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="validationServer01">Address of Auditors</label>
+                <input type="text" class="form-control is-valid" id="validationServer01"
+                    value="" required>
+            </div>
+            
+        </div>
+
+
+
+
+
+
+
+
+        <h4>Staff</h4>
+        
+        <div class="form-row">
+            <div class="col-md-12 mb-3">
+                <h5>List The Number  of Staff</h5>
+            </div>
+            <div class="col-md-2 mb-3">
+                <label for="validationServer01">Directors</label>
+                <input type="text" class="form-control is-valid" id="validationServer01"
+                    value="" required>
+            </div>
+            <div class="col-md-2 mb-3">
+                <label for="validationServer01">Managers</label>
+                <input type="text" class="form-control is-valid" id="validationServer01"
+                    value="" required>
+            </div>
+            <div class="col-md-2 mb-3">
+                <label for="validationServer01">Operators</label>
+                <input type="text" class="form-control is-valid" id="validationServer01"
+                    value="" required>
+            </div>
+            <div class="col-md-2 mb-3">
+                <label for="validationServer01">Genral Staff</label>
+                <input type="text" class="form-control is-valid" id="validationServer01"
+                    value="" required>
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <h4>Supported Business </h4>
+        
+        <div class="form-row">
+            <div class="col-md-12 mb-3">
+                <h5>Supported Business Required to Run your own Business List 5</h5>
+            </div>
+            <div class="col-md-3 mb-3">
+                <label for="validationServer01">Business 1</label>
+                <input type="text" class="form-control is-valid" id="validationServer01"
+                    value="" required>
+            </div>
+            <div class="col-md-3 mb-3">
+                <label for="validationServer01">Business 2</label>
+                <input type="text" class="form-control is-valid" id="validationServer01"
+                    value="" required>
+            </div>
+            <div class="col-md-3 mb-3">
+                <label for="validationServer01">Business 3</label>
+                <input type="text" class="form-control is-valid" id="validationServer01"
+                    value="" required>
+            </div>
+            <div class="col-md-3 mb-3">
+                <label for="validationServer01">Business 4</label>
+                <input type="text" class="form-control is-valid" id="validationServer01"
+                    value="" required>
+            </div>
+            <div class="col-md-3 mb-3">
+                <label for="validationServer01">Business 5</label>
+                <input type="text" class="form-control is-valid" id="validationServer01"
+                    value="" required>
+            </div>
+        </div>
+
+
+
+
+        <h4>Assest</h4>
+        
+        <div class="form-row">
+            <div class="col-md-12 mb-3">
+                <h5>List 8 Assests of Your Business</h5>
+            </div>
+            <div class="col-md-2 mb-3">
+                <label for="validationServer01">Assest 1</label>
+                <input type="text" class="form-control is-valid" id="validationServer01"
+                    value="" required>
+            </div>
+            <div class="col-md-2 mb-3">
+                <label for="validationServer01">Assest 2</label>
+                <input type="text" class="form-control is-valid" id="validationServer01"
+                    value="" required>
+            </div>
+            <div class="col-md-2 mb-3">
+                <label for="validationServer01">Assest 3</label>
+                <input type="text" class="form-control is-valid" id="validationServer01"
+                    value="" required>
+            </div>
+            <div class="col-md-2 mb-3">
+                <label for="validationServer01">Assest 4</label>
+                <input type="text" class="form-control is-valid" id="validationServer01"
+                    value="" required>
+            </div>
+            <div class="col-md-2 mb-3">
+                <label for="validationServer01">Assest 5</label>
+                <input type="text" class="form-control is-valid" id="validationServer01"
+                    value="" required>
+            </div>
+            <div class="col-md-2 mb-3">
+                <label for="validationServer01">Assest 6</label>
+                <input type="text" class="form-control is-valid" id="validationServer01"
+                    value="" required>
+            </div>
+            <div class="col-md-2 mb-3">
+                <label for="validationServer01">Assest 7</label>
+                <input type="text" class="form-control is-valid" id="validationServer01"
+                    value="" required>
+            </div>
+            <div class="col-md-2 mb-3">
+                <label for="validationServer01">Assest 8</label>
+                <input type="text" class="form-control is-valid" id="validationServer01"
+                    value="" required>
+            </div>
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <h4>Foreign Travellers </h4>
+
+        <div class="form-row">
+            <div class="col-md-6 mb-3">
+                <label for="validationServer03">Number of  Partnership with Foreign Travellers </label>
+                <input type="text" class="form-control is-valid" id="validationServer03" placeholder="Capital" required>
+               
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="formFileMultiple" class="form-label">Attached The Copy Agreement with Them</label>
+                <input class="form-control" type="file" id="formFileMultiple" multiple />
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="validationServer01">Any Dealing in Foreign Exchange</label>
+    
+                <!-- Button trigger modal -->
+                <button type="button" class="btn " data-toggle="modal" data-target="#model3">
+                    Yes
+                </button>
+                <button type="button" class="btn " data-target="#model3">
+                    No
+                </button>
+    
+                <!-- Modal -->
+                <div class="modal" id="model3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+                    aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Foreign Exchange Details</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="col-md-12 mb-3">
+                                    <label for="validationServer01">Licence Number</label>
+                                    <input type="text" class="form-control is-valid" id="validationServer01"
+                                        value="Code" required>
+                                </div>
+                                <div class="col-md-12 mb-3">
+                                    <label for="validationServer01">Issue Date</label>
+                                    <input type="text" class="form-control is-valid" id="validationServer01"
+                                        value="Address" required>
+                                </div>
+                                <div class="col-md-12 mb-3">
+                                    <label for="formFileMultiple" class="form-label">Attached The Copy Of Licence</label>
+                                    <input class="form-control" type="file" id="formFileMultiple" multiple />
+                                </div>
+                                <div class="col-md-12 mb-3">
+                                    <label for="formFileMultiple" class="form-label">Attached The Copy Foreign Exchange Statement</label>
+                                    <input class="form-control" type="file" id="formFileMultiple" multiple />
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <h4>Conviction Offence Details</h4>
+        <br>
+        <div class="form-row">
+            <div class="col-md-12 mb-3">
+                <label for="validationServer01">Does Any of Your Partners in your Business Ever Convicted Give Details
+                </label>
+                <input type="text" class="form-control is-valid" id="validationServer04" placeholder="Conviction"
+                    required>
+            </div>
+        </div>
+        <br>
+        <br>
+
+        <h4>Business Plan Details</h4>
+
+        <div class="form-row">
+            <div class="col-md-6 mb-3">
+                <label for="formFileMultiple" class="form-label">Attached The Copy Detail Plan of Your Office</label>
+                <input class="form-control" type="file" id="formFileMultiple" multiple />
+            </div>
+        </div>
+
+
+
+
+        <div class="form-group">
+            <div class="form-check">
+                <input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3" required>
+                <label class="form-check-label " for="invalidCheck3" style="color: aliceblue;">
+                    Agree to terms and conditions
+                </label>
+                <div class="invalid-feedback">
+                    You must agree before submitting.
+                </div>
+                <div class="invalid-feedback ">
+                    <a href="down.jpeg" download rel="noopener noreferrer" target="_blank">
+                        Download File
+                    </a>
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-danger" type="submit">Submit form</button>
+    </form>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

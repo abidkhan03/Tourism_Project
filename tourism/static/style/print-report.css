@@ -1,0 +1,489 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+    box-sizing: border-box;
+}
+
+
+/* label {
+    font-size: 18px;
+    font-weight: 500;
+} */
+
+legend {
+    font-weight: 500;
+    margin-top: 15px;
+}
+
+.report-row {
+    line-height: 50px;
+}
+
+input {
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+    margin: 0px 15px 0px 10px;
+}
+
+.ref-no input {
+    width: 130px !important;
+}
+
+.referred-by input {
+    min-width: 988px !important;
+}
+
+.necropsy-openion input {
+    min-width: 955px;
+}
+
+.custom-span {
+    border: none !important;
+    border-bottom: 1px dashed black !important;
+    outline: none !important;
+    margin: 0px 15px 0px 10px !important;
+    writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: -internal-light-dark(black, white);
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    appearance: auto;
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
+    margin: 0em;
+    padding: 1px 2px;
+    border-width: 2px;
+    border-style: inset;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-image: initial;
+}
+
+.ref-no .custom-span {
+    width: 130px !important;
+}
+
+.referred-by .custom-span {
+    min-width: 988px !important;
+}
+
+.necropsy-openion .custom-span {
+    min-width: 955px;
+}
+
+
+/* 
+p{
+    line-height: 50px;
+} */
+
+
+/* span{
+    min-width: 200px;
+
+    border-bottom: 2px solid #000;
+} */
+
+
+/* span::before{
+    margin:0px 15px 0px 10px;
+}
+
+p span:nth-child(1):before{
+    content: "";
+    width: 100px;
+    height: 1px;
+    background: black;
+    display: inline-block;
+} */
+
+
+/* p span:nth-child(2):before{
+    width: 190px;
+    content: "";
+    height: 1px;
+    background: black;
+    display: inline-block;
+}
+
+p span:nth-child(3):before{
+    width: 185px;
+    content: "";
+    height: 1px;
+    background: black;
+    display: inline-block;
+}
+
+p span:nth-child(4):before{
+    width: 190px;
+    content: "";
+    height: 1px;
+    background: black;
+    display: inline-block;
+}
+
+p span:nth-child(5):before{
+    width: 930px;
+    content: "";
+    height: 1px;
+    background: black;
+    display: inline-block;
+
+}
+
+p span:nth-child(6):before{
+    width: 190px;
+    content: "";
+    height: 1px;
+    background: black;
+    display: inline-block;
+}
+
+p span:nth-child(7):before{
+    width: 190px;
+    content: "";
+    height: 1px;
+    background: black;
+    display: inline-block;
+}
+p span:nth-child(8):before{
+    width: 190px;
+    content: "";
+    height: 1px;
+    background: black;
+    display: inline-block;
+}
+p span:nth-child(9):before{
+    width: 190px;
+    content: "";
+    height: 1px;
+    background: black;
+    display: inline-block;
+}
+
+p span:nth-child(10):before{
+    width: 190px;
+    content: "";
+    height: 1px;
+    background: black;
+    display: inline-block;
+}
+
+p span:nth-child(11):before{
+    width: 190px;
+    content: "";
+    height: 1px;
+    background: black;
+    display: inline-block;
+}
+
+p span:nth-child(12):before{
+    width: 280px;
+    content: "";
+    height: 1px;
+    background: black;
+    display: inline-block;
+}
+
+p span:nth-child(13):before{
+    width: 500px;
+    content: "";
+    height: 1px;
+    background: black;
+    display: inline-block;
+} */
+
+
+/* p span:nth-child(14):before{
+    width: 190px;
+    content: "";
+    height: 1px;
+    background: black;
+    display: inline-block;
+}
+p span:nth-child(15):before{
+    width: 190px;
+    content: "";
+    height: 1px;
+    background: black;
+    display: inline-block;
+}
+p span:nth-child(16):before{
+    width: 190px;
+    content: "";
+    height: 1px;
+    background: black;
+    display: inline-block;
+} */
+
+
+/* p span:nth-child(17):before{
+    width: 200px;
+    content: "";
+    height: 1px;
+    background: black;
+    display: inline-block;
+}
+p span:nth-child(18):before{
+    width: 220px;
+    content: "";
+    height: 1px;
+    background: black;
+    display: inline-block;
+}
+p span:nth-child(19):before{
+    width: 220px;
+    content: "";
+    height: 1px;
+    background: black;
+    display: inline-block;
+}
+p span:nth-child(20):before{
+    width: 200px;
+    content: "";
+    height: 1px;
+    background: black;
+    display: inline-block;
+}
+p span:nth-child(21):before{
+    width: 200px;
+    content: "";
+    height: 1px;
+    background: black;
+    display: inline-block;
+} */
+
+
+/* p span:nth-child(22):before{
+    width: 500px;
+    content: "";
+    height: 1px;
+    background: black;
+    display: inline-block;
+}
+p span:nth-child(23):before{
+    width: 500px;
+    content: "";
+    height: 1px;
+    background: black;
+    display: inline-block;
+}
+p span:nth-child(24):before{
+    width: 500px;
+    content: "";
+    height: 1px;
+    background: black;
+    display: inline-block;
+} */
+
+
+/* p span:nth-child(25):before{
+    width: 350px;
+    content: "";
+    height: 1px;
+    background: black;
+    display: inline-block;
+}
+
+
+p span:nth-child(26):before{
+    width: 350px;
+    content: "";
+    height: 1px;
+    background: black;
+    display: inline-block;
+}
+
+p span:nth-child(25):before{
+    width: 350px;
+    content: "";
+    height: 1px;
+    background: black;
+    display: inline-block;
+}
+
+p span:nth-child(26):before{
+    width: 350px;
+    content: "";
+    height: 1px;
+    background: black;
+    display: inline-block;
+} */
+
+
+/* p span:nth-child(27):before{
+    width: 350px;
+    content: "";
+    height: 1px;
+    background: black;
+    display: inline-block;
+}
+p span:nth-child(28):before{
+    width: 350px;
+    content: "";
+    height: 1px;
+    background: black;
+    display: inline-block;
+}
+
+
+p span:nth-child(29):before{
+    width: 350px;
+    content: "";
+    height: 1px;
+    background: black;
+    display: inline-block;
+} */
+
+
+/* p span:nth-child(30):before{
+    width: 230px;
+    content: "";
+    height: 1px;
+    background: black;
+    display: inline-block;
+}
+
+
+p span:nth-child(31):before{
+    width: 230px;
+    content: "";
+    height: 1px;
+    background: black;
+    display: inline-block;
+}
+
+p span:nth-child(32):before{
+    width: 230px;
+    content: "";
+    height: 1px;
+    background: black;
+    display: inline-block;
+}
+
+p span:nth-child(33):before{
+    width: 230px;
+    content: "";
+    height: 1px;
+    background: black;
+    display: inline-block;
+} */
+
+
+/* p span:nth-child(34):before{
+    width: 230px;
+    content: "";
+    height: 1px;
+    background: black;
+    display: inline-block;
+}
+
+p span:nth-child(35):before{
+    width: 230px;
+    content: "";
+    height: 1px;
+    background: black;
+    display: inline-block;
+}
+
+p span:nth-child(36):before{
+    width: 230px;
+    content: "";
+    height: 1px;
+    background: black;
+    display: inline-block;
+} */
+
+
+/* p span:nth-child(37):before{
+    width: 350px;
+    content: "";
+    height: 1px;
+    background: black;
+    display: inline-block;
+}
+
+p span:nth-child(38):before{
+    width: 350px;
+    content: "";
+    height: 1px;
+    background: black;
+    display: inline-block;
+} */
+
+
+/* p span:nth-child(39):before{
+    width: 230px;
+    content: "";
+    height: 1px;
+    background: black;
+    display: inline-block;
+}
+
+p span:nth-child(40):before{
+    width: 230px;
+    content: "";
+    height: 1px;
+    background: black;
+    display: inline-block;
+}
+
+p span:nth-child(41):before{
+    width: 230px;
+    content: "";
+    height: 1px;
+    background: black;
+    display: inline-block;
+} */
+
+
+/* p span:nth-child(42):before{
+    width: 250px;
+    content: "";
+    height: 1px;
+    background: black;
+    display: inline-block;
+}
+
+p span:nth-child(43):before{
+    width: 250px;
+    content: "";
+    height: 1px;
+    background: black;
+    display: inline-block;
+}
+
+p span:nth-child(44):before{
+    width: 250px;
+    content: "";
+    height: 1px;
+    background: black;
+    display: inline-block;
+}
+
+p span:nth-child(45):before{
+    width: 250px;
+    content: "";
+    height: 1px;
+    background: black;
+    display: inline-block;
+}
+
+p span:nth-child(46):before{
+    width: 930px;
+    content: "";
+    height: 1px;
+    background: black;
+    display: inline-block;
+} */
