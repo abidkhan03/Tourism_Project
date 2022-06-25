@@ -14,10 +14,22 @@
     <link rel="icon" type="" sizes="32x32" href="{% static 'images/favicon.png'%}" />
     <link rel="icon" type="" sizes="16x16" href="{% static 'images/favicon.png'%}" />
 
-    <link rel="stylesheet" href="{% static 'select2-4.1.0-rc.0/dist/css/select2.min.css'%}">
+    <!-- <link rel="stylesheet" href="{% static 'select2-4.1.0-rc.0/dist/css/select2.min.css'%}"> -->
     <!-- Font Awesome icons -->
-    <script src="https://kit.fontawesome.com/f14330b5d4.js" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://kit.fontawesome.com/f14330b5d4.js"></script>
+    <script src="{% static 'select2-4.1.0-rc.0/src/js/select2.full.min.js' %}"></script>
+    <script>
+        window.state = {
+            'token': '{{ csrf_token }}',
+            'hotel_form_url': "{% url 'hotel-form' %}"
+        };
+    </script>
+
+    <script src="{% static 'script/addFile.js' %}" defer></script>
+    <script src="{% static 'script/script.js' %}" defer></script>
+
 </head>
 
 <body>
@@ -316,7 +328,8 @@
             <div class="container space-y">
                 <!-- <div class="row row-cols-1 g-4"> -->
                 <div class="row touristGuide-content">
-                    <form action="">
+                    <form id="test_form" action="/hotel-form/" method="post">
+                        <!-- {% csrf_token %} -->
                         <fieldset>
                             <legend>Hotel Registration</legend>
                             <div class="row">
@@ -331,7 +344,6 @@
                                 </div>
                                 <div class="col-lg-3 col-md-6 my-2">
                                     <label for="" class="form-label">Date of Commission:</label>
-
                                     <input type="date" class="form-control" name="commission-date" />
                                 </div>
                                 <div class="col-lg-3 col-md-6 my-2">
@@ -341,7 +353,6 @@
                                 </div>
                                 <div class="col-lg-3 col-md-6 my-2">
                                     <label for="" class="form-label">Telephone Number:</label>
-
                                     <input type="text" class="form-control" name="telephone-no" />
                                 </div>
                                 <div class="col-lg-6 col-md-12 my-2">
@@ -413,45 +424,12 @@
                                         </u>
                                     </h5>
                                 </div>
-                                <div class="col-5 text-end">
-                                    <button class="add-owner-field btn btn-sm text-nowrap btn-success mt-4">Add Owners</button>
-                                </div>
-                                <div class="col-md-12 my-2">
-                                    <div class="owner-input-field">
-                                        <label for="" class="form-label">Fill the Information of Number of Owners you have</label>
-                                        <div class="row">
-                                            <div class="col-lg-4 col-md-6 my-2">
-                                                <label for="" class="form-label">Name of Owner:</label>
-
-                                                <input type="text" class="form-control" name="owner-name" />
-                                            </div>
-
-                                            <div class="col-lg-2 col-md-6 my-2">
-                                                <label for="" class="form-label">Owner % :</label>
-
-                                                <input type="text" class="form-control" name="owner-percentage" />
-                                            </div>
-
-                                            <div class="col-lg-6 col-md-12 my-2">
-                                                <label for="" class="form-label">Full Address of Owner:</label>
-
-                                                <input type="text" class="form-control" name="owner-address" />
-                                            </div>
-
-                                            <div class="col-lg-6 col-md-12 my-2">
-                                                <label for="" class="form-label">Telegraphic Address of Owner:</label>
-
-                                                <input type="text" class="form-control" name="owner-telegraph-address" />
-                                            </div>
-
-                                            <div class="col-lg-3 col-md-6 my-2">
-                                                <label for="" class="form-label">Owner Telephone Number:</label>
-
-                                                <input type="text" class="form-control" name="owner-telephone-no" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                
+                            </div>
+                            <div class="col-5 text-end">
+                                <div id="input_owner"></div>
+                                <!-- <button id="save_btn" class="btn btn-success">Save</button> -->
+                                <button id="add_owner" class="btn btn-sm text-nowrap btn-success mt-4">Add Owners</button>
                             </div>
 
                             <div class="row">
@@ -462,7 +440,7 @@
                                         </u>
                                     </h5>
                                 </div>
-                                <div class="col-5 text-end">
+                                <!-- <div class="col-5 text-end">
                                     <button class="add-hotelManager-field btn btn-sm text-nowrap btn-success mt-4">Add Manager</button>
                                 </div>
                                 <div class="col-md-12 my-2">
@@ -494,7 +472,12 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
+                            </div> 
+                            <div class="col-5 text-end">
+                                <div id="input_manager"></div>
+                                <!-- <button id="save_btn" class="btn btn-success">Save</button> -->
+                                <button id="add_manager" class="btn btn-sm text-nowrap btn-success mt-4">Add Managers</button>
                             </div>
                             <div class="row">
                                 <h5 class="mt-4 mb-2">
@@ -841,31 +824,37 @@
                                         <div class="col-7">
                                             <h5 class="mt-4 mb-2 form-Subhead">
                                                 <u>
-                                                     Common Bathroom No.
+                                                    Common Bathroom No.
                                                 </u>
                                             </h5>
                                         </div>
-                                        <div class="col-5 text-end">
-                                            <button class="add-bathroomNo-field btn btn-sm text-nowrap btn-success mt-4">Add </button>
-                                        </div>
-                                        <div class="col-md-12 my-2">
-                                            <div class="bathroomNo-input-field">
-                                                <label for="" class="form-label">Give the Number of Common Bathroom with Floor Numbers</label>
-                                                <div class="row">
-                                                    <div class="col-md-6 my-2">
-                                                        <label for="" class="form-label">Common Bathroom No.:</label>
-                                                        <input type="text" class="form-control" name="common-bathroom-no" />
-                                                    </div>
-                                                    <div class="col-md-6 my-2">
-                                                        <label for="" class="form-label">Floor No.:</label>
-                                                        <input type="text" class="form-control" name="bathroom-floor-no" />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        
+                                    </div>
+                                    <div class="col-5 text-end">
+                                        <div id="input_bathroom"></div>
+                                        <!-- <button id="save_btn" class="btn btn-success">Save</button> -->
+                                        <button id="add_bathroom" class="btn btn-sm text-nowrap btn-success mt-4">Add</button>
                                     </div>
                                 </div>
+                                
                                 <div class="col-lg-12 col-md-6 my-2">
+                                    <div class="row ">
+                                        <div class="col-7">
+                                            <h5 class="mt-4 mb-2 form-Subhead">
+                                                <u>
+                                                    Common Toilet No.
+                                                </u>
+                                            </h5>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="col-5 text-end">
+                                        <div id="input_toilet"></div>
+                                        <button id="add_toilet" class="btn btn-sm text-nowrap btn-success mt-4">Add</button>
+                                    </div>
+                                </div>
+
+                                <!-- <div class="col-lg-12 col-md-6 my-2">
                                     <div class="row ">
                                         <div class="col-7">
                                             <h5 class="mt-4 mb-2 form-Subhead">
@@ -893,7 +882,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                                 <div class="col-lg-4 col-md-6 my-2">
                                     <label for="" class="form-label">No. Of Staircase:</label>
 
@@ -936,8 +925,21 @@
                                     <input class="form-control" type="file" id="formFileMultiple" name="attach-file" multiple />
                                 </div>
                             </div>
-
-                            <div class="row">
+                            <div class="row ">
+                                <div class="col-7">
+                                    <h5 class="mt-4 mb-2">
+                                        <u>
+                                            Furniture and Fixtures
+                                        </u>
+                                    </h5>
+                                </div>
+                                
+                            </div>
+                            <div class="col-5 text-end">
+                                <div id="input_toilet"></div>
+                                <button id="add_toilet" class="btn btn-sm text-nowrap btn-success mt-4">Add Furniture</button>
+                            </div>
+                            <!-- <div class="row">
                                 <h5 class="mt-4 mb-2">
                                     <u>
                                        Furniture and Fixtures
@@ -967,8 +969,9 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-lg-12 col-md-6 my-2">
+                                </div> -->
+                                
+                                <!-- <div class="col-lg-12 col-md-6 my-2">
                                     <div class="row ">
                                         <div class="col-7">
                                             <h5 class="mt-4 mb-2 form-Subhead">
@@ -992,9 +995,9 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-
-                                <div class="col-lg-12 col-md-6 my-2">
+                                </div> -->
+                                
+                                <!-- <div class="col-lg-12 col-md-6 my-2">
                                     <div class="row ">
                                         <div class="col-7">
                                             <h5 class="mt-4 mb-2 form-Subhead">
@@ -1018,9 +1021,9 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
 
-                                <div class="col-lg-12 col-md-6 my-2">
+                                <!-- <div class="col-lg-12 col-md-6 my-2">
                                     <div class="row ">
                                         <div class="col-7">
                                             <h5 class="mt-4 mb-2 form-Subhead">
@@ -1044,9 +1047,9 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
 
-                                <div class="col-lg-12 col-md-6 my-2">
+                                <!-- <div class="col-lg-12 col-md-6 my-2">
                                     <div class="row ">
                                         <div class="col-7">
                                             <h5 class="mt-4 mb-2 form-Subhead">
@@ -1070,9 +1073,9 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
 
-                                <div class="col-lg-12 col-md-6 my-2">
+                                <!-- <div class="col-lg-12 col-md-6 my-2">
                                     <div class="row ">
                                         <div class="col-7">
                                             <h5 class="mt-4 mb-2 form-Subhead">
@@ -1096,7 +1099,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
 
                             <div class="row ">
@@ -1294,7 +1297,7 @@
                             </div> -->
                             <div class="row">
                                 <div class="col-md-12 my-2 pt-4 text-end">
-                                    <button class="btn btn-success btn-lg">Submit</button>
+                                    <button class="btn btn-success btn-lg" id="save_btn">Submit</button>
                                     <button class="btn btn-danger btn-lg">Reset</button>
                                 </div>
                             </div>
@@ -1440,15 +1443,9 @@
         </footrer>
         <!-- Footer End -->
     </div>
-        <!-- Main Wrapper
+        <!--  Main Wrapper -->
 
-    <!-- <script src="assets/bootstrap-5.1.3-dist/js/bootstrap.bundle.min.js"></script> -->
-    <script src="{% static 'script/script.js' %}"></script>
-    <!-- <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script> -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js'></script>
-    <script src="{% static 'script/addFile.js' %}"></script>
-    <script src="{% static 'select2-4.1.0-rc.0/dist/js/select2.full.min.js' %}"></script>
+    
     <script>
         $(document).ready(function() {
             $('.select').select2();
@@ -1484,7 +1481,7 @@
             });
         });
     </script>
-
+<script src="{% static 'script/hotel.js' %}"></script>
 </body>
 
 </html>

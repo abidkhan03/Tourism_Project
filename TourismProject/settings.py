@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'TourismProject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'tourism',
+        'NAME': 'tourist',
         'USER': 'postgres',
         'PASSWORD': 'admin123',
         'HOST': 'localhost'
