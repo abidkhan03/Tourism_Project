@@ -721,7 +721,7 @@
                                                 <div class="col-md-6 col-12">
                                                     <div class="form-group">
                                                         <label for="" class="form-label">Give Reception Hall  Detail</label>
-                                                        <input type="text" class="form-control required" name="reception-hall-details">
+                                                        <input type="text" class="form-control required" name="reception-hall-detail">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6 col-12">
@@ -936,8 +936,8 @@
                                 
                             </div>
                             <div class="col-5 text-end">
-                                <div id="input_toilet"></div>
-                                <button id="add_toilet" class="btn btn-sm text-nowrap btn-success mt-4">Add Furniture</button>
+                                <div id="input_furniture"></div>
+                                <button id="add_furniture" class="btn btn-sm text-nowrap btn-success mt-4">Add Furniture</button>
                             </div>
                             <!-- <div class="row">
                                 <h5 class="mt-4 mb-2">
@@ -1114,28 +1114,28 @@
                                     <div class="row">
                                         <div class="col-md-6 col-12 my-2">
                                             <label for="">Telephones Provided: </label>
-                                            <select class="form-select select" multiple="multiple" aria-label="Default select example" >
-                                                <option value="1">In Rooms</option>
-                                                <option value="2">On Each Floor</option>
-                                                <option value="3"> In Lobby </option>
+                                            <select class="form-select select" multiple="multiple" aria-label="Default select example" name="telephones_provided" >
+                                                <option value="In_Rooms">In Rooms</option>
+                                                <option value="On_Each_Floor">On Each Floor</option>
+                                                <option value="In_Lobby"> In Lobby </option>
                                             </select>
                                         </div>
 
                                         <div class="col-md-6 col-12 my-2">
                                             <label for="">Facilities Available On The Hotel Premises: </label>
-                                            <select class="form-select select" multiple="multiple" aria-label="Default select example">
-                                                <option value="1">Banking Counter</option>
-                                                <option value="2">Receptioln</option>
-                                                <option value="3"> Postal Counter </option>
-                                                <option value="4">Running Hot & Cold Water</option>
-                                                <option value="5">Heating or Air-Conditioning</option>
-                                                <option value="6">Restaurant</option>
-                                                <option value="7">Coffee Shop</option>
-                                                <option value="8">Bar</option>
-                                                <option value="9">Cold Storage </option>
-                                                <option value="10">Locks</option>
-                                                <option value="11"> Entertaiment</option>
-                                                <option value="12">Others</option>
+                                            <select class="form-select select" multiple="multiple" aria-label="Default select example" name="hotel_premises">
+                                                <option value="Banking_Counter">Banking Counter</option>
+                                                <option value="Reception">Reception</option>
+                                                <option value="Postal_Counter"> Postal Counter </option>
+                                                <option value="Running_Hot_Cold_Water">Running Hot & Cold Water</option>
+                                                <option value="Heating_or_AirCondition">Heating or Air-Conditioning</option>
+                                                <option value="Restaurant">Restaurant</option>
+                                                <option value="Coffee_Shop">Coffee Shop</option>
+                                                <option value="Bar">Bar</option>
+                                                <option value="Cold_Storage">Cold Storage </option>
+                                                <option value="Locks">Locks</option>
+                                                <option value="Entertainment"> Entertainment</option>
+                                                <option value="Others">Others</option>
                                             </select>
                                         </div>
                                     </div>
@@ -1145,14 +1145,14 @@
                             <div class="row ">
                                 <div class="col-lg-12 col-md-6 my-2">
                                     <div class="row ">
-                                        <div class="col-7">
+                                        <!-- <div class="col-7">
                                             <h5 class="mt-4 mb-2 form-Subhead">
                                                 <u>
                                                     Cuisine Served
                                                 </u>
                                             </h5>
-                                        </div>
-                                        <div class="col-5 text-end">
+                                        </div> -->
+                                        <!-- <div class="col-5 text-end">
                                             <button class="add-cuisineServed-field btn btn-sm text-nowrap btn-success mt-4">Add Cuisine</button>
                                         </div>
                                         <div class="col-md-12 my-2">
@@ -1165,7 +1165,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> -->
                                         <div class="col-12 my-2">
                                             <div class="form-group">
                                                 <div class="resturantForm">
@@ -1205,17 +1205,17 @@
                                     <div class="row">
                                         <div class="col-md-6 col-12 my-2">
                                             <label for="">Monthly Guests: </label>
-                                            <select class="form-select select" multiple="multiple" aria-label="Default select example">
-                                                <option value="1">Foreigners</option>
-                                                <option value="2">Pakistanis</option>
+                                            <select class="form-select select" multiple="multiple" aria-label="Default select example" name="monthly-guests">
+                                                <option value="Foreigners">Foreigners</option>
+                                                <option value="Pakistanis">Pakistanis</option>
                                             </select>
                                         </div>
 
                                         <div class="col-md-6 col-12 my-2">
                                             <label for="">Peak Season of Business: </label>
-                                            <select class="form-select select" multiple="multiple" aria-label="Default select example">
-                                                <option value="1">Winter</option>
-                                                <option value="2">Summer</option>
+                                            <select class="form-select select" multiple="multiple" aria-label="Default select example" name="business-season">
+                                                <option value="Winter">Winter</option>
+                                                <option value="Summer">Summer</option>
                                             </select>
                                         </div>
                                     </div>

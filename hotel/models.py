@@ -23,7 +23,6 @@ class HotelManager(models.Model):
     manager_name = models.CharField(max_length=30, null=True)
     manager_ratio = models.CharField(max_length=30, null=True)
     manager_full_address = models.CharField(max_length=200, null=True)
-    manager_telegraphic_address = models.CharField(max_length=200, null=True)
     manager_telephone = models.CharField(max_length=15, null=True)
 
     def __str__(self):
@@ -66,24 +65,24 @@ class HotelRegistration(models.Model):
     street = models.CharField(max_length=100 , null=True)
 
     # Land information
-    hotel_area = models.IntegerField(null=True) # Area of Hotel
-    covered_area = models.IntegerField(null=True) # Covered Area
-    area_type = models.CharField(max_length=100 , null=True) # Area Type
+    hotel_area = models.CharField(max_length=50, null=True, default='') # Area of Hotel
+    covered_area = models.CharField(max_length=50, null=True, default='') # Covered Area
+    area_type = models.CharField(max_length=100 , null=True, default='') # Area Type
 
     # cost information
-    land_cost = models.IntegerField( null=True) # Cost of Land
-    building_cost = models.IntegerField(null=True) # Cost of building
-    furniture_cost = models.IntegerField(null=True) # cost of furniture & Fixtures
-    equipment_cost = models.IntegerField(null=True) # cost of equipment
-    working_capital = models.IntegerField(null=True) # working capital
-    total_investment = models.IntegerField(null=True)
+    land_cost = models.IntegerField(default=0, null=True) # Cost of Land
+    building_cost = models.IntegerField(default=0, null=True) # Cost of building
+    furniture_cost = models.IntegerField(default=0, null=True) # cost of furniture & Fixtures
+    equipment_cost = models.IntegerField(default=0, null=True) # cost of equipment
+    working_capital = models.IntegerField(default=0, null=True) # working capital
+    total_investment = models.IntegerField(default=0, null=True)
 
 
 
 
     # Building information
-    floor_numbers = models.IntegerField(default=0) # number of floors
-    room_numbers = models.IntegerField(default=0) # Number of rooms on each floor
+    floor_numbers = models.CharField(max_length=100 , null=True, blank=True, default='1') # number of floors
+    room_numbers = models.CharField(max_length=100 , null=True, blank=True, default='1') # Number of rooms on each floor
 
     
     NATURE_OF_ROOM = (
@@ -106,20 +105,23 @@ class HotelRegistration(models.Model):
     restaurant_area = models.CharField(max_length=100, null=True)
 
     # Below from Common Toilets No
-    staircase_no = models.IntegerField(default=0) # No. Of Staircase:
-    lifts_no = models.IntegerField(default=0) # No. Of Lifts:
-    car_park = models.CharField(max_length=20) # Car Park (Lease Indicate Capacity):
-    area_of_compound  = models.CharField(max_length=30) # Area of Compund:
-    area_of_garden = models.CharField(max_length=40, null=True) # Area Of Garden (If any):
-    construction_completion_date = models.DateField(default=datetime.date.today) # Date of Completion of Construction :
+    staircase_no = models.CharField(max_length=20, null=True, default='') # No. Of Staircase:
+    lifts_no = models.CharField(max_length=20, null=True, default='') # No. Of Lifts:
+    car_park = models.CharField(max_length=20, null=True, default='') # Car Park (Lease Indicate Capacity):
+    area_of_compound  = models.CharField(max_length=50, null=True, default='') # Area of Compund:
+    area_of_garden = models.CharField(max_length=100, null=True, default='') # Area Of Garden (If any):
+    construction_completion_date = models.DateField(null=True, default=None) # Date of Completion of Construction :
     renovation_last_date = models.DateField(default=datetime.date.today)# Last Date of Renovation (If Any):
     building_files = models.FileField(upload_to='building_files/', null=True, blank=True) # Please Attach a Plan of The Buildings
-
+    phones_provided = models.CharField(max_length=100, null=True)
+    hotel_premises = models.CharField(max_length=100, null=True)
 
     # Is restaurant attached with hotel
     restaurant_name = models.CharField(max_length=100, null=True) # Restaurant Name
     restaurant_detail_files = models.FileField(upload_to='restaurant_files/', null=True) # Please Attach Restaurant Details
 
+    monthly_guests = models.CharField(max_length=100, null=True)
+    business_season = models.CharField(max_length=100, null=True)
 
     # Foreighn Keys
     owner_id = models.ForeignKey(HotelOwner, related_name='owner_id', on_delete=models.CASCADE)

@@ -70,6 +70,21 @@ $(document).ready(function () {
         x--;
     });
 
+    // add furniture button to increase the number of furnitures
+    $("#add_furniture").click(function (e) {
+        e.preventDefault();
+        appendRowFurniture();
+        x++;
+        // $("#save_btn").show();
+    });
+
+    $("#input_furniture").on("click", ".deleteBtn", function (e) {
+        e.preventDefault();
+        let id = e.currentTarget.id;
+        $('div[id='+id+']').remove();
+        x--;
+    });
+
 // save button to save the form data to the database
 $("#save_btn").click(function (e) {
     e.preventDefault();
@@ -89,11 +104,48 @@ $("#save_btn").click(function (e) {
         town :formData.get('town'),
         street_no :formData.get('street-no'),
         ownership_nature :formData.get('ownership-nature'),
+        hotel_area : formData.get('hotel-area'),
+        covered_area : formData.get('hotel-covered-area'),
+        area_type : formData.get('hotel-area-type'),
+        land_cost : formData.get('land-cost'),
+        building_cost : formData.get('building-cost'),
+        furniture_cost : formData.get('furniture-cost'),
+        equipment_cost : formData.get('equipment-cost'),
+        working_capital : formData.get('working-capital'),
+        total_investment : formData.get('total-investment'),
+        floor_rooms : formData.get('floor-rooms-no'),
+        room_nature : formData.get('room-nature'),
+        visitor_room : formData.get('visitors-room-detail'),
+        visitor_roomArea : formData.get('visitors-room-area'),
+        reception_detail : formData.get('reception-hall-detail'),
+        reception_area : formData.get('reception-hall-area'),
+        cloak_detail : formData.get('cloak-room-detail'),
+        cloak_area : formData.get('cloak-room-area'),
+        reading_detail : formData.get('reading-room-detail'),
+        reading_area : formData.get('reading-room-area'),
+        restaurant_detail : formData.get('restaurant-detail'),
+        restaurant_area : formData.get('restaurant-area'),
+        staircase : formData.get('staircase-no'),
+        lifts : formData.get('lifts-no'),
+        car_park : formData.get('car-park'),
+        compound_area : formData.get('compound-area'),
+        garden_area : formData.get('garden-area'),
+        completion_date : formData.get('completion-date'),
+        renovation_date : formData.get('renovation-date'),
+        // attach_file : formData.get('attach-file'),
+        provided_phones : formData.get('telephones_provided'),
+        hotel_premises : formData.get('hotel_premises'),
+        restaurant_name : formData.get('restaurant-name'),
+        // restaurant_file : formData.get('attach-restaurant-detail'),
+        monthly_guests : formData.get('monthly-guests'),
+        business_season : formData.get('business-season'),
+
 
         owners : [],
         managers : [], 
         bathrooms : [],
-        toilets : []
+        toilets : [],
+        furniture : []
     };
 
 
@@ -132,6 +184,19 @@ $("#save_btn").click(function (e) {
                 toilet_No : formData.getAll('commonToiletNo[]')[i],
                 floor_No : formData.getAll('toiletFloorNo[]')[i],
             });
+    }
+
+    for(let i = 0; i < formData.getAll('bedroomType[]').length; ++i) {
+
+        form.furniture.push({
+            bedroom : formData.getAll('bedroomType[]')[i],
+            room : formData.getAll('roomType[]')[i],
+            corrridor : formData.getAll('corridors[]')[i],
+            attach_bath : formData.getAll('attachedBathroom[]')[i],
+            common_bath : formData.getAll('commonBathroom[]')[i],
+            common_toilet : formData.getAll('commonToilet[]')[i],
+            cuisine : formData.getAll('cuisineName[]')[i],
+        });
     }
 
     $.ajax({
@@ -292,19 +357,19 @@ $("#save_btn").click(function (e) {
                     '<div id="'+x+'" class="row">'+
                         '<div id="'+x+'" class="col-lg-12 my-2">'+
                             '<label id="'+x+'" for="" class="form-label">Bedrooms Furniture Type:</label>'+
-                            '<input id="'+x+'" type="text" class="form-control" name="bedroom-type" />'+
+                            '<input id="'+x+'" type="text" class="form-control" name="bedroomType[]" />'+
                         '</div id="'+x+'">'+
                     '</div id="'+x+'">'+
                     '<div id="'+x+'" class="row">'+
                         '<div id="'+x+'" class="col-lg-12 my-2">'+
                             '<label id="'+x+'" for="" class="form-label">Common Rooms Furniture Type:</label>'+
-                            '<input id="'+x+'" type="text" class="form-control" name="room-type" />'+
+                            '<input id="'+x+'" type="text" class="form-control" name="roomType[]" />'+
                         '</div id="'+x+'">'+
                     '</div id="'+x+'">'+
                     '<div id="'+x+'" class="row">'+
                         '<div id="'+x+'" class="col-lg-12 my-2">'+
                             '<label id="'+x+'" for="" class="form-label">Corridors & Galleries Furniture Type:</label>'+
-                            '<input id="'+x+'" type="text" class="form-control" name="room-type" />'+
+                            '<input id="'+x+'" type="text" class="form-control" name="corridors[]" />'+
                         '</div id="'+x+'">'+
                     '</div id="'+x+'">'+
                     '<div id="'+x+'" class="row">'+
@@ -325,6 +390,17 @@ $("#save_btn").click(function (e) {
                             '<input id="'+x+'" type="text" class="form-control" name="commonToilet[]" />'+
                         '</div id="'+x+'">'+
                     '</div id="'+x+'">'+
+                    '<div id="'+x+'" class="row">'+
+                        '<div id="'+x+'" class="col-lg-12 my-2">'+
+                            '<label id="'+x+'" for="" class="form-label">Cuisine Name:</label>'+
+                            '<input id="'+x+'" type="text" class="form-control" name="cuisineName[]" />'+
+                        '</div id="'+x+'">'+
+                    '</div id="'+x+'">'+
+                    '<div id="'+x+'" class="form-group">'+
+                            '<div id="'+x+'" class="col-sm-10">'+
+                                '<button id="'+x+'" class="btn btn-danger deleteBtn">Remove</button>'+
+                            '</div id="'+x+'">'+
+                        '</div id="'+x+'">'+
 
                 '</div id="'+x+'">'+
             '</div id="'+x+'">'

@@ -28,31 +28,45 @@ def hotelform(request):
             # print(form['ownership_nature'])
 
             for owner in form['owners'] :
-                owner = HotelOwner.objects.create(owner_name=owner['name'], 
+                owner_data = HotelOwner.objects.create(owner_name=owner['name'], 
                                     owner_ratio=owner['ratio'], 
                                     owner_full_address=owner['address'], 
                                     owner_telegraphic_address=owner['telegraph'], 
                                     owner_telephone=owner['telephone'])
-                owner.save()
+                owner_data.save()
 
             for manager in form['managers'] :
-                manager = HotelManager.objects.create(manager_name=manager['managerName'],
+                manager_data = HotelManager.objects.create(manager_name=manager['managerName'],
                                     manager_ratio=manager['managerRatio'],
                                     manager_full_address=manager['managerAddress'],
                                     manager_telephone=manager['managerTelephone'])
-                manager.save()
+                manager_data.save()
 
             for bathroom in form['bathrooms']:
                 # print(bathroom)
-                bathroom = CommonBathroom.objects.create(bathroom_no=bathroom['bath_No'],
+                bathroom_data = CommonBathroom.objects.create(bathroom_no=bathroom['bath_No'],
                                     bathroom_floor=bathroom['floor_No'])
-                bathroom.save()
+                bathroom_data.save()
 
             for toilet in form['toilets']:
                 # print(toilet)
-                toilet = CommonToilet.objects.create(toilet_no=toilet['toilet_No'],
+                toilet_data = CommonToilet.objects.create(toilet_no=toilet['toilet_No'],
                                     toilet_floor=toilet['floor_No'])
-                toilet.save()
+                toilet_data.save()
+            
+            for furniture in form['furniture']:
+                # print(furniture)
+                furniture_data = Bedrooms.objects.create(
+                                bedrooms_type=furniture['bedroom'],
+                                rooms_type=furniture['room'],
+                                corridors_type=furniture['corrridor'],
+                                attached_bathroom_type=furniture['attach_bath'],
+                                bathrooms_type=furniture['common_bath'],
+                                toilets_type=furniture['common_toilet'],
+                                cuisine_name=furniture['cuisine']
+                            )
+                furniture_data.save()
+
 
         return JsonResponse({'status': 1}) 
     else:
