@@ -91,6 +91,7 @@ $("#save_btn").click(function (e) {
     console.log("save button clicked");
     let formData = new FormData(document.querySelector('#test_form'));
 
+    
     // create an object for the form data
     let form = {
         hotel_name : formData.get('hotel-name'),    
@@ -113,10 +114,11 @@ $("#save_btn").click(function (e) {
         equipment_cost : formData.get('equipment-cost'),
         working_capital : formData.get('working-capital'),
         total_investment : formData.get('total-investment'),
+        floors_number : formData.get('floors-number'),
         floor_rooms : formData.get('floor-rooms-no'),
         room_nature : formData.get('room-nature'),
         visitor_room : formData.get('visitors-room-detail'),
-        visitor_roomArea : formData.get('visitors-room-area'),
+        visitor_room_area : formData.get('visitors-room-area'),
         reception_detail : formData.get('reception-hall-detail'),
         reception_area : formData.get('reception-hall-area'),
         cloak_detail : formData.get('cloak-room-detail'),
@@ -127,12 +129,12 @@ $("#save_btn").click(function (e) {
         restaurant_area : formData.get('restaurant-area'),
         staircase : formData.get('staircase-no'),
         lifts : formData.get('lifts-no'),
-        car_park : formData.get('car-park'),
+        car_parking : formData.get('car-park'),
         compound_area : formData.get('compound-area'),
         garden_area : formData.get('garden-area'),
         completion_date : formData.get('completion-date'),
         renovation_date : formData.get('renovation-date'),
-        // attach_file : formData.get('attach-file'),
+        // attach_file : formData.get('attach-file')[0].files[0],
         provided_phones : formData.get('telephones_provided'),
         hotel_premises : formData.get('hotel_premises'),
         restaurant_name : formData.get('restaurant-name'),
@@ -148,7 +150,7 @@ $("#save_btn").click(function (e) {
         furniture : []
     };
 
-
+    
     
     for(let i = 0; i < formData.getAll('ownerName[]').length; ++i) {
 

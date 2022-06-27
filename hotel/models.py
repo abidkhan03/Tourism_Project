@@ -63,6 +63,7 @@ class HotelRegistration(models.Model):
     province = models.CharField(max_length=100 , null=True)
     town = models.CharField(max_length=100 , null=True)
     street = models.CharField(max_length=100 , null=True)
+    ownership_nature = models.CharField(max_length=100 , null=True) # ownership nature
 
     # Land information
     hotel_area = models.CharField(max_length=50, null=True, default='') # Area of Hotel

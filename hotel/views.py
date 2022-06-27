@@ -15,17 +15,57 @@ def hotelform(request):
         for i in data:
             j = json.loads(i)
             form = dict(j)
-            # print(form['hotel_name'])
-            # print(form['establishment_year'])
-            # print(form['commission_date'])
-            # print(form['telex_number'])
-            # print(form['telephone_no'])
-            # print(form['hotel_address'])
-            # print(form['telegraph_address'])
-            # print(form['province'])
-            # print(form['town'])
-            # print(form['street_no'])
-            # print(form['ownership_nature'])
+
+            hotel_registration = HotelRegistration.objects.create(
+                        hotel_name=form['hotel_name'],
+                        establishment_year=form['establishment_year'],
+                        commision_date=form['commission_date'],
+                        telex_number=form['telex_number'],
+                        phone_number=form['telephone_no'],
+                        hotel_address=form['hotel_address'],
+                        telegraphic_address=form['telegraph_address'],
+                        province=form['province'],
+                        town=form['town'],
+                        street=form['street_no'],
+                        ownership_nature=form['ownership_nature'],
+                        hotel_area=form['hotel_area'],
+                        covered_area=form['covered_area'],
+                        area_type=form['area_type'],
+                        land_cost=form['land_cost'],
+                        building_cost=form['building_cost'],
+                        furniture_cost=form['furniture_cost'],
+                        equipment_cost=form['equipment_cost'],
+                        working_capital=form['working_capital'],
+                        total_investment=form['total_investment'],
+                        floor_numbers=form['floors_number'],
+                        room_numbers=form['floor_rooms'],
+                        room_nature=form['room_nature'],
+                        )
+            print(form['visitor_room'])
+            print(form['visitor_room_area'])
+            print(form['reception_detail'])
+            print(form['reception_area'])
+            print(form['cloak_detail'])
+            print(form['cloak_area'])
+            print(form['reading_detail'])
+            print(form['reading_area'])
+            print(form['restaurant_detail'])
+            print(form['restaurant_area'])
+            print(form['staircase'])
+            print(form['lifts'])
+            print(form['car_parking'])
+            print(form['compound_area'])
+            print(form['garden_area'])
+            print(form['completion_date'])
+            print(form['renovation_date'])
+            # print(form['attach_file'])
+            print(form['provided_phones'])
+            print(form['hotel_premises'])
+            print(form['restaurant_name'])
+            # print(form['restaurant_file'])
+            print(form['monthly_guests'])
+            print(form['business_season'])
+
 
             for owner in form['owners'] :
                 owner_data = HotelOwner.objects.create(owner_name=owner['name'], 
